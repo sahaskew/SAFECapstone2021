@@ -1,0 +1,25 @@
+<!--The index.html is the default page upon loading in the browser. This will include script to listen for server updates.-->
+<html>
+  <head>
+    <script src = "/socket.io/socket.io.js"></script> 
+    <script>
+      let socket = io();
+      let element;
+
+      socket.on('time', function(timeString) {
+        element = document.getElementById('server-time')
+        element.innerHTML = 'Server time: ' + timeString;
+      });
+      
+      //this is to test the connection of the room. 
+      var room = '1';
+      socket.on('connect', function(){
+        socket.emit('createRoom',room);
+      });
+
+    </script>
+  </head>
+    <p id="initMsg"> greetings everyone, this is the default page</p>
+    <p id="server-time"></p>
+  </body>
+</html> 
