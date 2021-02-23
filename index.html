@@ -1,8 +1,10 @@
 <!--The index.html is the default page upon loading in the browser. This will include script to listen for server updates.-->
 <html>
   <head>
-    <script src = "/socket.io/socket.io.js"></script> 
-    <script>
+    <title>Default page</title>
+  </head>
+  <script src = "/socket.io/socket.io.js"></script> 
+  <script>
       let socket = io();
       let element;
 
@@ -17,9 +19,14 @@
         socket.emit('createRoom',room);
       });
 
-    </script>
-  </head>
+      socket.on('initialMsg', function(data){
+        console.log(data);
+        document.body.innerHTML = '';
+        document.write(data);
+      });
+
+  </script>
     <p id="initMsg"> greetings everyone, this is the default page</p>
     <p id="server-time"></p>
-  </body>
+  <body></body>
 </html> 

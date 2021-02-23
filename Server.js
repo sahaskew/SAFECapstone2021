@@ -17,14 +17,18 @@ const server = express()
 /*socket IO takes http server as arg to listen to socketIO requests*/ 
 const io = socketIO(server);
 
-io.on('connection', (socket) => {
+ io.on('connection', (socket) => {
   console.log('Client connected');
   socket.on('createRoom',function(room){
     socket.join(room);
     console.log('client joined room' + room);
   })
   socket.on('disconnect', () => console.log('Client disconnected'));
-});
+ });
+/*
+ var roomno  = 1;
+ io.sockets.in(roomno).emit('initialMsg', "hey nerds, welcome to room " + roomno);
+*/
+ //test emit signal with displaying time
+ setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
 
-//test function
-setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
