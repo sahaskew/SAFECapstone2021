@@ -1,7 +1,5 @@
 /* This is the server file. This file will create an http connection and kickstart 
-a socket connection.
-
-local port is set to :   http://localhost:3000  click this to locally test your code. */
+a socket connection. local port is set to :   http://localhost:3000   */
 
 const express = require('express')
 const socketIO = require('socket.io') 
