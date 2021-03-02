@@ -7,6 +7,7 @@ const socketIO = require("socket.io");
 const PORT = process.env.PORT || 3000;
 const INDEX = "/index.html";
 const STUDENT = "public/student.html";
+const ADMIN = "public/admin.html"
 
 //set up app
 var app = express();
@@ -22,6 +23,10 @@ var io = socketIO(server);
 
 app.get("/student", (req, res) => {
   res.sendFile(STUDENT, { root: __dirname });
+});
+
+app.get("/admin", (req, res) => {
+  res.sendFile(ADMIN, { root: __dirname });
 });
 
 io.on("connection", (socket) => {
