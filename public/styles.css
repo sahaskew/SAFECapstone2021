@@ -1,4 +1,23 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 10px;
+  background-color: darkslategray;
+  background-image: url(safeBackground.png);
+  color: white;
+}
+ a {
+   color: white;
+ }
+
+ a:hover {
+   color: lightgrey;
+ }
+
+ h1 {
+  font-size: 144px;
+ }
+
+button {
+  background-color: white !important;
+  color: darkslategray !important;
 }
