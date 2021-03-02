@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 10px;
   background-color: darkslategray;
   background-image: url(safeBackground.png);
   color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
  a {
-   color: white;
+  font-family: 'Arvo', serif;
+  color: white;
  }
 
  a:hover {
@@ -14,10 +21,12 @@ body {
  }
 
  h1 {
+  font-family: 'Major Mono Display', monospace;
   font-size: 144px;
  }
 
 button {
+  font-family: 'Major Mono Display', monospace;
   background-color: white !important;
   color: darkslategray !important;
 

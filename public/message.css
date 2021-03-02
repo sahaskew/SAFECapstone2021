@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+
+body {
+  
+  margin: 10px;
+  background-image: url(safeBackground.png);
+  color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+ a.left {
+  font-family: 'Major Mono Display', monospace !important;
+  font-size: 25px;
+  text-decoration: none;
+  color: white !important;
+  
+ }
+
+ a.right {
+
+  font-family: 'Major Mono Display', monospace;
+  font-size: 25px;
+  text-decoration: none !important;
+  color: white;
+  
+ }
+
+ a:hover {
+   color: lightgrey;
+ }
+
+ h1 {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 120px;
+ }
+
+ h2 {
+  margin-top: -2%;
+  font-family: 'Major Mono Display', monospace;
+  font-size: 28
+  
+}
+
+h3{
+  margin-top: 1%;
+  font-family: 'Arvo', serif !important;
+  font-size: 100% !important;
+}
+button{
+  margin-top: 2%;
+  font-family: 'Arvo', serif !important;
+  font-size: 25 !important;
+  width: 30% !important;
+  padding: 18px 100px !important;
+  background-color: white !important;
+  color: darkslategray !important;
+  border-radius: 30px !important;
+
+}
+
+
+a.btn:hover  {
+  background-color: lightgray !important;
+}
+
+input.name{
+  margin-top: 1%;
+  font-family: 'Arvo', serif !important;
+  font-size: 25 !important;
+  width: 30% !important;
+  padding: 18px 100px !important;
+  background-color: white !important;
+  color: darkslategray !important;
+  border-radius: 30px !important;
+}
+
+
+input.message {
+  margin-top: 2%;
+  font-family: 'Arvo', serif !important;
+  font-size: 25 !important;
+  width: 30% !important;
+  height: 220px !important;
+  padding: 18px 100px !important;
+  background-color: white !important;
+  color: darkslategray !important;
+  border-radius: 30px !important;
+}
+
+a.btn {
+  margin-top: 1%;
+  font-family: 'Arvo', serif !important;
+  font-size: 25 !important;
+  width: 30% !important;
+  padding: 18px 100px !important;
+  background-color: white !important;
+  color: darkslategray !important;
+  border-radius: 30px !important;
+}
+
+input.checkbox{
+  margin-left: auto;
+  margin-top:  1%  !important;
+  
+}
+label {
+  font-family: 'Arvo', serif !important;
+  font-size: 100% !important;
+  
+}
+
+.right {
+  position:relative;
+  left: 900px;
+  bottom: 60px;
+}
+
+.left {
+  position: relative;
+  left: 340px;
+  bottom: 60px;
+}
+
+.class-center {
+  margin-left: auto;
+  margin-right: auto;
+}
