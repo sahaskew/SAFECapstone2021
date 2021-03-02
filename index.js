@@ -7,7 +7,9 @@ const socketIO = require("socket.io");
 const PORT = process.env.PORT || 3000;
 const INDEX = "/index.html";
 const STUDENT = "public/student.html";
-const ADMIN = "public/admin.html"
+const ADMIN = "public/admin.html";
+const ABOUT = "public/about.html";
+const FORM = "public/form.html";
 
 //set up app
 var app = express();
@@ -27,6 +29,14 @@ app.get("/student", (req, res) => {
 
 app.get("/admin", (req, res) => {
   res.sendFile(ADMIN, { root: __dirname });
+});
+
+app.get("/about", (req, res) => {
+  res.sendFile(ABOUT, { root: __dirname });
+});
+
+app.get("/form", (req, res) => {
+  res.sendFile(FORM, { root: __dirname });
 });
 
 io.on("connection", (socket) => {
