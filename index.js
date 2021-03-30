@@ -45,14 +45,18 @@ app.get("/message", (req, res) => {
 
 io.on("connection", (socket) => {
   console.log("Client connected via socket (not in a room yet)");
+  
   socket.emit('Msg', 'welcome');
+
   socket.on("createRoom", function (room) {
     socket.join(room);
     console.log("client joined room " + room + ", ID: " + socket.id);
   });
-  socket.on( "chatMsg", function(msg){
 
-  })
+  socket.on( "chatMsg", msg => {
+    console.log(msg); 
+  });
+
   socket.on("disconnect", () => console.log("Client disconnected"));
 });
 
