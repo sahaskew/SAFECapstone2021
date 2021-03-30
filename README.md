@@ -12,3 +12,5 @@ https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=tru
 SAFE is an anonymous feedback app.
 Anonymous feedback can enable senders to give honest feedback without fear of judgement.
 
+about front end folders (this is really just notes for kelsey):
+public folder holds all front end functionality. this is CSS/HTML. Public/js is a folder for js files that are being ran on the front end (aka socket work on client)

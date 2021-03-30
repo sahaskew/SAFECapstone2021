@@ -12,7 +12,8 @@
 </head>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  let socket = io();
+/*
+  let socket = io(); //creates socket connection to server
   let element;
 
   socket.on('time', function (timeString) {
@@ -25,13 +26,15 @@
   socket.on('connect', function () {
     socket.emit('createRoom', room);
   });
-
+*/ 
+/*
   socket.on('initialMsg', function (data) {
     console.log(data);
     document.body.innerHTML = '';
     document.write(data);
   });
 
+*/ 
 </script>
 
 <body>
