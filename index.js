@@ -52,9 +52,11 @@ io.on("connection", (socket) => {
     socket.join(room);
     console.log("client joined room " + room + ", ID: " + socket.id);
   });
-
+  //display chat msg on server terminal 
   socket.on( "chatMsg", msg => {
     console.log(msg); 
+    //emit to everybody
+    io.emit('Msg', msg ); 
   });
 
   socket.on("disconnect", () => console.log("Client disconnected"));
