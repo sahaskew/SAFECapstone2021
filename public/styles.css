@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
-
 body {
+  
   margin: 10px;
+  color: white;
   background-color: darkslategray;
   background-image: url(safeBackground.png);
-  color: white;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-size: 120%, 100%;
+  background-position: top, left;
+
 }
+
  a {
   font-family: 'Arvo', serif;
   color: white;
@@ -20,14 +20,164 @@ body {
    color: lightgrey;
  }
 
- h1 {
-  font-family: 'Major Mono Display', monospace;
-  font-size: 144px;
- }
-
 button {
   font-family: 'Major Mono Display', monospace;
   background-color: white !important;
   color: darkslategray !important;
 
+}
+
+/*nav is the header bar on top of the screen*/
+nav {
+  display: flex;
+  justify-content: space-around;
+  min-height: 10vh;
+  align-items: center;
+}
+
+.logo {
+  color:white;
+  align-self: center;
+}
+
+.logo h1 {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 60px !important;
+}
+
+.navLinkRight{
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.navLinkLeft{
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+/*navLinkRight is the Home button*/
+.navLinkRight a {
+  color:white;
+  text-decoration: none;
+  font-family: 'Major Mono Display', monospace;
+  font-size: 20px;
+}
+
+/*navLinkLeft is the Home button*/
+.navLinkLeft a {
+  color:white;
+  text-decoration: none;
+  font-family: 'Major Mono Display', monospace;
+  font-size: 20px;
+}
+
+.navLinkRight li {
+  list-style: none;
+}
+
+.navLinkLeft li {
+  list-style: none;
+}
+
+/*burger is the menu bars that appear when the screen becomes smaller*/
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div{
+  position: relative;
+  right: 0px;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+
+}
+
+/*This gets rid of the menu background when the screen is bigger*/
+.background {
+  opacity: 0;
+}
+
+/*If the screen is smaller than 600 px it switches to small mode*/
+@media screen and (max-width: 600px){
+  body {
+    overflow-x: hidden;
+    background-size: 330%, 100%;
+    background-position: top, right;
+  }
+  
+  .background {
+    opacity: 100;
+    position: absolute;
+    display: flexbox;
+    background-color: rgba(24, 24, 24, 0.555);
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 35%;
+    transform: translateX(100%);
+  }
+  .navLinkLeft {
+    position: absolute;
+    right: 10px;
+    height: 10%;
+    top: 30vh;
+    width: 35%;
+    z-index: 0;
+  }
+
+  .navLinkRight {
+    position: absolute;
+    right: 10px;
+    height: 10%;
+    top: 20vh;
+    width: 35%;
+    z-index: 1;
+  }
+  
+  .navLinkLeft li {
+    opacity: 0;
+  }
+
+  .navLinkRight li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  
+}
+
+/*If the burger is pressed this makes the menu appear*/
+.nav1-active {
+  transform: translateX(0%);
+}
+
+/*This is the animation function for text menu elements*/
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform:translate(50px);
+  }
+  to {
+    opacity:1;
+    transform: translate(0px);
+  }
+}
+
+/*These toggle functions are what animate the burger.*/
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 4.5px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
 }
