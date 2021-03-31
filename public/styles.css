@@ -27,7 +27,7 @@ button {
 
 }
 
-/*nav is the header bar on top of the screen*/
+/*nav is the header bar on top of the screen.*/
 nav {
   display: flex;
   justify-content: space-around;
