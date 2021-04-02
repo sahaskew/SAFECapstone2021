@@ -46,7 +46,8 @@ app.get("/message", (req, res) => {
 io.on("connection", (socket) => {
   console.log("Client connected via socket (not in a room yet)");
   
-  socket.emit('Msg', 'welcome');
+  //sends msg to client to test connection 
+  socket.emit('Msg', 'welcome! , I am a msg sent from the server to your chat room.');
 
   socket.on("createRoom", function (room) {
     socket.join(room);
