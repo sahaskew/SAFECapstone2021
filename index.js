@@ -3,8 +3,8 @@ a socket connection. local port is set to :   http://localhost:3000   */
 
 const express = require("express");
 const socketIO = require("socket.io");
-
 const PORT = process.env.PORT || 3000;
+
 const INDEX = "/index.html";
 const STUDENT = "public/student.html";
 const ADMIN = "public/admin.html";
@@ -14,7 +14,7 @@ const MESSAGE = "public/message.html";
 //set up app
 var app = express();
 var server = app.listen(PORT, () => {
-  console.log(`Our app is running on port ${PORT}`);
+  console.log(`SAFE is running on port ${PORT}`);
 });
 
 //static files for retrieval. ALL HTML and CSS must go in this folder.
@@ -44,11 +44,22 @@ app.get("/message", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  console.log("Client connected");
+  console.log("Client connected via socket (not in a room yet)");
+  
+  //sends msg to client to test connection 
+  socket.emit('Msg', 'welcome! , I am a msg sent from the server to your chat room.');
+
   socket.on("createRoom", function (room) {
     socket.join(room);
-    console.log("client joined room" + room);
+    console.log("client joined room " + room + ", ID: " + socket.id);
   });
+  //display chat msg on server terminal 
+  socket.on( "chatMsg", msg => {
+    console.log(msg); 
+    //emit to everybody
+    io.emit('Msg', msg ); 
+  });
+
   socket.on("disconnect", () => console.log("Client disconnected"));
 });
 

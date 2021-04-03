@@ -8,6 +8,8 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Message Landing Page</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/chat.js"></script> 
 </head>
 
 <body>
@@ -16,6 +18,12 @@
       </header>
     <h2>Message/ Form Landing Page</h2>
     <a href="/">Back to Home</a>
+    <div class = "form-group">
+        <form id = "form">
+          <input id = "msg" type = "text" />
+          <button type = "submit" id = "submit-button" > send chat </button>
+        </form>
+    </div>
 </body>
 
 </html>
