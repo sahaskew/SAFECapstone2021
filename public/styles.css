@@ -48,6 +48,7 @@ nav {
   font-size: 60px !important;
 }
 
+/*This is the container for the about and home links*/
 .linkContainer {
   position: relative;
   display: flex;
