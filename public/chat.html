@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+    
+    <div class = "descriptionContainer">
+        <div class = "description">anonymous Chat</div>
+    </div>
+    
+    <div class = "chatContainer" >
+        <div class = "chat">
+            <div class = "chatHeader">
+                <div class = "profile">
+                    <img src = "green.png" class = "online">
+                    <div class = "nameMessage">PSU Staff</div>
+                    <div class = "endButton">
+                        <a class = "endLabel" href="/">
+                            <div class="endChat">
+                            End Chat
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div id = "chatBoxContainer" class = "chatBox">
+                <div id = "text" class = "chatR">
+                    <div class = "sp"></div>
+                    <div class = "mess mess-r">
+                        <p id = "result" class ="messageText">This is a test</p>
+                        <div class = "time"> <span id = "getTime"> </span></div>
+                        <script>
+                            var dt = new Date();
+                            if (dt.getHours() > 12)
+                            {
+                                var timeOfDay = 'PM';
+                            }
+                            else
+                            {
+                                var timeOfDay = 'AM';
+                            }
+                            if (dt.getMinutes() < 10)
+                            {
+                                var minutes = '0' + dt.getMinutes();
+                            }
+                            else
+                            {
+                                var minutes = dt.getMinutes();
+                            }
+                            document.getElementById("getTime").innerHTML = (dt.getHours() % 12) + ':' + minutes + ' ' + timeOfDay;
+                            
+                        </script>
+                    </div>
+                </div>
+                <div class = "chatL ">
+                    <div class = "mess">
+                        <p class ="messageText">Hey Jerry, How are you doing?  </p>
+                        <div class = "time"> <span id = "getTimeLeft"> </span></div>
+                        <script>
+                            var dt = new Date();
+                            if (dt.getHours() > 12)
+                            {
+                                var timeOfDay = 'PM';
+                            }
+                            else
+                            {
+                                var timeOfDay = 'AM';
+                            }
+                            if (dt.getMinutes() < 10)
+                            {
+                                var minutes = '0' + dt.getMinutes();
+                            }
+                            else
+                            {
+                                var minutes = dt.getMinutes();
+                            }
+                            document.getElementById("getTimeLeft").innerHTML = (dt.getHours() % 12) + ':' + minutes + ' ' + timeOfDay;
+
+                        </script>
+                    </div>
+                    <div class = "sp"></div>
+                </div>
+            </div>
+            <div class = "chatFooter">
+                <textarea id = "input"placeholder = "Type a message..."></textarea>
+                <a id = "sendButton" onclick = "duplicate()">
+                    <img src ="sendIcon.png" class = "send">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <nav>
+        <div class = "background"></div>
+        <ul class = "navLinkLeft">
+          <li> <a href="/about">About</a></li>
+        </ul>
+        <div class = "logo">
+            <h1>SaFE</h1>
+        </div>
+        <ul class = "navLinkRight">
+          <li> <a href="/">Home</a></li>
+        </ul>
+       
+        <div class="burger">
+          <div class = "line1">
+          </div>
+          <div class = "line2">
+          </div>
+          <div class = "line3">
+          </div>
+        </div>
+    </nav>
+
+
+    
+    <script src= "app.js"></script>
+</body>
+
+</html>
