@@ -36,7 +36,15 @@
         <div class="line3"></div>
       </div>
     </nav>
-    <h2>Admin Landing Page</h2>
-    <a href="/">Back to Home</a>
+    <div>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username">
+  </div>
+  <div>
+    <label for="pass">Password (8 characters minimum):</label><br>
+    <input type="password" id="pass" name="password"
+           minlength="8" required>
+  </div>
+  <input type="submit" value="Sign in">
   </body>
 </html>
