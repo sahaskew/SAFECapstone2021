@@ -11,21 +11,57 @@
     />
     <title>Message Landing Page</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/message.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/chat.js"></script>
   </head>
 
   <body>
     <header>
-      <h1 class="text-center">SAFE</h1>
+      <nav>
+        <div class = "background"></div>
+        <ul class = "navLinkLeft">
+          <li> <a href="/about">About</a></li>
+        </ul>
+        <div class = "logo">
+            <h1>SaFE</h1>
+        </div>
+        <ul class = "navLinkRight">
+          <li> <a href="/">Home</a></li>
+        </ul>
+       
+        <div class="burger">
+          <div class = "line1">
+          </div>
+          <div class = "line2">
+          </div>
+          <div class = "line3">
+          </div>
+        </div>
+    </nav>
     </header>
-    <h2>Message/ Form Landing Page</h2>
-    <a href="/">Back to Home</a>
-    <div class="form-group">
-      <form id="form">
-        <input id="msg" type="text" />
-        <button type="submit" id="submit-button">send chat</button>
-      </form>
+    <h1>WHO WOULD YOUR LIKE TO CONNECT WITH?</h1>
+    <div class = "form-group">
+        <form class = "form">
+        
+          <div class="form-group">
+            <input type="text" class="form-control" id="msg" placeholder="Enter Name">
+          </div>
+
+          <div class="form-group">
+            <label for="name" class="label1">What's your feedback?</label>
+            <textarea class="form-control" placeholder="Enter Feedback"></textarea>
+          </div>
+
+          <div class="checkbox">
+            <label class="label2">
+              <input type="checkbox">I'd like a Reply
+            </label>
+          </div>
+          
+          <button type = "submit" class= "btn-submit" onclick="">Submit Feedback</button>
+        </form>
     </div>
+    <script src= "app.js"></script>
   </body>
 </html>
