@@ -197,3 +197,8 @@ input[type='submit'],
 label {
   margin-top: 1rem;
 }
+
+.grid-container{
+  display: grid;
+  justify-items: center;
+}
