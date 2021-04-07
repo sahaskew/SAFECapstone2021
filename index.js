@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 const INDEX = "/index.html";
 const STUDENT = "public/student.html";
+const CHAT = "public/chat.html";
 const ADMIN = "public/admin.html";
 const ABOUT = "public/about.html";
 const MESSAGE = "public/message.html";
@@ -29,6 +30,11 @@ app.get("/", (req, res) => {
 
 app.get("/student", (req, res) => {
   res.sendFile(STUDENT, { root: __dirname });
+});
+
+
+app.get("/chat", (req, res) => {
+  res.sendFile(CHAT, { root: __dirname });
 });
 
 app.get("/admin", (req, res) => {
