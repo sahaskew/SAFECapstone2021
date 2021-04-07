@@ -187,3 +187,13 @@ nav {
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -5px);
 }
+
+label {
+  display: block;
+  font: .9rem 'Fira Sans', sans-serif;
+}
+
+input[type='submit'],
+label {
+  margin-top: 1rem;
+}
