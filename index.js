@@ -5,6 +5,15 @@ const express = require("express");
 const socketIO = require("socket.io");
 const PORT = process.env.PORT || 3000;
 
+//Connect to MongoDB
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true , useUnifiedTopology: true });
+mongoose.connection.once('open', function(){
+  console.log('connection has been made');
+}).on('error', function(error){
+  console.log('error is:', error);
+});
+
 const INDEX = "/index.html";
 const STUDENT = "public/student.html";
 const ADMIN = "public/admin.html";
