@@ -18,12 +18,12 @@
     <div class="descriptionContainer">
       <div class="description">anonymous Chat</div>
     </div>
-
+    <!--This is the start of the chat portion of the html file-->
     <div class="chatContainer">
       <div class="chat">
         <div class="chatHeader">
           <div class="profile">
-            <img src="green.png" class="online" />
+            <img src="images/green.png" class="online" />
             <div class="nameMessage">PSU Staff</div>
             <div class="endButton">
               <a class="endLabel" href="/">
@@ -32,7 +32,9 @@
             </div>
           </div>
         </div>
+        <!--This is the inner window where texts will appear-->
         <div id="chatBoxContainer" class="chatBox">
+          <!--This is where the right texts are made (The texts sent by you)
           <div id="text" class="chatR">
             <div class="sp"></div>
             <div class="mess mess-r">
@@ -77,20 +79,25 @@
             </div>
             <div class="sp"></div>
           </div>
+        -->
         </div>
+      
+         <!--This is where the text area and the send button are made-->
         <div class="chatFooter">
           <textarea id="input" placeholder="Type a message..."></textarea>
-          <a id="sendButton" onclick="duplicate()">
-            <img src="sendIcon.png" class="send" />
-          </a>
+          <button id="sendButton">
+            <img src="images/sendIcon.png" class="send" />
+          </button>
         </div>
       </div>
     </div>
 
+     <!--This is the end of the chat portion of the html file-->
+
     <nav>
       <div class="background"></div>
       <ul class="navLinkLeft">
-        <li><a href="/about">About</a></li>
+        <li><a href="/about">about</a></li>
       </ul>
       <div class="logo">
         <h1>SaFE</h1>
