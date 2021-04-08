@@ -34,13 +34,12 @@
         </div>
         <!--This is the inner window where texts will appear-->
         <div id="chatBoxContainer" class="chatBox">
-          <!--This is where the right texts are made (The texts sent by you)-->
+          <!--This is where the right texts are made (The texts sent by you)
           <div id="text" class="chatR">
             <div class="sp"></div>
             <div class="mess mess-r">
               <p id="result" class="messageText">This is a test</p>
               <div class="time"><span id="getTime"> </span></div>
-              <!--This script finds the current time-->
               <script>
                 var dt = new Date();
                 if (dt.getHours() > 12) {
@@ -58,12 +57,10 @@
               </script>
             </div>
           </div>
-          <!--This is where the Left texts are made (The texts you receive)-->
           <div class="chatL">
             <div class="mess">
               <p class="messageText">Hey Jerry, How are you doing?</p>
               <div class="time"><span id="getTimeLeft"> </span></div>
-               <!--This script finds the current time-->
               <script>
                 var dt = new Date();
                 if (dt.getHours() > 12) {
@@ -82,13 +79,15 @@
             </div>
             <div class="sp"></div>
           </div>
+        -->
         </div>
+      
          <!--This is where the text area and the send button are made-->
         <div class="chatFooter">
           <textarea id="input" placeholder="Type a message..."></textarea>
-          <a id="sendButton" onclick="duplicate()">
+          <button id="sendButton">
             <img src="images/sendIcon.png" class="send" />
-          </a>
+          </button>
         </div>
       </div>
     </div>
