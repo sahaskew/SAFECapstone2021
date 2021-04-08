@@ -202,3 +202,7 @@ label {
   display: grid;
   justify-items: center;
 }
+
+.adminIcon{
+  list-style: none;
+}
