@@ -23,7 +23,7 @@ const navSlide = () => {
   }
   //Call function
   navSlide();
-
+/*
 var textarea = document.getElementById('input');
 var result = document.getElementById('result');
 
@@ -36,7 +36,7 @@ var input = document.getElementById('input');
 
 
 
-/*
+
 var i = 0;
 var textTemplate = document.getElementById('text');
 function sendMessage() {
