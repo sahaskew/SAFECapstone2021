@@ -13,16 +13,16 @@
 </head>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  let socket = io();
+/*  let socket = io();
   let element;
-
+*/ 
   socket.on('time', function (timeString) {
     element = document.getElementById('server-time')
     element.innerHTML = 'Server time: ' + timeString;
   });
 
   //this is to test the connection of the room. 
-  var room = '1';
+ /* var room = '1';
   socket.on('connect', function () {
     socket.emit('createRoom', room);
   }); 
@@ -32,7 +32,7 @@
     document.body.innerHTML = '';
     document.write(data);
   });
-
+ */ 
 </script>
 <div class = "backgroundImage"></div>
 <body>

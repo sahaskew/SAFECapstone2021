@@ -1,4 +1,4 @@
-/* this file is ran when message.html is loaded. 
+/* this file is ran when chat.html is loaded. 
 It is socket connection create via frontend */ 
 
 //var socket = io.connect( 'http://localhost:3000' );
@@ -32,9 +32,11 @@ socket.on('Msg', msg => {
 //output message to DOM to create chatboxes
 function chatBox(msg){
  const div = document.createElement('div');
- div.innerHTML = `<p class= "messageText"> ${msg} </p>`
+ div.classList.add('.mess');
+ div.innerHTML = `<p class= "messageText"> ${msg} </p>`;
  document.querySelector('.mess').appendChild(div);
 }
+//chatR chatL or chatbox class
 
 //when msg submiitted, (1)display on client side (2) emit it to the server 
 //call below function when button clicked

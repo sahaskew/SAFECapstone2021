@@ -38,8 +38,8 @@
             <div id = "chatBoxContainer" class = "chatBox">
                 <div id = "text" class = "chatR">
                     <div class = "sp"></div>
-                    <div class = "mess mess-r">
-                        <p id = "result" class ="messageText">This is a test</p>
+                     <div class = "mess mess-r">
+                      <p id = "result" class ="messageText"></p>
                         <div class = "time"> <span id = "getTime"> </span></div>
                         <script>
                             var dt = new Date();
@@ -89,21 +89,23 @@
                             document.getElementById("getTimeLeft").innerHTML = (dt.getHours() % 12) + ':' + minutes + ' ' + timeOfDay;
 
                         </script>
-                    </div>
-                    <div class = "sp"></div>
+                    </div>  
+                    <div class = "sp"></div> 
                 </div>
-            </div>
+            </div> 
+
           <!--  <div class = "chatFooter">
                 <textarea id = "input"placeholder = "Type a message..."></textarea>
                 <a id = "sendButton" onclick = "duplicate()">
                     <img src ="sendIcon.png" class = "send">
-                </a>
-             -->
+                </a> -->
              <div class = "chatFooter">
                 <div class = "form-group">
                     <form id = "form">
                       <input id = "msg" type = "text" />
-                      <button type = "submit" value= "send" id = "submit-button" > send chat </button>
+                      <button type = "submit" value= "send" id = "submit-button" > send chat 
+                         <img src ="sendIcon.png" class = "send">
+                      </button>
                     </form>
             </div>
         </div>
@@ -133,7 +135,7 @@
 
 
     
-   <!-- <script src= "app.js"></script>-->
+    <script src= "app.js"></script>
 </body>
 
 </html>
