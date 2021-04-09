@@ -11,7 +11,8 @@ window.onload=function(){
  if(chatForm){
   chatForm.addEventListener('submit', event => {
    event.preventDefault(); //so that form contents do not automatically send to a file/ disconnect socket
-   const msg = event.target.elements.msg.value; //get the msg value from the form
+   const msg = document.getElementById("msg").value; 
+  // const msg = event.target.elements.msg.value; //get the msg value from the form
 
    //test msg output
 //   console.log(msg);
@@ -30,9 +31,10 @@ socket.on('Msg', msg => {
 
 //output message to DOM to create chatboxes
 function chatBox(msg){
-
+ const div = document.createElement('div');
+ div.innerHTML = `<p class= "messageText"> ${msg} </p>`
+ document.querySelector('.mess').appendChild(div);
 }
-//front end pls create a box style that you want. I will make general one for functionality
 
 //when msg submiitted, (1)display on client side (2) emit it to the server 
 //call below function when button clicked
