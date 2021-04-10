@@ -40,28 +40,38 @@
         </div>
     </nav>
     </header>
-    <h1>WHO WOULD YOUR LIKE TO CONNECT WITH?</h1>
+    <h1>WHo Would you like to connect with?</h1>
     <div class = "form-group">
-        <form class = "form">
+        <form class = "form" onsubmit="return checkform();">
         
           <div class="form-group">
-            <input type="text" class="form-control" id="msg" placeholder="Enter Name">
+            <input type="text" class="form-control" id="name" placeholder="Enter Name...">
           </div>
 
           <div class="form-group">
             <label for="name" class="label1">What's your feedback?</label>
-            <textarea class="form-control" placeholder="Enter Feedback"></textarea>
+            <div class="textP">
+              <textarea class="form-control" id="feedback" maxlength="500" 
+                placeholder="Enter Feedback..." onkeyup="countNum(this);" ></textarea>
+              <div class="textNum">
+                <span><span id="textNum">0</span>/500</span>
+              </div>
+            </div>
           </div>
-
+    
           <div class="checkbox">
             <label class="label2">
-              <input type="checkbox">I'd like a Reply
+              <input type="checkbox" id="check" >  I'd like a Reply
             </label>
           </div>
-          
-          <button type = "submit" class= "btn-submit" onclick="">Submit Feedback</button>
+
+          <div class="button">
+            <button type = "submit" class= "btn-submit" onclick="getInfo()">Submit Feedback</button>
+          </div>
         </form>
     </div>
+
+    <script src="./js/submit.js"></script>
     <script src= "app.js"></script>
   </body>
 </html>
