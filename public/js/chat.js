@@ -7,6 +7,7 @@ It is  the socket connection create via frontend .
  //'http://localhost:3000' 
 
 const socket = io(); //create frontend socket connection to server. 
+
 window.onload=function(){
 
  const chatForm  = document.getElementById("form");
@@ -14,15 +15,12 @@ window.onload=function(){
   chatForm.addEventListener('submit', event => {
    event.preventDefault(); //so that form contents do not automatically send to a file/ disconnect socket
    const msg = document.getElementById("msg").value; 
-  // const msg = event.target.elements.msg.value;
-   
-  //send message to server
+  
+   //send message to server
    socket.emit('chatMsg', msg); 
   
    //clear input after sending msg
    document.getElementById("msg").value = '';
-
-
   });
  }
 
@@ -49,6 +47,4 @@ function chatBox(msg){
   //emit the message to server
   socket.emit('chatMsg', msg); 
  });
-
-
 */ 
