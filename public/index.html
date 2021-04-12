@@ -15,15 +15,17 @@
   </head>
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    let socket = io();
+    /*let socket = io();
     let element;
 
     socket.on("time", function (timeString) {
       element = document.getElementById("server-time");
       element.innerHTML = "Server time: " + timeString;
     });
+    */ 
 
     //this is to test the connection of the room.
+    /*
     var room = "1";
     socket.on("connect", function () {
       socket.emit("createRoom", room);
@@ -34,6 +36,7 @@
       document.body.innerHTML = "";
       document.write(data);
     });
+    */ 
   </script>
   <div class="backgroundImage"></div>
   <body>
@@ -72,6 +75,6 @@
     <a href="/about">How to use SAFE</a>
 
     <p id="server-time"></p>
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

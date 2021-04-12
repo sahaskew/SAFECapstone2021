@@ -75,7 +75,10 @@ io.on("connection", (socket) => {
     io.emit('Msg', msg ); 
   });
 
-  socket.on("disconnect", () => console.log("Client disconnected"));
+  socket.on("disconnect", () => { 
+    console.log("Client disconnected");
+    io.emit( 'Msg', 'A user has left the chat');
+  }); 
 });
 
 //test emit signal with displaying time
