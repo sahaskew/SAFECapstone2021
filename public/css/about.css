@@ -17,7 +17,13 @@ img {
 
 p {
   display: inline;
+  font-family: "Arvo", serif;
   padding: 10px;
+}
+
+a {
+  font-family: "Arvo", serif;
+  color: white;
 }
 
 .boxes {
