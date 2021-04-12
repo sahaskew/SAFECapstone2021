@@ -4,6 +4,7 @@ h2 {
   font-size: 60px !important;
   padding: 50px;
 }
+
 .middle {
   margin: 0 auto;
   width: 40%;
@@ -25,7 +26,9 @@ a {
   font-family: "Arvo", serif;
   color: white;
 }
-
+.about-about {
+  font-family: "Major Mono Display", monospace;
+}
 .boxes {
   padding-top: 150px;
   display: grid;
