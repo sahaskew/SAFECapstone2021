@@ -111,6 +111,10 @@ nav {
   opacity: 0;
 }
 
+.adminIcon{
+  list-style: none;
+}
+
 /*If the screen is smaller than 600 px it switches to small mode*/
 @media screen and (max-width: 600px) {
   body {
@@ -129,11 +133,20 @@ nav {
     bottom: 0px;
     width: 35%;
   }
+
+  .adminIcon{
+    list-style: none;
+    position: absolute;
+    right: 10px;
+    height: 10%;
+    top: 20vh;
+    width: 23%;
+  }
   .navLinkLeft {
     position: absolute;
     right: 10px;
     height: 10%;
-    top: 30vh;
+    top: 40vh;
     width: 35%;
     z-index: 0;
   }
@@ -142,9 +155,13 @@ nav {
     position: absolute;
     right: 10px;
     height: 10%;
-    top: 20vh;
+    top: 30vh;
     width: 35%;
     z-index: 1;
+  }
+
+  .adminIcon li {
+    opacity: 0;
   }
 
   .navLinkLeft li {
@@ -202,3 +219,5 @@ label {
   display: grid;
   justify-items: center;
 }
+
+
