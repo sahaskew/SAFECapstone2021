@@ -207,15 +207,15 @@ nav {
 
 label {
   display: block;
-  font: .9rem 'Fira Sans', sans-serif;
+  font: 0.9rem "Fira Sans", sans-serif;
 }
 
-input[type='submit'],
+input[type="submit"],
 label {
   margin-top: 1rem;
 }
 
-.grid-container{
+.grid-container {
   display: grid;
   justify-items: center;
 }

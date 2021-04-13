@@ -1,0 +1,92 @@
+h2 {
+  text-align: center;
+  font-family: "Major Mono Display", monospace;
+  font-size: 60px !important;
+  padding: 50px;
+}
+
+.middle {
+  margin: 0 auto;
+  width: 40%;
+}
+img {
+  position: absolute;
+  width: 250px;
+  left: 250px;
+  transition: linear 1s;
+}
+
+p {
+  display: inline;
+  font-family: "Arvo", serif;
+  padding: 10px;
+}
+
+a {
+  font-family: "Arvo", serif;
+  color: white;
+}
+.about-about {
+  font-family: "Major Mono Display", monospace;
+}
+.boxes {
+  padding-top: 150px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.box {
+  box-sizing: border-box;
+  padding: 15px;
+  width: 400px;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  transition: linear 1s;
+}
+
+span {
+  color: #198d8d;
+  font-size: 20px;
+  font-family: "Arvo", serif;
+}
+
+@media (max-width: 1680px) {
+  img {
+    left: 190px;
+  }
+}
+
+@media (max-width: 1500px) {
+  img {
+    left: 100px;
+  }
+}
+
+@media (max-width: 1230px) {
+  img {
+    left: 70px;
+  }
+  .box {
+    width: 350px;
+  }
+}
+
+@media (max-width: 1080px) {
+  img {
+    display: none;
+  }
+  .box {
+    width: 450px;
+    padding: 20px;
+  }
+  .boxes {
+    grid-template-columns: 1fr;
+    row-gap: 2em;
+  }
+  .middle {
+    width: 70%;
+  }
+}
