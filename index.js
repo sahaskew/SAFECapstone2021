@@ -16,6 +16,7 @@ mongoose.connection.once('open', function(){
 
 const INDEX = "/index.html";
 const STUDENT = "public/student.html";
+const CHAT = "public/chat.html";
 const ADMIN = "public/admin.html";
 const ABOUT = "public/about.html";
 const MESSAGE = "public/message.html";
@@ -38,6 +39,11 @@ app.get("/", (req, res) => {
 
 app.get("/student", (req, res) => {
   res.sendFile(STUDENT, { root: __dirname });
+});
+
+
+app.get("/chat", (req, res) => {
+  res.sendFile(CHAT, { root: __dirname });
 });
 
 app.get("/admin", (req, res) => {
@@ -69,7 +75,10 @@ io.on("connection", (socket) => {
     io.emit('Msg', msg ); 
   });
 
-  socket.on("disconnect", () => console.log("Client disconnected"));
+  socket.on("disconnect", () => { 
+    console.log("Client disconnected");
+    io.emit( 'Msg', 'A user has left the chat');
+  }); 
 });
 
 //test emit signal with displaying time
