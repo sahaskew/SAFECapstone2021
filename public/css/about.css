@@ -50,6 +50,7 @@ a {
 span {
   color: #198d8d;
   font-size: 20px;
+  font-family: "Arvo", serif;
 }
 
 @media (max-width: 1680px) {
