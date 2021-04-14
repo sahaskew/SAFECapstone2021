@@ -220,4 +220,54 @@ label {
   justify-items: center;
 }
 
+/* Admin Page Input form-----*/
+.grid-container {
+  margin-top: 3rem;
+  display: grid;
+  justify-items: center;
+}
+
+.login {
+  font-family: "Major Mono Display", monospace;
+  font-size: 60px !important;
+}
+
+input[type=email]{
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 30px;
+  border: none;
+  height: 60px;
+  width: 350px;
+  margin: 15px 0;
+}
+
+input[type=password]{
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 30px;
+  border: none;
+  height: 60px;
+  width: 350px;
+  margin: 15px 0;
+}
+
+input[type=submit]{
+  font-family: "Major Mono Display", monospace;
+  font-size: 20px !important;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 30px;
+  border: none;
+  height: 60px;
+  width: 350px;
+  margin: 15px 0;
+}
+.forget_create{
+  text-align: center;
+}
+
+
 
