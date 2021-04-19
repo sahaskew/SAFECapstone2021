@@ -6,13 +6,29 @@ const socketIO = require("socket.io");
 const PORT = process.env.PORT || 3000;
 
 //Connect to MongoDB
+const dbURI = 'mongodb+srv://jkmoore:sypzeg-Mupxit-2zudba@cluster0.bfd5u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true , useUnifiedTopology: true });
+const Schema = mongoose.Schema;
+mongoose.connect(dbURI, { useNewUrlParser: true , useUnifiedTopology: true });
 mongoose.connection.once('open', function(){
-  console.log('connection has been made');
+  console.log('Connected to MongoDB');
 }).on('error', function(error){
   console.log('error is:', error);
 });
+
+//Create message schema
+const messageSchema = new Schema({
+  message: String
+})
+const Message = mongoose.model('Message', messageSchema);
+module.exports = Message;
+
+/* How to create and save a message
+const testMessage = new Message({
+  message: 'testing message with mongo'
+});
+testMessage.save(); */
+
 
 const INDEX = "/index.html";
 const STUDENT = "public/student.html";
