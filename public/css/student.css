@@ -1,3 +1,73 @@
 button {
   height: 70px !important;
 }
+
+.student-title {
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Major Mono Display", monospace;
+}
+
+.student-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.student-body a {
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  width: 500px;
+  height: 300px;
+  margin: 20px;
+  border-radius: 25px;
+  text-align: center;
+  font-family: "Major Mono Display", monospace;
+  font-size: 1.5rem;
+  line-height: 290px;
+  font-weight: 900;
+}
+
+h2 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .student-body a {
+    font-size: 1.3rem;
+    width: 400px;
+    height: 250px;
+    line-height: 250px;
+  }
+}
+
+@media (max-width: 890px) {
+  .student-body a {
+    font-size: 1rem;
+    line-height: 250px;
+    margin: 20px auto;
+    font-size: 1.3rem;
+  }
+  .student-body {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-body {
+    display: block;
+  }
+  .student-body a {
+    margin: 20p auto;
+    width: 400px;
+    height: 250px;
+    line-height: 250px;
+}
