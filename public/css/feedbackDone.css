@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+
+h1{
+    font-family: 'Major Mono Display', monospace;
+	text-align: center;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+	white-space: nowrap;
+	margin-top: 2%;
+}
+
+img{
+    width: calc(100vw / 12);
+	height: calc(100vw / 10);
+}
+.lock{
+	position: relative;
+	margin: 8% auto;
+	text-align: center;
+}
+label{
+	font-size: calc(100vw / 99);
+    font-family: 'Arvo', serif;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+.label1{
+	position: relative;
+	text-align: center;
+}
+
+@media screen and (max-width: 500px){
+	h1{
+		font-size: 15px;
+	}
+	label{
+		font-size: calc(100vw / 99);
+	}
+}
