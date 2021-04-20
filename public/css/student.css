@@ -6,6 +6,7 @@ button {
   text-align: center;
   font-size: 3rem;
   font-family: "Major Mono Display", monospace;
+  margin-top: 70px;
 }
 
 .student-body {
@@ -18,11 +19,11 @@ button {
   display: block;
   box-sizing: border-box;
   text-decoration: none;
-  color: black;
+  color: rgba(0, 0, 0, 0.69);
   background-color: white;
   width: 500px;
   height: 300px;
-  margin: 20px;
+  margin: 100px;
   border-radius: 25px;
   text-align: center;
   font-family: "Major Mono Display", monospace;
@@ -31,15 +32,33 @@ button {
   font-weight: 900;
 }
 
-h2 {
+.textIndex {
   text-align: center;
+  font-family: "Arvo", serif;
 }
 
-h4 {
+.textIndex1 {
   text-align: center;
   font-size: 0.9rem;
+  font-family: "Arvo", serif;
 }
 
+@media (max-width: 1314px) {
+  .student-body a {
+    font-size: 1.3rem;
+    width: 550px;
+    height: 250px;
+    line-height: 250px;
+  }
+}
+@media (max-width: 1214px) {
+  .student-body a {
+    font-size: 1rem;
+    width: 550px;
+    height: 250px;
+    line-height: 250px;
+  }
+}
 @media (max-width: 1024px) {
   .student-body a {
     font-size: 1.3rem;

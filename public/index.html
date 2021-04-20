@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--The index.html is the default page upon loading in the browser. This will include script to listen for server updates.-->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -10,42 +9,28 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <title>SAFE Anonymous Feedback</title>
+    <title>Student Landing Page</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/student.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="js/chat.js"></script> -->
   </head>
-  <script src="/socket.io/socket.io.js"></script>
   <script>
-    /*let socket = io();
-    let element;
-
-    socket.on("time", function (timeString) {
-      element = document.getElementById("server-time");
-      element.innerHTML = "Server time: " + timeString;
-    });
-    */
-
-    //this is to test the connection of the room.
-    /*
-    var room = "1";
-    socket.on("connect", function () {
-      socket.emit("createRoom", room);
-    });
-
-    socket.on("initialMsg", function (data) {
-      console.log(data);
-      document.body.innerHTML = "";
-      document.write(data);
-    });
-    */
+    //move everything here to chat.js
+    /*  let socket = io();
+  var room = '2';
+  //this is to test the connection of the room. 
+  socket.on('connect', function () {
+    socket.emit('createRoom', room);
+  });
+ */
   </script>
-  <div class="backgroundImage"></div>
   <body>
-    <!--This is where the NAV is made-->
     <nav>
       <div class="background"></div>
       <ul class="navLinkLeft">
         <div class="linkContainer">
-          <li><a href="/about">about</a></li>
+          <li><a href="/about" class="about-about">about</a></li>
         </div>
       </ul>
       <div class="logo">
@@ -56,25 +41,28 @@
           <li><a href="/">home</a></li>
         </div>
       </ul>
-
       <div class="burger">
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
     </nav>
-    <h2 class="text-center">An application for secure anonymous feedback</h2>
-    <div class="text-center">
-      <a href="/student">
-        <button type="button" class="btn btn-secondary">Student</button></a
-      >
-      <a href="/admin"
-        ><button type="button" class="btn btn-secondary">Admin</button></a
-      >
-    </div>
-    <a href="/about">How to use SAFE</a>
 
-    <p id="server-time"></p>
+    <header>
+      <h1 class="student-title">anonymous Feedback</h1>
+    </header>
+    <body>
+      <div class="student-body">
+        <a href="/chat" class="student-box">real-Time anonymous Chat</a>
+
+        <a href="/message" class="student-box">Send an anonymous message</a>
+      </div>
+      <h2 class="textIndex">Both options are fully anonymous</h2>
+      <h4 class="textIndex1">
+        not a student? <a href="/admin">Log in Here</a>
+      </h4>
+    </body>
+
     <script src="js/app.js"></script>
   </body>
 </html>
