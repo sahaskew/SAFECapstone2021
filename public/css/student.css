@@ -11,25 +11,26 @@ button {
 
 .student-body {
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
 
-.student-body a {
-  display: block;
-  box-sizing: border-box;
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.69);
+.student-box {
+  width: 400px;
+  height: 250px;
   background-color: white;
-  width: 500px;
-  height: 300px;
-  margin: 100px;
   border-radius: 25px;
   text-align: center;
+  margin: 50px;
+}
+.student-box a {
+  display: block;
   font-family: "Major Mono Display", monospace;
-  font-size: 1.5rem;
-  line-height: 290px;
-  font-weight: 900;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.69);
+  margin-top: 3em;
+  padding: 10px;
 }
 
 .textIndex {
@@ -41,52 +42,33 @@ button {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Arvo", serif;
+  margin-top: 20px;
 }
-
-@media (max-width: 1314px) {
-  .student-body a {
-    font-size: 1.3rem;
-    width: 550px;
-    height: 250px;
-    line-height: 250px;
-  }
-}
-@media (max-width: 1214px) {
-  .student-body a {
-    font-size: 1rem;
-    width: 550px;
-    height: 250px;
-    line-height: 250px;
-  }
-}
-@media (max-width: 1024px) {
-  .student-body a {
-    font-size: 1.3rem;
-    width: 400px;
-    height: 250px;
-    line-height: 250px;
-  }
-}
-
-@media (max-width: 890px) {
-  .student-body a {
-    font-size: 1rem;
-    line-height: 250px;
-    margin: 20px auto;
-    font-size: 1.3rem;
-  }
-  .student-body {
-    display: block;
-  }
-}
-
 @media (max-width: 768px) {
+  .student-box {
+    width: 50%;
+    text-align: center;
+    margin: 50px 15px;
+  }
+}
+@media (max-width: 375px) {
   .student-body {
     display: block;
   }
-  .student-body a {
-    margin: 20p auto;
-    width: 400px;
-    height: 250px;
-    line-height: 250px;
+  .student-box {
+    width: 90%;
+    height: 125px;
+    text-align: center;
+    margin: 0 15px 26px 15px;
+  }
+  .student-box a:first-child {
+    padding-top: 2em;
+  }
+  .student-box a {
+    margin-top: 1em;
+    font-size: 1.2em;
+  }
+  .student-title {
+    margin: 30px 0;
+  }
 }
