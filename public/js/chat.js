@@ -34,10 +34,12 @@ socket.on('Msg', msg => {
 //output message to DOM to inside chatboxes
 function chatBox(msg){
  const div = document.createElement('div');
- div.classList.add('.mess');
+ div.classList.add('mess');
  div.innerHTML = `<p class= "messageText"> ${msg} </p>`;
- document.querySelector('.chatBox .mess').appendChild(div);
+ document.querySelector('.chatBox').appendChild(div);
 }
+ 
+//chatBox is wrapper, chatR is wwrapper for mess
 
 /* not in use
  document.getElementById("submit-button").addEventListener('click', function() {
