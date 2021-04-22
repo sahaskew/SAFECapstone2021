@@ -1,6 +1,7 @@
 .navLinkRight {
     width: 23% !important; 
     justify-content: flex-end;
+    right: 1.5%;
   }
 
 .adminIcon{
@@ -19,4 +20,10 @@
       .navLinkRight {
         width: 35% !important;
       }
+ }
+ 
+ .pw span {
+     position: relative;
+     right: 30px;
+     cursor: pointer;
  }
