@@ -97,5 +97,5 @@ io.on("connection", (socket) => {
   }); 
 });
 
-//test emit signal with displaying time
+//test emit signal with displaying time display msg sent time
 setInterval(() => io.emit("time", new Date().toTimeString()), 1000);
