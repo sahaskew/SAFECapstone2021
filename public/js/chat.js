@@ -34,10 +34,28 @@ socket.on('Msg', msg => {
 //output message to DOM to inside chatboxes
 function chatBox(msg){
  const div = document.createElement('div');
- div.classList.add('.mess');
- div.innerHTML = `<p class= "messageText"> ${msg} </p>`;
- document.querySelector('.chatBox .mess').appendChild(div);
+ div.classList.add('mess');
+ var msgTime = getTime();
+ div.innerHTML = `<p>  ${msgTime} </p> 
+ <p class= "messageText">  ${msg}  </p>`;
+ document.querySelector('.chatBox').appendChild(div);
 }
+
+//moved grahams time fn to backend for exporting in the msg box
+function getTime(){
+  var dt = new Date();
+  if (dt.getHours() > 12) {
+    var timeOfDay = "PM";
+  } else {
+    var timeOfDay = "AM";
+  }
+  if (dt.getMinutes() < 10) {
+    var minutes = "0" + dt.getMinutes();
+  } else {
+    var minutes = dt.getMinutes();
+  }
+   return (dt.getHours() % 12) + ":" + minutes + " " + timeOfDay;
+};
 
 /* not in use
  document.getElementById("submit-button").addEventListener('click', function() {

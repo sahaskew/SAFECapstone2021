@@ -10,8 +10,8 @@
       crossorigin="anonymous"
     />
     <title>chat</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/chat.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/chat.js"></script> 
 </head>
@@ -26,6 +26,7 @@
     
    <div class = "chatContainer" >
         <div class = "chat">
+            <!--start chat header-->
             <div class = "chatHeader">
                 <div class = "profile">
                     <img src = "images/green.png" class = "online">
@@ -39,133 +40,22 @@
                     </div>
                 </div>
             </div>
+            <!--end chat header-->
                 <div id = "chatBoxContainer" class = "chatBox">
-                  <!-- This is the first chat box -->
-                  <div id = "text" class = "chatR">
-                    <div class = "sp"></div>
-                    <div class = "mess mess-r">
-                      <p id = "result" class ="messageText"></p>
-                        <div class = "time"> <span id = "getTime"> </span></div>
-                        <script>
-                            var dt = new Date();
-                            if (dt.getHours() > 12)
-                            {
-                                var timeOfDay = 'PM';
-                            }
-                            else
-                            {
-                                var timeOfDay = 'AM';
-                            }
-                            if (dt.getMinutes() < 10)
-                            {
-                                var minutes = '0' + dt.getMinutes();
-                            }
-                            else
-                            {
-                                var minutes = dt.getMinutes();
-                            }
-                            document.getElementById("getTime").innerHTML = (dt.getHours() % 12) + ':' + minutes + ' ' + timeOfDay;
-                            
-                        </script>
-                    </div>
+                <!-- this is where msgs will be outputted to the DOM -->
                 </div>
-                <!-- This is the second chat box -->
-                <div id = "text" class = "chatR">
-                  <div class = "sp"></div>
-                  <div class = "mess mess-r">
-                    <p id = "result" class ="messageText"></p>
-                      <div class = "time"> <span id = "getTime"> </span></div>
-                      <script>
-                          var dt = new Date();
-                          if (dt.getHours() > 12)
-                          {
-                              var timeOfDay = 'PM';
-                          }
-                          else
-                          {
-                              var timeOfDay = 'AM';
-                          }
-                          if (dt.getMinutes() < 10)
-                          {
-                              var minutes = '0' + dt.getMinutes();
-                          }
-                          else
-                          {
-                              var minutes = dt.getMinutes();
-                          }
-                          document.getElementById("getTime").innerHTML = (dt.getHours() % 12) + ':' + minutes + ' ' + timeOfDay;
-                          
-                      </script>
-                    </div>
-                </div>
-                <!-- This is the third chat box -->
-                <div id = "text" class = "chatR">
-                    <div class = "sp"></div>
-                     <div class = "mess mess-r">
-                      <p id = "result" class ="messageText"></p>
-                        <div class = "time"> <span id = "getTime"> </span></div>
-                        <script>
-                            var dt = new Date();
-                            if (dt.getHours() > 12)
-                            {
-                                var timeOfDay = 'PM';
-                            }
-                            else
-                            {
-                                var timeOfDay = 'AM';
-                            }
-                            if (dt.getMinutes() < 10)
-                            {
-                                var minutes = '0' + dt.getMinutes();
-                            }
-                            else
-                            {
-                                var minutes = dt.getMinutes();
-                            }
-                            document.getElementById("getTime").innerHTML = (dt.getHours() % 12) + ':' + minutes + ' ' + timeOfDay;
-                            
-                        </script>
-                     </div>
-                 </div>
-
-                <!-- <div class = "chatL ">
-                    <div class = "mess">
-                        <p class ="messageText">Hey Jerry, How are you doing?  </p>
-                        <div class = "time"> <span id = "getTimeLeft"> </span></div>
-                        <script>
-                            var dt = new Date();
-                            if (dt.getHours() > 12)
-                            {
-                                var timeOfDay = 'PM';
-                            }
-                            else
-                            {
-                                var timeOfDay = 'AM';
-                            }
-                            if (dt.getMinutes() < 10)
-                            {
-                                var minutes = '0' + dt.getMinutes();
-                            }
-                            else
-                            {
-                                var minutes = dt.getMinutes();
-                            }
-                            document.getElementById("getTimeLeft").innerHTML = (dt.getHours() % 12) + ':' + minutes + ' ' + timeOfDay;
-                        </script>
-                    </div>  
-                    <div class = "sp"></div> 
-                 </div> -->
-           </div> 
-           <div class = "chatFooter">
-                <div class = "form-group">
+            <!--start footer-->
+                <div class = "chatFooter">
+                  <div class = "form-group">
                     <form id = "form">
                       <input id = "msg" type = "text" />
                       <button type = "submit" value= "send" id = "submit-button" > 
                          <img src ="images/sendIcon.png" class = "send">
                       </button>
                     </form>
+                  </div>
                 </div>
-            </div>
+            <!--end footer-->
         </div>
        </div>
      </div>
@@ -195,6 +85,8 @@
   </body>
 
 </html>
+
+
 
           <!--  <div class = "chatFooter">    original html for input. see above for update in chatFooter
                 <textarea id = "input"placeholder = "Type a message..."></textarea>

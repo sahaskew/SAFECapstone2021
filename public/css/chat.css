@@ -113,8 +113,8 @@
 }
 
 .chatBox .mess {
-  max-width: 60%;
-  min-width: 30%;
+/*  max-width: 60%;
+  min-width: 30%; */ 
   background: rgba(129, 128, 128, 0.61);
   padding: 10px;
   border-radius: 20px;
