@@ -1,3 +1,74 @@
 button {
   height: 70px !important;
 }
+
+.student-title {
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Major Mono Display", monospace;
+  margin-top: 70px;
+}
+
+.student-body {
+  display: flex;
+  justify-content: center;
+}
+
+.student-box {
+  width: 400px;
+  height: 250px;
+  background-color: white;
+  border-radius: 25px;
+  text-align: center;
+  margin: 50px;
+}
+.student-box a {
+  display: block;
+  font-family: "Major Mono Display", monospace;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.69);
+  margin-top: 3em;
+  padding: 10px;
+}
+
+.textIndex {
+  text-align: center;
+  font-family: "Arvo", serif;
+}
+
+.textIndex1 {
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: "Arvo", serif;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .student-box {
+    width: 50%;
+    text-align: center;
+    margin: 50px 15px;
+  }
+}
+@media (max-width: 375px) {
+  .student-body {
+    display: block;
+  }
+  .student-box {
+    width: 90%;
+    height: 125px;
+    text-align: center;
+    margin: 0 15px 26px 15px;
+  }
+  .student-box a:first-child {
+    padding-top: 2em;
+  }
+  .student-box a {
+    margin-top: 1em;
+    font-size: 1.2em;
+  }
+  .student-title {
+    margin: 30px 0;
+  }
+}

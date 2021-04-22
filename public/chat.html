@@ -39,7 +39,66 @@
                     </div>
                 </div>
             </div>
-            <div id = "chatBoxContainer" class = "chatBox">
+                <div id = "chatBoxContainer" class = "chatBox">
+                  <!-- This is the first chat box -->
+                  <div id = "text" class = "chatR">
+                    <div class = "sp"></div>
+                    <div class = "mess mess-r">
+                      <p id = "result" class ="messageText"></p>
+                        <div class = "time"> <span id = "getTime"> </span></div>
+                        <script>
+                            var dt = new Date();
+                            if (dt.getHours() > 12)
+                            {
+                                var timeOfDay = 'PM';
+                            }
+                            else
+                            {
+                                var timeOfDay = 'AM';
+                            }
+                            if (dt.getMinutes() < 10)
+                            {
+                                var minutes = '0' + dt.getMinutes();
+                            }
+                            else
+                            {
+                                var minutes = dt.getMinutes();
+                            }
+                            document.getElementById("getTime").innerHTML = (dt.getHours() % 12) + ':' + minutes + ' ' + timeOfDay;
+                            
+                        </script>
+                    </div>
+                </div>
+                <!-- This is the second chat box -->
+                <div id = "text" class = "chatR">
+                  <div class = "sp"></div>
+                  <div class = "mess mess-r">
+                    <p id = "result" class ="messageText"></p>
+                      <div class = "time"> <span id = "getTime"> </span></div>
+                      <script>
+                          var dt = new Date();
+                          if (dt.getHours() > 12)
+                          {
+                              var timeOfDay = 'PM';
+                          }
+                          else
+                          {
+                              var timeOfDay = 'AM';
+                          }
+                          if (dt.getMinutes() < 10)
+                          {
+                              var minutes = '0' + dt.getMinutes();
+                          }
+                          else
+                          {
+                              var minutes = dt.getMinutes();
+                          }
+                          document.getElementById("getTime").innerHTML = (dt.getHours() % 12) + ':' + minutes + ' ' + timeOfDay;
+                          
+                      </script>
+                    </div>
+                </div>
+                <!-- This is the third chat box -->
                 <div id = "text" class = "chatR">
                     <div class = "sp"></div>
                      <div class = "mess mess-r">
@@ -68,7 +127,8 @@
                         </script>
                      </div>
                  </div>
-                <div class = "chatL ">
+
+                <!-- <div class = "chatL ">
                     <div class = "mess">
                         <p class ="messageText">Hey Jerry, How are you doing?  </p>
                         <div class = "time"> <span id = "getTimeLeft"> </span></div>
@@ -94,7 +154,7 @@
                         </script>
                     </div>  
                     <div class = "sp"></div> 
-                 </div>
+                 </div> -->
            </div> 
            <div class = "chatFooter">
                 <div class = "form-group">
