@@ -7,19 +7,22 @@ h2 {
 
 .middle {
   margin: 0 auto;
-  width: 40%;
+  width: 45%;
 }
 img {
   position: absolute;
-  width: 250px;
-  left: 250px;
+  width: 150px;
+  top: 250px;
+  left: 120px;
   transition: linear 1s;
+  opacity: 0.8;
 }
 
-p {
-  display: inline;
+.desc {
   font-family: "Arvo", serif;
   padding: 10px;
+  font-size: 1em;
+  text-align: center;
 }
 
 a {
@@ -30,21 +33,22 @@ a {
   font-family: "Major Mono Display", monospace;
 }
 .boxes {
-  padding-top: 150px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .box {
   box-sizing: border-box;
-  padding: 15px;
-  width: 400px;
-  height: 250px;
+  padding: 20px;
+  width: 300px;
+  height: 200px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   color: black;
   transition: linear 1s;
+  margin: 15px;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 span {
@@ -53,40 +57,22 @@ span {
   font-family: "Arvo", serif;
 }
 
-@media (max-width: 1680px) {
-  img {
-    left: 190px;
-  }
+.about {
+  font-weight: bold;
+  color: white;
 }
-
-@media (max-width: 1500px) {
+@media (max-width: 768px) {
   img {
-    left: 100px;
-  }
-}
-
-@media (max-width: 1230px) {
-  img {
+    top: 300px;
     left: 70px;
   }
-  .box {
-    width: 350px;
-  }
 }
-
-@media (max-width: 1080px) {
+@media (max-width: 375px) {
+  .middle {
+    width: 95%;
+    margin-bottom: 10px;
+  }
   img {
     display: none;
-  }
-  .box {
-    width: 450px;
-    padding: 20px;
-  }
-  .boxes {
-    grid-template-columns: 1fr;
-    row-gap: 2em;
-  }
-  .middle {
-    width: 70%;
   }
 }

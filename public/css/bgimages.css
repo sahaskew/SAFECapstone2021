@@ -1,0 +1,18 @@
+
+
+.flip-v-bg{
+    background-repeat: no-repeat; 
+    }
+
+    .flip-h-bg{
+    background-repeat: no-repeat;
+    }
+    body{
+        background:#747474;
+        background-image:url(../images/safeBackground.png);
+    }
+
+    #canvas-flip-bg{
+        border:1px solid #000;
+        display:none;
+    }
