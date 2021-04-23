@@ -1,29 +1,28 @@
 .navLinkRight {
-    width: 23% !important; 
-    justify-content: flex-end;
-    right: 1.5%;
+  width: 23% !important;
+  justify-content: flex-end;
+}
+.adminIcon {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+  margin: 0 0;
+}
+
+@media screen and (max-width: 600px) {
+  .adminIcon {
+    width: 35% !important;
   }
 
-.adminIcon{
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    width: 15%;
-    margin: 0 0;
- }
+  .navLinkRight {
+    padding-right: 6%;
+    width: 35% !important;
+  }
+}
 
- @media screen and (max-width: 600px) {
-    .adminIcon{
-        width: 35% !important;
-      }
-
-      .navLinkRight {
-        width: 35% !important;
-      }
- }
- 
- .pw span {
-     position: relative;
-     right: 30px;
-     cursor: pointer;
- }
+.pw span {
+  position: relative;
+  right: 30px;
+  cursor: pointer;
+}

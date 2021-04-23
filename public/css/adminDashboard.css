@@ -1,0 +1,192 @@
+.navLinkRight {
+  width: 23% !important;
+  justify-content: flex-end;
+}
+.adminIcon {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+  margin: 0 0;
+}
+
+@media screen and (max-width: 600px) {
+  .adminIcon {
+    width: 35% !important;
+  }
+
+  .navLinkRight {
+    padding-right: 6%;
+    width: 35% !important;
+  }
+}
+
+.headerText {
+  font-family: "Major Mono Display", monospace;
+  font-size: 35px !important;
+}
+
+.dashboardContainer {
+  position: absolute;
+  display: flex;
+  right: 4%;
+  height: 530px;
+  width: 92%;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 15px;
+}
+
+.headerContainer {
+  position: absolute;
+  display: flex;
+  top: 5px;
+  right: 5px;
+  left: 5px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.trashCan {
+  position: absolute;
+  align-content: center !important;
+  justify-content: center !important;
+  border: none;
+  display: flex;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  width: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.unread {
+  position: absolute;
+  align-content: center;
+  justify-content: center;
+  padding-top: 5px;
+  border: none;
+  display: flex;
+  top: 5px;
+  left: 55px;
+  bottom: 5px;
+  width: 150px;
+  border-radius: 10px;
+  font-family: "Arvo", serif;
+  font-size: 15px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.imageCenter {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 10px;
+  right: 10px;
+  top: 5px;
+  bottom: 5px;
+}
+
+.trashCan:hover {
+  background-color: rgba(209, 209, 209, 0.6) !important;
+}
+
+.trashCan:active {
+  background-color: rgb(255, 255, 255) !important;
+}
+.unread:hover {
+  background-color: rgba(209, 209, 209, 0.6) !important;
+}
+
+.unread:active {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.innerContainer {
+  position: absolute;
+  display: flex;
+  align-content: flex-start;
+  left: 0px;
+  right: 0px;
+  top: 45px;
+  bottom: 0px;
+  padding: 5px;
+}
+
+.messages {
+  overflow-y: scroll;
+  display: list-item;
+  width: 25%;
+  height: 100%;
+  border-radius: 12px 0px 0px 12px;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.readMessage {
+  display: flex;
+  width: 75%;
+  height: 100%;
+  border-radius: 0px 12px 12px 0px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.72);
+}
+
+.messageText {
+  word-wrap: break-word;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  display: flex;
+  font-family: "Arvo", serif;
+  font-size: 15px;
+  color: rgb(46, 46, 46);
+  width: 80%;
+  height: 100%;
+}
+
+.clickableMessage {
+  width: 100%;
+  border: none;
+  border-radius: 12px 0px 0px 12px;
+  background-color: rgba(255, 255, 255, 0.26) !important;
+  height: 70px;
+  margin-bottom: 5px;
+}
+
+.clickableMessage:hover {
+  background-color: rgba(255, 255, 255, 0.356) !important;
+}
+
+.clickableMessage:focus {
+  background-color: rgba(255, 255, 255, 0.63) !important;
+}
+
+.unreadIndicator {
+  display: flex;
+  margin-bottom: -16px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: rgb(0, 134, 218);
+}
+
+.innerText {
+  display: flex;
+  margin-left: 30px;
+  margin-bottom: 0px;
+  font-family: "Arvo", serif;
+  font-size: 15px;
+  color: rgb(46, 46, 46);
+  word-wrap: break-word;
+  overflow: hidden !important;
+}
+
+.logOut {
+  position: absolute;
+  left: 49%;
+  justify-content: center;
+  bottom: 10px;
+}
