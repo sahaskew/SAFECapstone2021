@@ -16,8 +16,14 @@
   }
 
   .navLinkRight {
-    padding-right: 6%;
+    justify-content: center !important;
+    align-content: center;
+    position: absolute;
+    right: 10px;
+    height: 10%;
+    top: 30vh;
     width: 35% !important;
+    z-index: 0;
   }
 }
 
