@@ -235,7 +235,7 @@ label {
 input[type="email"] {
   font-family: "Times New Roman", Times, serif;
   text-align: center;
-  background-color: lightgray;
+  background-color: white;
   border-radius: 30px;
   border: none;
   height: 60px;
@@ -246,7 +246,7 @@ input[type="email"] {
 input[type="password"] {
   font-family: "Times New Roman", Times, serif;
   text-align: center;
-  background-color: lightgray;
+  background-color: white;
   border-radius: 30px;
   border: none;
   height: 60px;
@@ -258,7 +258,7 @@ input[type="submit"] {
   font-family: "Major Mono Display", monospace;
   font-size: 20px !important;
   text-align: center;
-  background-color: lightgray;
+  background-color: white;
   border-radius: 30px;
   border: none;
   height: 60px;
@@ -272,7 +272,7 @@ input[type="submit"] {
 input[type="text"] {
   font-family: "Times New Roman", Times, serif;
   text-align: center;
-  background-color: lightgray;
+  background-color: white;
   border-radius: 30px;
   border: none;
   height: 60px;
