@@ -90,7 +90,7 @@ nav {
   list-style: none;
 }
 
-.adminIcon{
+.adminIcon {
   list-style: none;
 }
 
@@ -134,7 +134,7 @@ nav {
     width: 35%;
   }
 
-  .adminIcon{
+  .adminIcon {
     list-style: none;
     position: absolute;
     right: 10px;
@@ -156,7 +156,7 @@ nav {
     right: 10px;
     height: 10%;
     top: 30vh;
-    width: 35% !important;
+    width: 35%;
     z-index: 1;
   }
 
@@ -232,8 +232,8 @@ label {
   font-size: 60px !important;
 }
 
-input[type=email]{
-  font-family: 'Times New Roman', Times, serif;
+input[type="email"] {
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
   background-color: lightgray;
   border-radius: 30px;
@@ -243,8 +243,8 @@ input[type=email]{
   margin: 15px 0;
 }
 
-input[type=password]{
-  font-family: 'Times New Roman', Times, serif;
+input[type="password"] {
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
   background-color: lightgray;
   border-radius: 30px;
@@ -254,7 +254,7 @@ input[type=password]{
   margin: 15px 0;
 }
 
-input[type=submit]{
+input[type="submit"] {
   font-family: "Major Mono Display", monospace;
   font-size: 20px !important;
   text-align: center;
@@ -265,12 +265,12 @@ input[type=submit]{
   width: 350px;
   margin: 15px 0;
 }
-.forget_create{
+.forget_create {
   text-align: center;
 }
 
-input[type=text]{
-  font-family: 'Times New Roman', Times, serif;
+input[type="text"] {
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
   background-color: lightgray;
   border-radius: 30px;
