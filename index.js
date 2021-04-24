@@ -29,8 +29,8 @@ const testMessage = new Message({
 });
 testMessage.save(); */
 
-
 const INDEX = "/index.html";
+const DASHBOARD = "public/Dashboard.html";
 const STUDENT = "public/student.html";
 const CHAT = "public/chat.html";
 const ADMIN = "public/admin.html";
@@ -57,9 +57,12 @@ app.get("/student", (req, res) => {
   res.sendFile(STUDENT, { root: __dirname });
 });
 
-
 app.get("/chat", (req, res) => {
   res.sendFile(CHAT, { root: __dirname });
+});
+
+app.get("/dashboard", (req, res) => {
+  res.sendFile(DASHBOARD, { root: __dirname });
 });
 
 app.get("/admin", (req, res) => {
