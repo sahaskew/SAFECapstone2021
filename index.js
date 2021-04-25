@@ -55,7 +55,7 @@ var io = socketIO(server, {
   }
 });
 
-//connect server to chat admin UI
+//connect server to chat admin UI . !! NEED TO ENCRPYT !!
 instrument(io, {
   auth: {
     type: "basic",
