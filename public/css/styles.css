@@ -279,3 +279,9 @@ input[type="text"] {
   width: 350px;
   margin: 15px 0;
 }
+
+.reset span {
+  position: relative;
+  right: 30px;
+  cursor: pointer;
+}
