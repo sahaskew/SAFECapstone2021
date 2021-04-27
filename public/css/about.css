@@ -61,18 +61,37 @@ span {
   font-weight: bold;
   color: white;
 }
-@media (max-width: 768px) {
+@media (max-width: 930px) {
   img {
-    top: 300px;
+    top: 250px;
     left: 70px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 768px) {
+  img {
+    top: 280px;
+    left: 50px;
+  }
+}
+@media (max-width: 700px) {
+  img {
+    top: 250px;
+    left: 70px;
+    display: none;
+  }
   .middle {
     width: 95%;
     margin-bottom: 10px;
   }
-  img {
-    display: none;
+  .box {
+    width: 90%;
+    height: 160px;
+  }
+}
+
+@media (max-width: 420px) {
+  .middle {
+    width: 95%;
+    margin-bottom: 10px;
   }
 }

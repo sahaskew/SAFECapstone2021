@@ -51,7 +51,7 @@
 
     <section class="grid-container">
       <div class="login">
-      <h2>Sign In</h2>
+      <h1>Sign In</h1>
       </div>
       <form id="login-form" action="">
         <!-- <label for="email"><b>Email</b></label>
@@ -62,15 +62,15 @@
         <!-- <label for="password"><b>Password</b></label>
         <br /> -->
         <div class="pw">
-        <input required type="password" name="password" id="password" placeholder="Password"><span><i class="fa fa-eye" id="eye" onclick="toggle()"></i></span>
+        <input required type="password" name="password" id="password" placeholder="Password"><span><i class="fa fa-eye" style="color:#7a797e" id="eye" onclick="toggle()"></i></span>
         </div>
         
         <div class="submit">
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" onClick="location.href='/dashboard'"/>
           <br />
           <br />
           <div class="forget_create">
-          <a href="/forgotPass.html">Forget Password</a>
+          <a href="/resetpw.html">Forget Password</a>
           <br />
           <a href="/account.html">Create Account</a>
           </div>
@@ -78,7 +78,7 @@
         </div>
       </form>
     </section>
-    <script src="admin.js"></script>
+    <script src="js/admin.js"></script>
   
   </body>
 </html>
