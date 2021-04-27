@@ -37,6 +37,7 @@ const CHAT = "public/chat.html";
 const ADMIN = "public/admin.html";
 const ABOUT = "public/about.html";
 const MESSAGE = "public/message.html";
+const RESET = "public/resetpw.html";
 
 //set up app
 var app = express();
