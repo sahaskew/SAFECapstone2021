@@ -3,6 +3,7 @@ a socket connection. local port is set to :   http://localhost:3000   */
 
 const express = require("express");
 const socketIO = require("socket.io");
+const {instrument} = require( "@socket.io/admin-ui"); 
 const PORT = process.env.PORT || 3000;
 
 //Connect to MongoDB
@@ -41,13 +42,27 @@ const MESSAGE = "public/message.html";
 var app = express();
 var server = app.listen(PORT, () => {
   console.log(`SAFE is running on port ${PORT}`);
+
 });
 
 //static files for retrieval. ALL HTML and CSS must go in this folder.
 app.use(express.static("public"));
 
-//pass the socket a server. "I want socketio to work on this server"
-var io = socketIO(server);
+//Socketio gets passed http server as arg and specifies 
+var io = socketIO(server, {
+  cors: {
+    origin: ["https://admin.socket.io"] //permits cross origin of the static chat admin site
+  }
+});
+
+//connect server to chat admin UI . !! NEED TO ENCRPYT !!
+instrument(io, {
+  auth: {
+    type: "basic",
+    username: "admin",
+    password: "$2y$12$JMlYelfCXM5t6woezPSxZ.wbPa97DD.Xu2J7eu4lXQN1rURTYI6HO" 
+  },
+});
 
 app.get("/", (req, res) => {
   res.sendFile(INDEX, { root: __dirname });
