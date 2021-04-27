@@ -24,13 +24,14 @@ button {
 }
 .student-box a {
   display: block;
+  box-sizing: border-box;
   font-family: "Major Mono Display", monospace;
   font-size: 1.5em;
   font-weight: 400;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.69);
-  margin-top: 3em;
-  padding: 10px;
+  padding-top: 3.3em;
+  height: inherit;
 }
 
 .textIndex {
@@ -51,7 +52,7 @@ button {
     margin: 50px 15px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   .student-body {
     display: block;
   }
@@ -62,7 +63,7 @@ button {
     margin: 0 15px 26px 15px;
   }
   .student-box a:first-child {
-    padding-top: 2.6em;
+    padding-top: 2.5em;
   }
   .student-box a {
     margin-top: 1em;
