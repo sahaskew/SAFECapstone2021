@@ -124,10 +124,11 @@ nav {
   }
 
   .background {
+    z-index: 5;
     opacity: 0;
     position: absolute;
     display: flexbox;
-    background-color: rgba(250, 250, 250, 0.315);
+    background-color: rgba(29, 29, 29, 0.808);
     right: 0px;
     top: 0px;
     bottom: 0px;
@@ -135,6 +136,7 @@ nav {
   }
 
   .adminIcon {
+    z-index: 200;
     list-style: none;
     position: absolute;
     right: 10px;
@@ -143,12 +145,13 @@ nav {
     width: 23% !important;
   }
   .navLinkLeft {
+    z-index: 200;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 40vh;
     width: 35%;
-    z-index: 0;
+    z-index: 200;
   }
 
   .navLinkRight {
@@ -157,7 +160,7 @@ nav {
     height: 10%;
     top: 30vh;
     width: 35%;
-    z-index: 1;
+    z-index: 200;
   }
 
   .adminIcon li {
@@ -173,6 +176,7 @@ nav {
   }
 
   .burger {
+    z-index: 6;
     display: block;
   }
 }
