@@ -9,6 +9,7 @@ h1{
     word-break: keep-all;
 	white-space: nowrap;
 	margin-top: 2%;
+	font-size: 2.25em;
 }
 
 img{
@@ -21,7 +22,7 @@ img{
 	text-align: center;
 }
 label{
-	font-size: calc(100vw / 99);
+	font-size: 18px;
     font-family: 'Arvo', serif;
     text-overflow: ellipsis;
     word-break: keep-all;
