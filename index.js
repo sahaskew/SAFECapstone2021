@@ -2,12 +2,13 @@
 a socket connection. local port is set to :   http://localhost:3000   */
 
 const express = require("express");
+require('dotenv').config();
 const socketIO = require("socket.io");
 const {instrument} = require( "@socket.io/admin-ui"); 
 const PORT = process.env.PORT || 3000;
 
 //Connect to MongoDB
-const dbURI = 'mongodb+srv://jkmoore:sypzeg-Mupxit-2zudba@cluster0.bfd5u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://jkmoore:' + process.env.MONGO_DB_PASSWORD + '@cluster0.bfd5u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 mongoose.connect(dbURI, { useNewUrlParser: true , useUnifiedTopology: true });
