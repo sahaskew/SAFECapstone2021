@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
 
-h1{
+h1, h2{
     text-align: center;
     font-family: 'Major Mono Display', monospace;
     /*
@@ -16,7 +16,7 @@ h1{
     white-space: nowrap;
 }
 .form{
-    padding: 2% 35% 10%;
+    padding: 2% 30% 10%;
 }
 .form-group input{
     background-color: white;
