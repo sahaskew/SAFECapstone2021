@@ -21,8 +21,9 @@ img {
 .desc {
   font-family: "Arvo", serif;
   padding: 10px;
-  font-size: 1em;
+  font-size: 20px;
   text-align: center;
+  text-shadow: 2px;
 }
 
 a {
