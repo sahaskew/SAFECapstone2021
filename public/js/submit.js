@@ -1,4 +1,8 @@
 
+function ShowHideEmail(chkEmail) {
+    var dvPassport = document.getElementById("dvEmail");
+    dvPassport.style.display = chkEmail.checked ? "block" : "none";
+}
 
 // functions for the message.html;
 // count the number of textarea
