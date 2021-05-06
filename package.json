@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "set MONGO_DB_PASSWORD=sypzeg-Mupxit-2zudba && node index.js"
   },
   "repository": {
     "type": "git",
