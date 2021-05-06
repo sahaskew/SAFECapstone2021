@@ -94,6 +94,14 @@ app.get("/message", (req, res) => {
   res.sendFile(MESSAGE, { root: __dirname });
 });
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}))
+app.post("/submit", (req, res) => {
+  console.log(req.body.name);
+  console.log(req.body.feedback);
+  res.redirect("/feedbackDone.html");
+})
+
 io.on("connection", (socket) => {
   console.log("Client connected via socket (not in a room yet)");
   
