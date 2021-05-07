@@ -1,3 +1,5 @@
+//requirejs("mongoSchema");
+
 
 function ShowHideEmail(chkEmail) {
     var dvPassport = document.getElementById("dvEmail");

@@ -18,13 +18,19 @@ mongoose.connection.once('open', function(){
   console.log('error is:', error);
 });
 
+//setup requirejs to require schema module on frontend (submit.js)
+var requirejs = require("requirejs");
+requirejs.config({
+  nodeRequire: require,
+});
+/*
 //Create message schema
 const messageSchema = new Schema({
   message: String
 })
 const Message = mongoose.model('Message', messageSchema);
 module.exports = Message;
-
+*/ 
 /* How to create and save a message
 const testMessage = new Message({
   message: 'testing message with mongo'
