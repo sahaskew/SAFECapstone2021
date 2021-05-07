@@ -17,6 +17,12 @@ const ABOUT = "public/about.html";
 const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
 
+//setup requirejs 
+  var requirejs = require("requirejs");
+  requirejs.config({
+    nodeRequire: require,
+  });
+
 //set up app
 var app = express();
 var server = app.listen(PORT, () => {
@@ -42,12 +48,6 @@ instrument(io, {
     password: "$2y$12$JMlYelfCXM5t6woezPSxZ.wbPa97DD.Xu2J7eu4lXQN1rURTYI6HO" 
   },
 });
-
- //setup requirejs 
-  var requirejs = require("requirejs");
-  requirejs.config({
-    nodeRequire: require,
-  });
   
   //calls a module that connects to mongodb 
   var mongoConnect = require('./public/js/mongoModule.js');

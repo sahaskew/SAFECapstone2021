@@ -7,8 +7,10 @@ define(['mongoose'], function(){ //this could require the module of the db being
   message: String
  })
 
- return function( ){
-   messageObj = mongoose.model('Message', messageSchema); //in submit.js now can I fill/save this?
+ return {
+   messageObj = mongoose.model('Message', messageSchema) //in submit.js now can I fill/save this?
  }
 
 });
+
+//create a msg module that creates model. require that module inside the defined formmodule 
