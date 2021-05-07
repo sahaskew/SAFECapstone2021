@@ -17,11 +17,6 @@ const ABOUT = "public/about.html";
 const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
 
-//setup requirejs 
-  var requirejs = require("requirejs");
-  requirejs.config({
-    nodeRequire: require,
-  });
 
 //set up app
 var app = express();
@@ -29,6 +24,10 @@ var server = app.listen(PORT, () => {
   console.log(`SAFE is running on port ${PORT}`);
 
 });
+ 
+//calls a module that connects to mongodb 
+var mongoConnect = require('./public/js/mongoModule.js');
+mongoConnect.db();
 
 //static files for retrieval. ALL HTML and CSS must go in this folder.
 app.use(express.static("public"));
@@ -49,9 +48,6 @@ instrument(io, {
   },
 });
   
-  //calls a module that connects to mongodb 
-  var mongoConnect = require('./public/js/mongoModule.js');
-  mongoConnect.db();
 
 app.get("/", (req, res) => {
   res.sendFile(INDEX, { root: __dirname });

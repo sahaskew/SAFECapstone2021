@@ -1,6 +1,7 @@
-requirejs("formModule"); 
-
-
+requirejs(['./common'], function (common) {
+    requirejs(['formModule']);
+});
+/*
 function ShowHideEmail(chkEmail) {
     var dvPassport = document.getElementById("dvEmail");
     dvPassport.style.display = chkEmail.checked ? "block" : "none";
@@ -43,15 +44,14 @@ function checkform(){
 function getInfo(){
     var name = document.getElementById("name").value;
     var feedback = document.getElementById("feedback").value;
-   /* notice here: .checked not .value  (ture means chedked, else if false)*/
+   /* notice here: .checked not .value  (ture means chedked, else if false)
     var checkStatus = document.getElementById("check").checked;
     console.log("name: " + name);
     console.log("feedback: " + feedback);
     console.log("cheack: " + checkStatus);
 }
-
-
-/* ================================================ */
+*/ 
+/* ================================================ 
 // functions for feedbackEmail.html
 
 // check the fromat of emial.
@@ -75,4 +75,4 @@ function checkEmail(){
 function getEmail(){
     var email = document.getElementById("emailName").value;
     console.log("Email: " + email);
-}
+} */ 

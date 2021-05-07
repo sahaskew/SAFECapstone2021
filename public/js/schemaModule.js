@@ -1,9 +1,12 @@
+//this module creates a mongoschema and returns the model 
+define(['mongoose'], function(mongoose){ 
 //Create message schema
-module.exports.model = function(){
-const messageSchema = new Schema({
+ const messageSchema = new Schema({
   message: String
-})
-const Message = mongoose.model('Message', messageSchema);
-module.exports = Message;
+ })
 
-}
+ return {
+   messageObj = mongoose.model('Message', messageSchema) 
+ }
+
+});
