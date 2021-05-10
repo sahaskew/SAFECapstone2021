@@ -26,9 +26,9 @@ function checkform(){
             // to the different pages.
             if(checkStatus == true){
                 formSub.action= "feedbackEmail.html"
-            } else {
-                formSub.action= "feedbackDone.html"
-            }
+            } //else {
+                //formSub.action= "feedbackDone.html"
+            //}
             formSub.submit();
             return true;
         }

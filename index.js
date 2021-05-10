@@ -94,6 +94,17 @@ app.get("/message", (req, res) => {
   res.sendFile(MESSAGE, { root: __dirname });
 });
 
+app.post("/addMessage", (req, res) => {
+  var myData = new Message(req.body);
+  myData.save()
+    .then(item => {
+      res.send("Message saved to the database");
+    })
+    .catch(err => {
+      res.status(400).send("Unable to save to database");
+    });
+});
+
 io.on("connection", (socket) => {
   console.log("Client connected via socket (not in a room yet)");
   
