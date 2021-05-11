@@ -13,11 +13,10 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/adminDashboard.css" />
     <script src="/socket.io/socket.io.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
-  <body>
+  <body >
     <nav>
       <div class="background"></div>
       <ul class="navLinkLeft">
@@ -48,14 +47,25 @@
 
     <!-- <script src="admin.js"></script> -->
 
-    <h1 class = "text-center headerText mt-2">admin Dashboard</h1>
+    <h1 class = "text-center headerText mt-2">admin dashboard</h1>
 
-    <div class = "dashboardContainer mt-4"> 
+    <div class = "dashboardContainer"> 
         <div class = "headerContainer"> 
             <button class = "trashCan"><img class = "align-center imageCenter" alt="trash can" src="./images/garbage-can-icon-2.png"></button>
             <button class = "unread">Mark Unread</button>
+            <button class = "flag"><img class = "align-center imageCenter" alt="flag message" src="./images/flag.png"></button>
+            <button onclick="writeMessage()" class = "reply">Reply</button>
+            <button class = "junk">Junk</button>
         </div>
         <div class = "innerContainer"> 
+            <div class = "folders">
+              <div class = "folderText text-center">Mailboxes</div>
+              <button onclick="buttonClicked('inbox')" id = "inbox" class = "aFolder">Inbox</button>
+              <button onclick="buttonClicked('flagged')" id = "flagged" class = "aFolder">Flagged</button>
+              <button onclick="buttonClicked('sent')" id = "sent" class = "aFolder">Sent</button>
+              <button onclick="buttonClicked('trash')" id = "trash" class = "aFolder">Trash</button>
+              <button onclick="buttonClicked('junk')" id = "junk" class = "aFolder">Junk</button>
+            </div>
             <div class = "messages">
                 <button class = "clickableMessage">
                     <div class = "unreadIndicator"></div>
@@ -113,7 +123,7 @@
 
     </div>
     <div class = "logOut"><a href="/" class = "b-4">Log Out</a></div>
-    <script src="admin.js"></script>
+    <script src="js/admin.js"></script>
   
   </body>
 </html>
