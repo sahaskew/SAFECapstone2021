@@ -38,6 +38,7 @@ const ADMIN = "public/admin.html";
 const ABOUT = "public/about.html";
 const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
+const REPLY = "public/reply.html";
 
 //set up app
 var app = express();
@@ -83,6 +84,10 @@ app.get("/dashboard", (req, res) => {
 
 app.get("/admin", (req, res) => {
   res.sendFile(ADMIN, { root: __dirname });
+});
+
+app.get("/reply", (req, res) => {
+  res.sendFile(REPLY, { root: __dirname });
 });
 
 app.get("/about", (req, res) => {
