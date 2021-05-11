@@ -8,6 +8,7 @@ const {instrument} = require( "@socket.io/admin-ui");
 const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 
+
 //Connect to MongoDB
 const dbURI = 'mongodb+srv://jkmoore:sypzeg-Mupxit-2zudba@cluster0.bfd5u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const mongoose = require('mongoose');
@@ -48,6 +49,9 @@ var server = app.listen(PORT, () => {
   console.log(`SAFE is running on port ${PORT}`);
 
 });
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
 
 //static files for retrieval. ALL HTML and CSS must go in this folder.
 app.use(express.static("public"));
