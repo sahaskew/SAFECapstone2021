@@ -49,6 +49,13 @@ h1, h2{
     height: 3em;
 }
 
+#txtEmail{
+    position: relative;
+    margin-top: 2%;
+    width: 100%;
+    height: 3em;
+}
+
 .label1{
     position: relative;
     text-align: center;
