@@ -6,6 +6,7 @@ require('dotenv').config();
 const socketIO = require("socket.io");
 const {instrument} = require( "@socket.io/admin-ui"); 
 const PORT = process.env.PORT || 3000;
+const bodyParser = require('body-parser');
 
 //Connect to MongoDB
 const dbURI = 'mongodb+srv://jkmoore:sypzeg-Mupxit-2zudba@cluster0.bfd5u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
@@ -20,6 +21,7 @@ mongoose.connection.once('open', function(){
 
 //Create message schema
 const messageSchema = new Schema({
+  subject: String,
   message: String
 })
 const Message = mongoose.model('Message', messageSchema);
