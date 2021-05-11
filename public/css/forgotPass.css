@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+/*
+.navLinkRight {
+    width: 23% !important; 
+    justify-content: flex-end;
+    right: 1.5%;
+  }
+  .adminIcon{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+    margin: 0 0;
+ }
+ */
+
+h1{
+    font-family: 'Major Mono Display', monospace;
+    text-align: center;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+    margin-top: 2%;
+}
+.form{
+    padding: 4% 33% 10%;
+}
+
+.form input{
+    width: 100%;
+    height: 4em;
+    background-color: white;
+    box-shadow: 0px 4px 4px 4px rgba(0,0,0,0.25);
+    border-radius: 30px;
+}
+:-ms-input-placeholder{text-align: center; font-family: 'Arvo', serif; font-size: 14px;}
+::-webkit-input-placeholder{text-align: center; font-family: 'Arvo', serif; font-size: 13px;}
+
+.btn-submit{
+    position: relative;
+    width: 100%;
+    height: 4em;
+    margin-top: 15%;
+    font-family: 'Arvo', serif;
+    box-shadow: 0px 4px 4px 4px rgba(0,0,0,0.25);
+    border-radius: 30px;
+}
+
+.f-label{
+    position: relative;
+    margin-top: 20%;
+    text-align: center;
+}
+label{
+    font-family: 'Arvo', serif;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 500px){
+    .form{
+        padding: 4% 18%;
+    }
+    .form input{
+        height: 3em;
+    }
+    .btn-submit{
+        height: 3em;
+    }
+    label{
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1200px){
+    h1{
+        margin: 2% auto;
+        font-size: 25px;
+    }
+    .form{
+        padding: 2% 25%;
+    }
+}
+
+
+

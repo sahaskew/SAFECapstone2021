@@ -2,6 +2,7 @@
 a socket connection. local port is set to :   http://localhost:3000   */
 
 const express = require("express");
+require('dotenv').config();
 const socketIO = require("socket.io");
 const {instrument} = require( "@socket.io/admin-ui"); 
 const PORT = process.env.PORT || 3000;

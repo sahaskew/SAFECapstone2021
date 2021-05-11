@@ -40,7 +40,7 @@
         </div>
     </nav>
     </header>
-    <h1>Send an anonymous message</h1>
+    <h2>send an anonymous message</h2>
     <div class = "form-group">
         <form class = "form" id="form" action="" onsubmit="return checkform();">
         
@@ -58,11 +58,17 @@
               </div>
             </div>
           </div>
-    
+
           <div class="checkbox">
-            <label class="label2">
-              <input type="checkbox" id="check" >  I'd like a Reply
-            </label>
+            <label for="chkEmail" class="label2">
+              <input type="checkbox" id="check" onclick="ShowHideEmail(this)" />
+              I'd like a Reply
+          </label>
+          </div>
+          <hr />
+
+          <div id="dvEmail" style="display: none">
+            <input type="text" class="form-control" id="name" placeholder="Enter Email...">
           </div>
 
           <div class="button">
