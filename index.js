@@ -28,12 +28,6 @@ const messageSchema = new Schema({
 const Message = mongoose.model('Message', messageSchema);
 module.exports = Message;
 
-/* How to create and save a message
-const testMessage = new Message({
-  message: 'testing message with mongo'
-});
-testMessage.save(); */
-
 const INDEX = "/index.html";
 const DASHBOARD = "public/Dashboard.html";
 const STUDENT = "public/student.html";
@@ -42,6 +36,7 @@ const ADMIN = "public/admin.html";
 const ABOUT = "public/about.html";
 const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
+const FEEDBACKDONE = "public/feedbackDone.html";
 
 //set up app
 var app = express();
@@ -104,7 +99,7 @@ app.post("/addMessage", (req, res) => {
   var myData = new Message(req.body);
   myData.save()
     .then(item => {
-      res.send("Message saved to the database");
+      res.sendFile(FEEDBACKDONE, { root: __dirname });
     })
     .catch(err => {
       res.status(400).send("Unable to save to database");

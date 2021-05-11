@@ -14,7 +14,6 @@ function countNum(obj){
 // use the status of checkbox, to jump to different pages.
 function checkform(){
     var feedback = document.getElementById("feedback").value;
-    var checkStatus = document.getElementById("check").checked;
     var formSub =document.getElementById("form");
     if(feedback == ''){
         alert("Please write your feedback");
@@ -23,12 +22,7 @@ function checkform(){
     else{
         var checkSub = confirm("Are you sure want to submit the feedback?");
         if(checkSub == true){
-            // to the different pages.
-            if(checkStatus == true){
-                formSub.action= "feedbackEmail.html"
-            } //else {
-                //formSub.action= "feedbackDone.html"
-            //}
+            formSub.action = "/addMessage";
             formSub.submit();
             return true;
         }
