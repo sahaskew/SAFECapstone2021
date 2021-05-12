@@ -61,14 +61,13 @@
 
           <div class="checkbox">
             <label for="chkEmail" class="label2">
-              <input type="checkbox" id="check" onclick="ShowHideEmail(this)" />
+              <input type="checkbox" id="chkEmail" onclick="EnableDisableTextBox(this)" />
               I'd like a Reply
           </label>
           </div>
-          <hr />
 
-          <div id="dvEmail" style="display: none">
-            <input type="text" class="form-control" id="name" placeholder="Enter Email...">
+          <div id="dvEmail">
+            <input type="text" class="form-control" id="txtEmail" disabled="disabled" placeholder="Enter Email...">
           </div>
 
           <div class="button">
