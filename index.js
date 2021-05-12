@@ -6,6 +6,8 @@ require('dotenv').config();
 const socketIO = require("socket.io");
 const {instrument} = require( "@socket.io/admin-ui"); 
 const PORT = process.env.PORT || 3000;
+const bodyParser = require('body-parser');
+
 
 //Connect to MongoDB
 const dbURI = 'mongodb+srv://jkmoore:sypzeg-Mupxit-2zudba@cluster0.bfd5u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
@@ -20,16 +22,11 @@ mongoose.connection.once('open', function(){
 
 //Create message schema
 const messageSchema = new Schema({
+  subject: String,
   message: String
 })
 const Message = mongoose.model('Message', messageSchema);
 module.exports = Message;
-
-/* How to create and save a message
-const testMessage = new Message({
-  message: 'testing message with mongo'
-});
-testMessage.save(); */
 
 const INDEX = "/index.html";
 const DASHBOARD = "public/Dashboard.html";
@@ -39,6 +36,7 @@ const ADMIN = "public/admin.html";
 const ABOUT = "public/about.html";
 const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
+const FEEDBACKDONE = "public/feedbackDone.html";
 const REPLY = "public/reply.html";
 
 //set up app
@@ -47,6 +45,9 @@ var server = app.listen(PORT, () => {
   console.log(`SAFE is running on port ${PORT}`);
 
 });
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
 
 //static files for retrieval. ALL HTML and CSS must go in this folder.
 app.use(express.static("public"));
@@ -97,6 +98,17 @@ app.get("/about", (req, res) => {
 
 app.get("/message", (req, res) => {
   res.sendFile(MESSAGE, { root: __dirname });
+});
+
+app.post("/addMessage", (req, res) => {
+  var myData = new Message(req.body);
+  myData.save()
+    .then(item => {
+      res.sendFile(FEEDBACKDONE, { root: __dirname });
+    })
+    .catch(err => {
+      res.status(400).send("Unable to save to database");
+    });
 });
 
 io.on("connection", (socket) => {

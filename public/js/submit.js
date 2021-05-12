@@ -20,6 +20,29 @@ function countNum(obj){
 }
 
 
+// check the feedback in the form. 
+// use the status of checkbox, to jump to different pages.
+function checkform(){
+    var feedback = document.getElementById("feedback").value;
+    var formSub =document.getElementById("form");
+    if(feedback == ''){
+        alert("Please write your feedback");
+        return false;
+    }
+    else{
+        var checkSub = confirm("Are you sure want to submit the feedback?");
+        if(checkSub == true){
+            formSub.action = "/addMessage";
+            formSub.submit();
+            return true;
+        }
+        else{
+            return false;
+        }
+    }   
+}
+
+
 function getInfo(){
     var name = document.getElementById("name").value;
     var feedback = document.getElementById("feedback").value;
