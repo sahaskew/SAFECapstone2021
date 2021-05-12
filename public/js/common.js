@@ -1,9 +1,8 @@
-//commonjs configs for requirejs 
+//commonjs configs for requirejs to be used in frontend.
 
-//setup requirejs for frontend use
 //  var requirejs = require("requirejs");
  requirejs.config({
-//    nodeRequire: require,
+    nodeRequire: require,
     baseUrl: 'public/js',
  });
 

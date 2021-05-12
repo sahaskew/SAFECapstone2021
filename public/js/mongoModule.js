@@ -1,6 +1,5 @@
 
 //Connect to MongoDB
-
 module.exports.db = function () {
   const dbURI =
     "mongodb+srv://jkmoore:sypzeg-Mupxit-2zudba@cluster0.bfd5u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
@@ -17,7 +16,7 @@ module.exports.db = function () {
 
 };
  
-/* this was originally on index.js with above code. this is now part of formModule.js
+/* this was originally on index.js with above code. this is now part of SchemaModule.js
 //Create message schema
 const messageSchema = new Schema({
   message: String

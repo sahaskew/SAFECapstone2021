@@ -10,23 +10,6 @@
   margin: 0 0;
 }
 
-@media screen and (max-width: 600px) {
-  .adminIcon {
-    width: 35% !important;
-  }
-
-  .navLinkRight {
-    justify-content: center !important;
-    align-content: center;
-    position: absolute;
-    right: 10px;
-    height: 10%;
-    top: 30vh;
-    width: 35% !important;
-    z-index: 0;
-  }
-}
-
 .headerText {
   font-family: "Major Mono Display", monospace;
   font-size: 35px !important;
@@ -66,6 +49,19 @@
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.6) !important;
 }
+.flag {
+  position: absolute;
+  align-content: center !important;
+  justify-content: center !important;
+  border: none;
+  display: flex;
+  top: 5px;
+  left: 185px;
+  bottom: 5px;
+  width: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
 
 .unread {
   position: absolute;
@@ -75,9 +71,45 @@
   border: none;
   display: flex;
   top: 5px;
-  left: 55px;
+  left: 50px;
   bottom: 5px;
-  width: 150px;
+  width: 130px;
+  border-radius: 10px;
+  font-family: "Arvo", serif;
+  font-size: 15px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.junk {
+  position: absolute;
+  align-content: center;
+  justify-content: center;
+  padding-top: 5px;
+  border: none;
+  display: flex;
+  top: 5px;
+  left: 230px;
+  bottom: 5px;
+  width: 55px;
+  border-radius: 10px;
+  font-family: "Arvo", serif;
+  font-size: 15px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.reply {
+  position: absolute;
+  align-content: center;
+  justify-content: center;
+  padding-top: 5px;
+  border: none;
+  display: flex;
+  top: 5px;
+  left: 290px;
+  bottom: 5px;
+  width: 60px;
   border-radius: 10px;
   font-family: "Arvo", serif;
   font-size: 15px;
@@ -102,6 +134,31 @@
 .trashCan:active {
   background-color: rgb(255, 255, 255) !important;
 }
+
+.reply:hover {
+  background-color: rgba(209, 209, 209, 0.6) !important;
+}
+
+.reply:active {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.junk:hover {
+  background-color: rgba(209, 209, 209, 0.6) !important;
+}
+
+.junk:active {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.flag:hover {
+  background-color: rgba(209, 209, 209, 0.6) !important;
+}
+
+.flag:active {
+  background-color: rgb(255, 255, 255) !important;
+}
+
 .unread:hover {
   background-color: rgba(209, 209, 209, 0.6) !important;
 }
@@ -109,6 +166,19 @@
 .unread:active {
   background-color: rgb(255, 255, 255) !important;
 }
+
+.aFolder:hover {
+  background-color: rgba(209, 209, 209, 0.6) !important;
+}
+
+/*
+
+.aFolder:active {
+  background-color: rgba(255, 255, 255, 0.753) !important;
+}
+.aFolder:focus {
+  background-color: rgba(255, 255, 255, 0.87) !important;
+} */
 
 .innerContainer {
   position: absolute;
@@ -121,12 +191,59 @@
   padding: 5px;
 }
 
+.folders {
+  overflow-y: scroll;
+  display: list-item;
+  width: 12%;
+  height: 100%;
+  border-radius: 12px 0px 0px 12px;
+  padding-top: 5px;
+  background-color: rgba(255, 255, 255, 0.151);
+  /* background-color: rgba(255, 255, 255, 0.72); */
+}
+
+.folderText {
+  font-family: "Arvo", serif;
+  font-size: 12px;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.aFolder {
+  font-family: "Arvo", serif !important;
+  font-size: 15px !important;
+  color: black !important;
+  width: 100%;
+  text-align: left;
+  margin-left: 0px !important;
+  margin-right: 10px !important;
+  margin-bottom: 2px;
+  padding: 5px !important;
+  padding-left: 25px !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.clickedFolder {
+  font-family: "Arvo", serif !important;
+  font-size: 15px !important;
+  color: black !important;
+  width: 100%;
+  text-align: left;
+  margin-left: 0px !important;
+  margin-right: 10px !important;
+  margin-bottom: 2px;
+  padding: 5px !important;
+  padding-left: 25px !important;
+  border: none !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+
 .messages {
   overflow-y: scroll;
   display: list-item;
   width: 25%;
   height: 100%;
-  border-radius: 12px 0px 0px 12px;
   background-color: rgba(255, 255, 255, 0.25);
   padding-left: 5px;
   padding-top: 5px;
@@ -134,7 +251,7 @@
 
 .readMessage {
   display: flex;
-  width: 75%;
+  width: 63%;
   height: 100%;
   border-radius: 0px 12px 12px 0px;
   padding: 30px;
@@ -195,4 +312,34 @@
   left: 49%;
   justify-content: center;
   bottom: 10px;
+}
+@media screen and (max-width: 600px) {
+  .adminIcon {
+    width: 35% !important;
+  }
+
+  .navLinkRight {
+    justify-content: center !important;
+    align-content: center;
+    position: absolute;
+    right: 10px;
+    height: 10%;
+    top: 30vh;
+    width: 35% !important;
+    z-index: 0;
+  }
+  .dashboardContainer {
+    right: 0%;
+    width: 100%;
+  }
+  .messages {
+    width: 30%;
+  }
+
+  .readMessage {
+    width: 50%;
+  }
+  .folders {
+    width: 20%;
+  }
 }

@@ -5,7 +5,7 @@ const navSlide = () => {
     const nav1 = document.querySelector('.background');
     const navLinkRight = document.querySelector('.navLinkRight li');
     const navLinkLeft = document.querySelector('.navLinkLeft li');
-
+   if(burger){
     burger.addEventListener('click', () => {
         nav1.classList.toggle('nav1-active');
     //Animate Links
@@ -20,6 +20,7 @@ const navSlide = () => {
     burger.classList.toggle('toggle');
 
     });
+   }
   }
   //Call function
   navSlide();
