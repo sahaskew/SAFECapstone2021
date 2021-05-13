@@ -9,24 +9,6 @@ const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 
 
-//Connect to MongoDB
-const dbURI = 'mongodb+srv://jkmoore:sypzeg-Mupxit-2zudba@cluster0.bfd5u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-mongoose.connect(dbURI, { useNewUrlParser: true , useUnifiedTopology: true });
-mongoose.connection.once('open', function(){
-  console.log('Connected to MongoDB');
-}).on('error', function(error){
-  console.log('error is:', error);
-});
-
-//Create message schema
-const messageSchema = new Schema({
-  subject: String,
-  message: String
-})
-const Message = mongoose.model('Message', messageSchema);
-module.exports = Message;
 
 const INDEX = "/index.html";
 const DASHBOARD = "public/Dashboard.html";
@@ -39,12 +21,19 @@ const RESET = "public/resetpw.html";
 const FEEDBACKDONE = "public/feedbackDone.html";
 const REPLY = "public/reply.html";
 
+
 //set up app
 var app = express();
 var server = app.listen(PORT, () => {
   console.log(`SAFE is running on port ${PORT}`);
 
 });
+ 
+//calls a module that connects to mongodb 
+var mongoConnect = require('./public/js/mongoModule.js');
+mongoConnect.db();
+//call SchemaModule to fill a message model for DB
+var Message = require('./public/js/schemaModule.js')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
@@ -67,6 +56,7 @@ instrument(io, {
     password: "$2y$12$JMlYelfCXM5t6woezPSxZ.wbPa97DD.Xu2J7eu4lXQN1rURTYI6HO" 
   },
 });
+  
 
 app.get("/", (req, res) => {
   res.sendFile(INDEX, { root: __dirname });
@@ -100,6 +90,7 @@ app.get("/message", (req, res) => {
   res.sendFile(MESSAGE, { root: __dirname });
 });
 
+//following app methods are for message.html and DB implementation
 app.post("/addMessage", (req, res) => {
   var myData = new Message(req.body);
   myData.save()
@@ -111,6 +102,7 @@ app.post("/addMessage", (req, res) => {
     });
 });
 
+//socket implementation
 io.on("connection", (socket) => {
   console.log("Client connected via socket (not in a room yet)");
   

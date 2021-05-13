@@ -1,3 +1,8 @@
+/* keeping this in case we get requirejs working
+requirejs(['./common'], function (common) {
+    requirejs(['formModule']);
+});
+*/ 
 //Enable/Disable Email textbox
 function EnableDisableTextBox(chkEmail) {
     var txtEmail = document.getElementById("txtEmail");
@@ -46,15 +51,14 @@ function checkform(){
 function getInfo(){
     var name = document.getElementById("name").value;
     var feedback = document.getElementById("feedback").value;
-   /* notice here: .checked not .value  (ture means chedked, else if false)*/
-    var checkStatus = document.getElementById("check").checked;
+   /* notice here: .checked not .value  (ture means chedked, else if false)*/ 
+    var checkStatus = document.getElementById("chkEmail").checked;
     console.log("name: " + name);
     console.log("feedback: " + feedback);
     console.log("cheack: " + checkStatus);
 }
-
-
-/* ================================================ */
+ 
+/* ================================================ */ 
 // functions for feedbackEmail.html
 
 // check the fromat of emial.
