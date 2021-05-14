@@ -145,13 +145,12 @@ nav {
     width: 23% !important;
   }
   .navLinkLeft {
-    z-index: 200;
+    z-index: 20000 !important;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 40vh;
     width: 35%;
-    z-index: 200;
   }
 
   .navLinkRight {
@@ -160,7 +159,7 @@ nav {
     height: 10%;
     top: 30vh;
     width: 35%;
-    z-index: 200;
+    z-index: 20000 !important;
   }
 
   .adminIcon li {
@@ -284,18 +283,17 @@ input[type="text"] {
   margin: 15px 0;
 }
 
-
 .reset span {
   position: relative;
   right: 30px;
   cursor: pointer;
 }
 
-.recovery h1{
+.recovery h1 {
   font-family: "Major Mono Display", monospace;
   font-size: 50px;
   display: flex;
   justify-content: space-around;
   min-height: 25vh;
-  align-items: center
+  align-items: center;
 }
