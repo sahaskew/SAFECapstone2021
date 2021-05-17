@@ -1,6 +1,7 @@
 /* This is the server file. This file will create an http connection and kickstart 
 a socket connection. local port is set to :   http://localhost:3000   */
 
+//import "body-parser";
 const express = require("express");
 require('dotenv').config();
 const socketIO = require("socket.io");
@@ -17,6 +18,11 @@ mongoose.connection.once('open', function(){
 }).on('error', function(error){
   console.log('error is:', error);
 });
+
+// Adding body parser
+//const bodyParser = require("body-parser");
+//import Login from "./Login";
+let adminLogin = require("./public/js/login.js");
 
 //Create message schema
 const messageSchema = new Schema({
@@ -49,6 +55,12 @@ var server = app.listen(PORT, () => {
 
 //static files for retrieval. ALL HTML and CSS must go in this folder.
 app.use(express.static("public"));
+
+// Using body-parser
+//app.use(bodyParser.urlencoded({extended: false}));
+
+// Use login file to handle posting form information
+app.use("/public/admin", adminLogin);
 
 //Socketio gets passed http server as arg and specifies 
 var io = socketIO(server, {
@@ -85,7 +97,12 @@ app.get("/dashboard", (req, res) => {
 app.get("/admin", (req, res) => {
   res.sendFile(ADMIN, { root: __dirname });
 });
-
+/*
+app.post("/login", (req, res) => {
+  let result = Login();
+  console.log(result);
+});
+*/
 app.get("/about", (req, res) => {
   res.sendFile(ABOUT, { root: __dirname });
 });

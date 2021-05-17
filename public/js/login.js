@@ -17,9 +17,10 @@
 // have the script tag in the header of the admin.html file list this file
 // as the source
 // Next: create a socket.io instance
-const socket = io();
+//const socket = io();
 
 // Function runs as soon as the admin.html file is loaded
+/*
 window.onload = function() {
     const loginForm = document.getElementById("login-form");
     if(loginForm) {
@@ -51,6 +52,7 @@ window.onload = function() {
         });
     }
 }
+*/
 
 // I reiterate: DO NOT KEEP THIS!! THIS IS ONLY FOR TESTING PURPOSES!!!
 /*
@@ -59,3 +61,23 @@ socket.on('Message', (email, password) => {
     alert("Email:" + email + "\nPassword:" + password);
 });
 */
+
+/*
+function Login() {
+    let email = document.getElementById('email').value;
+    console.log('User email: ' + email);
+
+    return false;
+}
+
+export default Login;
+*/
+
+var express = require('express');
+var router = express.Router();
+
+router.post("../admin", (req, res) => {
+    console.log(req);
+});
+
+module.exports = router;
