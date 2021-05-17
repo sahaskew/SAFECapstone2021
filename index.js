@@ -7,6 +7,7 @@ require('dotenv').config();
 const socketIO = require("socket.io");
 const {instrument} = require( "@socket.io/admin-ui"); 
 const PORT = process.env.PORT || 3000;
+const bodyParser = require('body-parser');
 
 //Connect to MongoDB
 const dbURI = 'mongodb+srv://jkmoore:' + process.env.MONGO_DB_PASSWORD + '@cluster0.bfd5u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
@@ -31,11 +32,6 @@ const messageSchema = new Schema({
 const Message = mongoose.model('Message', messageSchema);
 module.exports = Message;
 
-/* How to create and save a message
-const testMessage = new Message({
-  message: 'testing message with mongo'
-});
-testMessage.save(); */
 
 const INDEX = "/index.html";
 const DASHBOARD = "public/Dashboard.html";
@@ -45,6 +41,9 @@ const ADMIN = "public/admin.html";
 const ABOUT = "public/about.html";
 const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
+const FEEDBACKDONE = "public/feedbackDone.html";
+const REPLY = "public/reply.html";
+
 
 //set up app
 var app = express();
@@ -52,6 +51,15 @@ var server = app.listen(PORT, () => {
   console.log(`SAFE is running on port ${PORT}`);
 
 });
+ 
+//calls a module that connects to mongodb 
+var mongoConnect = require('./public/js/mongoModule.js');
+mongoConnect.db();
+//call SchemaModule to fill a message model for DB
+//var Message = require('./public/js/schemaModule.js');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
 
 //static files for retrieval. ALL HTML and CSS must go in this folder.
 app.use(express.static("public"));
@@ -77,6 +85,7 @@ instrument(io, {
     password: "$2y$12$JMlYelfCXM5t6woezPSxZ.wbPa97DD.Xu2J7eu4lXQN1rURTYI6HO" 
   },
 });
+  
 
 app.get("/", (req, res) => {
   res.sendFile(INDEX, { root: __dirname });
@@ -103,6 +112,11 @@ app.post("/login", (req, res) => {
   console.log(result);
 });
 */
+
+app.get("/reply", (req, res) => {
+  res.sendFile(REPLY, { root: __dirname });
+});
+
 app.get("/about", (req, res) => {
   res.sendFile(ABOUT, { root: __dirname });
 });
@@ -111,6 +125,19 @@ app.get("/message", (req, res) => {
   res.sendFile(MESSAGE, { root: __dirname });
 });
 
+//following app methods are for message.html and DB implementation
+app.post("/addMessage", (req, res) => {
+  var myData = new Message(req.body);
+  myData.save()
+    .then(item => {
+      res.sendFile(FEEDBACKDONE, { root: __dirname });
+    })
+    .catch(err => {
+      res.status(400).send("Unable to save to database");
+    });
+});
+
+//socket implementation
 io.on("connection", (socket) => {
   console.log("Client connected via socket (not in a room yet)");
   

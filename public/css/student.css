@@ -27,7 +27,7 @@ button {
   box-sizing: border-box;
   font-family: "Major Mono Display", monospace;
   font-size: 1.5em;
-  font-weight: 400;
+  font-weight: 800;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.69);
   padding-top: 3.3em;
@@ -37,11 +37,12 @@ button {
 .textIndex {
   text-align: center;
   font-family: "Arvo", serif;
+  font-size: 1.3rem;
 }
 
 .textIndex1 {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: "Arvo", serif;
   margin-top: 20px;
 }

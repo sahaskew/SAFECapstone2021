@@ -1,4 +1,24 @@
 //Admin.js includes animations and logic defining the header menu.
+var lastElement = ''
+
+function buttonClicked(id) {
+    if (lastElement != '')
+    {
+        var last = document.getElementById(lastElement);
+        last.classList.add("aFolder");
+        last.classList.remove("clickedFolder");
+    }
+    var element = document.getElementById(id);
+    element.classList.remove("aFolder");
+    element.classList.add("clickedFolder");
+    lastElement = id;
+    
+}
+
+function writeMessage() {
+    const replyWindow = window.open('/reply','popup','width=1000,height=650');
+}
+
 
 function Validate() {
     var password = document.getElementById("password1").value;

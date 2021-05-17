@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <title>Reply Page</title>
+    <link rel="stylesheet" href="./css/sendEmail.css" />
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- <script>
+      window.addEventListener("onbeforeunload", ev => {
+        console.log("UNLOAD:1");
+        ev.returnValue = "Any Changes will be deleted";
+      });
+    </script> -->
+  </head>
+  <body onbeforeunload="alert('function alrt WORKS !!!!')">
+      <h1 class = "headerText text-center">reply</h1>
+      <div class = "emailContainer">
+        <div class = "headerContainer">
+            <input type = "text" class = "subject" placeholder="Subject:">
+            <button class = "send"><img class = "align-center imageCenter" alt="send icon" src="./images/sendEmail.png"></button>
+        </div>
+        <div class = "mainContainer">
+            <textarea class = "writeBody"></textarea>
+        </div>
+      </div>  
+      <!-- <script type="text/javascript">
+        window.onbeforeunload = function () {
+
+            return "Are you sure that you want to leave this page?";
+        }
+        </script>     -->
+  </body>
+</html>
