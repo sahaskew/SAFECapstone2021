@@ -12,6 +12,7 @@
     <title>Reset Password</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/student.css" />
+    <link rel="stylesheet" href="./css/resetPass.css" />
     <script src="/socket.io/socket.io.js"></script>
     <!-- <script src="js/chat.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,7 +23,7 @@
       <div class="background"></div>
       <ul class="navLinkLeft">
         <div class="linkContainer">
-          <li><a href="/about" class="about-about">about</a></li>
+          <li><a href="/about">about</a></li>
         </div>
       </ul>
       <div class="logo">
@@ -33,6 +34,12 @@
           <li><a href="/">home</a></li>
         </div>
       </ul>
+      <ul class="adminIcon">
+        <div class="linkContainer">
+          <li> <a href="/admin"><img alt="SourceLink" height="30" src="./images/profileIcon.png"/></a></li>
+        </div>
+      </ul>
+
       <div class="burger">
         <div class="line1"></div>
         <div class="line2"></div>
@@ -41,25 +48,25 @@
     </nav>
     
     <body>
-        <section class="grid-container">
+        <div class="grid-container">
             <div class="login">
-            <h1>reset Password</h1>
+              <h1 class = "text-center">reset password </h1>
             </div>
             <form id="login-form" action="">
     
               <br />
-              <div class="reset">
-                <input required type="password" name="password1" id="password1" placeholder="New Password"><span><i class="fa fa-eye" style="color:#7a797e" id="eye" onclick="toggle1()"></i></span>
-                </div>
-              
-              <div class="reset">
-              <input required type="password" name="password2" id="password2" placeholder="Confirm Password"><span><i class="fa fa-eye" style="color:#7a797e" id="eye2" onclick="toggle2()"></i></span>
+              <div class="input">
+                <input class = "passwordField" required type="password" name="password1" id="password1" placeholder="New Password"><span><i class="fa fa-eye" style="color:#7a797e" id="eye" onclick="toggle1()"></i></span>
               </div>
               
-              <div class="submit">
+              <div class="input">
+                <input class = "passwordField" required type="password" name="password2" id="password2" placeholder="Confirm Password"><span><i class="fa fa-eye" style="color:#7a797e" id="eye2" onclick="toggle2()"></i></span>
+              </div>
+              
+              <div class="input">
                 <!-- <input type="submit" value="Submit" onClick="location.href='/dashboard'"/> -->
                 <input type="submit" value="Submit" onclick="return Validate()"/>
-                </div>
+              </div>
               </div>
             </form>
         </section>

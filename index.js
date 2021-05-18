@@ -16,6 +16,8 @@ const STUDENT = "public/student.html";
 const CHAT = "public/chat.html";
 const ADMIN = "public/admin.html";
 const ABOUT = "public/about.html";
+const ACCOUNT = "public/account.html";
+const FORGOT = "public/forgotPass.html";
 const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
 const FEEDBACKDONE = "public/feedbackDone.html";
@@ -65,6 +67,14 @@ app.get("/", (req, res) => {
 
 app.get("/student", (req, res) => {
   res.sendFile(STUDENT, { root: __dirname });
+});
+
+app.get("/account", (req, res) => {
+  res.sendFile(ACCOUNT, { root: __dirname });
+});
+
+app.get("/forgot", (req, res) => {
+  res.sendFile(FORGOT, { root: __dirname });
 });
 
 app.get("/chat", (req, res) => {

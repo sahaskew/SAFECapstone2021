@@ -12,7 +12,7 @@
     <title>Forget Password Page</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/forgotPass.css">
-    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/account.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/chat.js"></script>
     
@@ -48,24 +48,24 @@
       </div>
     </nav>
     <!-- nav -->
-    <h1>forgot Password</h1>
+    <h1 class = "forgotText text-center">forgot password</h1>
 
     <form class="form" action="resetpw.html" onsubmit="return checkEmail();">
         
-      <div class="f-email">
+      <div class="input">
         <input type="text" class="form-control" id="email" placeholder="What's your email?">
       </div>
 
-      <div class="f-btn">
+      <div class="input">
           <button type="submit" class="btn-submit" onclick="getEmail()">Submit</button>
       </div>
-      <div class="f-label">
+      <div class="input">
           <label>A Password Recovery email will be send to</label>
           <label>this email.</label>
       </div>
       
     </form>
-    <script src= "./js/app.js"></script>
+    <script src= "./js/admin.js"></script>
     <script src="./js/forgot.js"></script>
 
   </body>

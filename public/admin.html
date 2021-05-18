@@ -51,31 +51,26 @@
 
     <section class="grid-container">
       <div class="login">
-      <h1>Sign In</h1>
+        <h1 class = "text-center">Sign In</h1>
       </div>
       <form id="login-form" action="">
-        <!-- <label for="email"><b>Email</b></label>
-        <br /> -->
-        <br />
-        <input required type="email" id="email" name="email" placeholder="Email"/>
-        <br />
-        <!-- <label for="password"><b>Password</b></label>
-        <br /> -->
-        <div class="pw">
-        <input required type="password" name="password" id="password" placeholder="Password"><span><i class="fa fa-eye" style="color:#7a797e" id="eye" onclick="toggle()"></i></span>
+        <div class = "input">
+          <input required type="email" id="email" name="email" placeholder="Email"/>
+        </div>
+        <div class="input">
+          <input required type="password" name="password" id="password" placeholder="Password"><span><i class="fa fa-eye" style="color:#7a797e" id="eye" onclick="toggle()"></i></span>
         </div>
         
-        <div class="submit">
+        <div class="input">
           <input type="submit" value="Submit" onClick="location.href='/dashboard'"/>
-          <br />
-          <br />
-          <div class="forget_create">
-          <a href="/forgotPass.html">Forget Password</a>
-          <br />
-          <a href="/account.html">Create Account</a>
-          </div>
-          <!-- <input type="reset" value="Reset" /> -->
         </div>
+        <div class="forget_create">
+          <a href="/forgot">Forget Password</a>
+          <br />
+          <a href="/account">Create Account</a>
+        </div>
+          <!-- <input type="reset" value="Reset" /> -->
+        
       </form>
     </section>
     <script src="js/admin.js"></script>
