@@ -9,6 +9,18 @@
   width: 15%;
   margin: 0 0;
 }
+.navLinkRightActive {
+  width: 23% !important;
+  justify-content: flex-end;
+}
+
+.adminIconActive {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+  margin: 0 0;
+}
 
 @media screen and (max-width: 600px) {
   .adminIcon {
@@ -23,7 +35,21 @@
     height: 10%;
     top: 30vh;
     width: 35% !important;
-    z-index: 0;
+    z-index: -2000;
+  }
+  .adminIconActive {
+    width: 35% !important;
+  }
+
+  .navLinkRightActive {
+    justify-content: center !important;
+    align-content: center;
+    position: absolute;
+    right: 10px;
+    height: 10%;
+    top: 30vh;
+    width: 35% !important;
+    z-index: 30000;
   }
 }
 
