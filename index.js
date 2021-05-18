@@ -77,6 +77,10 @@ app.get("/forgot", (req, res) => {
   res.sendFile(FORGOT, { root: __dirname });
 });
 
+app.get("/resetPass", (req, res) => {
+  res.sendFile(RESET, { root: __dirname });
+});
+
 app.get("/chat", (req, res) => {
   res.sendFile(CHAT, { root: __dirname });
 });
