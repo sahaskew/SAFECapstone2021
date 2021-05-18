@@ -4,7 +4,7 @@ body {
   margin: 10px;
   color: white;
   background-color: darkslategray;
-  background-image: url(../images/safeBackground.png);
+  background-image: url(../images/BackgroundSAFE.png);
   background-size: 120%, 100%;
   background-position: top, left;
 }
