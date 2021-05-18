@@ -2,7 +2,7 @@
   "name": "safe-capstone-2021",
   "version": "1.0.0",
   "description": "this is our readme.",
-  "main": "server.js",
+  "main": "index.js",
   "engines": {
     "node": "12.17.x"
   },
@@ -23,14 +23,16 @@
   "homepage": "https://github.com/sahaskew/SAFECapstone2021#readme",
   "dependencies": {
     "@socket.io/admin-ui": "0.0.1",
+    "body-parser": "^1.19.0",
     "bufferutil": "^4.0.3",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
-    "heroku": "^7.49.1",
+    "heroku": "^7.53.0",
     "mongodb": "^3.6.6",
-    "mongoose": "^5.12.3",
-    "socket.io": "^3.1.1",
-    "utf-8-validate": "^5.0.4",
-    "ws": "^7.4.3"
+    "mongoose": "^5.12.7",
+    "requirejs": "^2.3.6",
+    "socket.io": "^3.1.2",
+    "utf-8-validate": "^5.0.5",
+    "ws": "^7.4.5"
   }
 }
