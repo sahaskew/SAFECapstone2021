@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 
 
 const INDEX = "/index.html";
-const DASHBOARD = "public/Dashboard.html";
+const DASHBOARD = "public/dashboard.html";
 const STUDENT = "public/student.html";
 const CHAT = "public/chat.html";
 const ADMIN = "public/admin.html";
@@ -20,6 +20,7 @@ const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
 const FEEDBACKDONE = "public/feedbackDone.html";
 const REPLY = "public/reply.html";
+
 
 
 //set up app
