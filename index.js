@@ -90,6 +90,10 @@ app.get("/message", (req, res) => {
   res.sendFile(MESSAGE, { root: __dirname });
 });
 
+app.get("/feedbackDone", (req, res) => {
+  res.sendFile(FEEDBACKDONE, { root: __dirname });
+});
+
 //following app methods are for message.html and DB implementation
 app.post("/addMessage", (req, res) => {
   var myData = new Message(req.body);
@@ -107,7 +111,7 @@ io.on("connection", (socket) => {
   console.log("Client connected via socket (not in a room yet)");
   
   //sends msg to client to test connection 
-  socket.emit('Msg', 'welcome! , I am a msg sent from the server to your chat room.');
+  socket.emit('Msg', 'Welcome! I am a msg sent from the server to your chat room.');
 
   socket.on("createRoom", function (room) {
     socket.join(room);

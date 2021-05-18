@@ -17,10 +17,10 @@
   top: 13%;
 }
 .description {
-  position: absolute;
-  height: 100%;
+  margin-top: 20px;
+  position: relative;
   font-family: "Major Mono Display", monospace;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .endContainer {
@@ -33,7 +33,6 @@
 }
 
 .endButton {
-  cursor: pointer;
   position: absolute;
   font-family: "Arvo", serif !important;
   font-size: 12px !important;
@@ -44,7 +43,9 @@
   height: 100%;
   border-radius: 25px;
   color: rgb(37, 37, 37) !important;
-  background-color: rgba(255, 255, 255, 0.781) !important;
+  background-color: white !important;
+  cursor: pointer !important;
+  z-index: 50;
 }
 
 .endButton:hover {
@@ -222,15 +223,14 @@
   overflow-x: scroll;
 }
 
-.chatFooter .send {
+.send {
   display: block;
   width: 35px;
   height: 50px;
   margin-right: 20px;
-  cursor: pointer;
 }
 
-button {
+.sendButton {
   z-index: 5;
   width: 35px;
   height: 50px;
@@ -242,9 +242,9 @@ button {
   background-color: transparent !important;
   background-repeat: no-repeat;
   border: none;
-  cursor: pointer;
   overflow: hidden;
   outline: none;
+  z-index: 5;
 }
 
 @media screen and (max-width: 600px) {
@@ -253,11 +253,7 @@ button {
     font-size: 20pt;
   }
   .chatContainer {
-    position: absolute;
-    left: 8%;
-    right: 5%;
-    height: 78%;
-    top: 20%;
-    bottom: 2%;
+    left: 2%;
+    right: 2%;
   }
 }

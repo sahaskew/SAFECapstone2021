@@ -89,14 +89,33 @@ function toggle2(){
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav1 = document.querySelector('.background');
-    const adminIcon = document.querySelector('.adminIcon li');
-    const navLinkRight = document.querySelector('.navLinkRight li');
-    const navLinkLeft = document.querySelector('.navLinkLeft li');
+    const adminIcon = document.querySelector('.adminIcon');
+    const navLinkRight = document.querySelector('.navLinkRight');
+    const navLinkLeft = document.querySelector('.navLinkLeft');
     
 
 
     burger.addEventListener('click', () => {
         nav1.classList.toggle('nav1-active');
+        if (navLinkLeft.classList.contains("navLinkLeft"))
+        {
+            navLinkLeft.classList.remove("navLinkLeft");
+            navLinkLeft.classList.add("navLinkLeftActive");
+            navLinkRight.classList.remove("navLinkRight");
+            navLinkRight.classList.add("navLinkRightActive");
+            adminIcon.classList.remove("adminIcon");
+            adminIcon.classList.add("adminIconActive");
+        }
+        else
+        {
+            
+            navLinkLeft.classList.remove("navLinkLeftActive");
+            navLinkLeft.classList.add("navLinkLeft");
+            navLinkRight.classList.remove("navLinkRightActive");
+            navLinkRight.classList.add("navLinkRight");
+            adminIcon.classList.remove("adminIconActive");
+            adminIcon.classList.add("adminIcon");
+        }
     //Animate Links
     if(navLinkLeft.style.animation) {
         adminIcon.style.animation = ``;

@@ -65,6 +65,22 @@ nav {
   margin: 0 0;
   right: 1.5%;
 }
+
+.navLinkRightActive {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  margin: 0 0;
+}
+
+.navLinkLeftActive {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 0 0;
+  right: 1.5%;
+}
 /*navLinkRight is the Home button*/
 .navLinkRight a {
   color: white;
@@ -82,6 +98,21 @@ nav {
   font-size: 20px;
 }
 
+.navLinkRightActive a {
+  color: white;
+  text-decoration: none;
+  font-family: "Major Mono Display", monospace;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.navLinkLeftActive a {
+  color: white;
+  text-decoration: none;
+  font-family: "Major Mono Display", monospace;
+  font-size: 20px;
+}
+
 .navLinkRight li {
   list-style: none;
 }
@@ -90,17 +121,31 @@ nav {
   list-style: none;
 }
 
+.navLinkRightActive li {
+  list-style: none;
+}
+
+.navLinkLeftActive li {
+  list-style: none;
+}
+
 .adminIcon {
+  list-style: none;
+}
+
+.adminIconActive {
   list-style: none;
 }
 
 /*burger is the menu bars that appear when the screen becomes smaller*/
 .burger {
+  z-index: 30000;
   display: none;
   cursor: pointer;
 }
 
 .burger div {
+  z-index: 20000;
   position: relative;
   right: 0px;
   width: 25px;
@@ -113,6 +158,7 @@ nav {
 /*This gets rid of the menu background when the screen is bigger*/
 .background {
   opacity: 0;
+  z-index: -2000;
 }
 
 /*If the screen is smaller than 600 px it switches to small mode*/
@@ -124,7 +170,7 @@ nav {
   }
 
   .background {
-    z-index: 5;
+    z-index: -2000;
     opacity: 0;
     position: absolute;
     display: flexbox;
@@ -136,31 +182,33 @@ nav {
   }
 
   .adminIcon {
-    z-index: 200;
     list-style: none;
     position: absolute;
+    z-index: -2000;
     right: 10px;
     height: 10%;
     top: 20vh;
     width: 23% !important;
+    opacity: 0;
   }
   .navLinkLeft {
-    z-index: 200;
     position: absolute;
+    z-index: -2000;
     right: 10px;
     height: 10%;
     top: 40vh;
     width: 35%;
-    z-index: 200;
+    opacity: 0;
   }
 
   .navLinkRight {
     position: absolute;
+    z-index: -2000;
     right: 10px;
     height: 10%;
     top: 30vh;
     width: 35%;
-    z-index: 200;
+    opacity: 0;
   }
 
   .adminIcon li {
@@ -175,8 +223,53 @@ nav {
     opacity: 0;
   }
 
+  .adminIconActive li {
+    opacity: 1;
+  }
+
+  .navLinkLeftActive li {
+    opacity: 1;
+  }
+
+  .navLinkRightActive li {
+    opacity: 1;
+  }
+
+  .adminIconActive {
+    list-style: none;
+    position: absolute;
+    z-index: -2000;
+    right: 10px;
+    height: 10%;
+    top: 20vh;
+    width: 23% !important;
+    opacity: 0;
+    z-index: 30000;
+  }
+
+  .navLinkLeftActive {
+    position: absolute;
+    right: 10px;
+    height: 10%;
+    top: 40vh;
+    width: 35%;
+    opacity: 0;
+    z-index: 30000;
+  }
+
+  .navLinkRightActive {
+    position: absolute;
+    z-index: -100;
+    right: 10px;
+    height: 10%;
+    top: 30vh;
+    width: 35%;
+    opacity: 0;
+    z-index: 30000;
+  }
+
   .burger {
-    z-index: 6;
+    z-index: 30000 !important;
     display: block;
   }
 }
@@ -184,6 +277,8 @@ nav {
 /*If the burger is pressed this makes the menu appear*/
 .nav1-active {
   opacity: 100;
+  z-index: 100;
+  width: 35%;
 }
 
 /*This is the animation function for text menu elements*/
@@ -284,18 +379,17 @@ input[type="text"] {
   margin: 15px 0;
 }
 
-
 .reset span {
   position: relative;
   right: 30px;
   cursor: pointer;
 }
 
-.recovery h1{
+.recovery h1 {
   font-family: "Major Mono Display", monospace;
   font-size: 50px;
   display: flex;
   justify-content: space-around;
   min-height: 25vh;
-  align-items: center
+  align-items: center;
 }

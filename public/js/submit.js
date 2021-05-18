@@ -31,7 +31,7 @@ function getInfo(){
     var checkStatus = document.getElementById("chkEmail").checked;
     console.log("name: " + name);
     console.log("feedback: " + feedback);
-    console.log("cheack: " + checkStatus);
+    console.log("check: " + checkStatus);
 }
  
 /* ================================================ */ 
