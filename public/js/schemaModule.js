@@ -4,16 +4,17 @@ var mongoose = require("mongoose");
 //Create message schema
 var messageSchema = new mongoose.Schema({
   subject: {
-    type: String,
-    required: true,
+    type: String
   },
   message: {
     type: String,
     required: true,
   },
   response: {
-    check: Boolean,
-    email: String,
+    type: String
+  },
+  email: {
+    type: String
   },
   flag: {
     type: Boolean,
