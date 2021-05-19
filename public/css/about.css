@@ -1,8 +1,9 @@
 h2 {
   text-align: center;
   font-family: "Major Mono Display", monospace;
-  font-size: 60px !important;
-  padding: 50px;
+  font-size: 45px !important;
+  padding-top: 50px;
+  padding-bottom: 10px;
 }
 
 .middle {
@@ -12,10 +13,10 @@ h2 {
 img {
   position: absolute;
   width: 150px;
-  top: 250px;
-  left: 120px;
-  transition: linear 1s;
-  opacity: 0.8;
+  top: 215px;
+  left: 13%;
+  transition: linear 0.5s;
+  opacity: 1;
 }
 
 .desc {
@@ -40,6 +41,7 @@ a {
 }
 
 .box {
+  position: relative;
   box-sizing: border-box;
   padding: 20px;
   width: 300px;
@@ -56,12 +58,14 @@ span {
   color: #198d8d;
   font-size: 20px;
   font-family: "Arvo", serif;
+  margin-right: 8px;
 }
 
-.about {
+/* .about {
   font-weight: bold;
   color: white;
-}
+  margin-right: 0px !important;
+} */
 @media (max-width: 930px) {
   img {
     top: 250px;
