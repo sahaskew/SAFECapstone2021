@@ -2,15 +2,37 @@
 var mongoose = require("mongoose");
 
 //Create message schema
- var messageSchema = new mongoose.Schema({
-  message: String
- })
+var messageSchema = new mongoose.Schema({
+  subject: {
+    type: String,
+    required: true,
+  },
+  message: {
+    type: String,
+    required: true,
+  },
+  response: {
+    check: Boolean,
+    email: String,
+  },
+  flag: {
+    type: Boolean,
+    default: false,
+  },
+  open: {
+    type: Boolean,
+    default: false,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
- const Message =  mongoose.model('Message', messageSchema) ;
- module.exports = Message;
+const Message = mongoose.model("Message", messageSchema);
+module.exports = Message;
 
-
- /*
+/*
 //this module creates a mongoschema and returns the model 
 //this was for the requirejs attempt.keep in case.
 define(['mongoose'], function(mongoose){ 
@@ -24,4 +46,4 @@ define(['mongoose'], function(mongoose){
  }
 
 });
-*/ 
+*/
