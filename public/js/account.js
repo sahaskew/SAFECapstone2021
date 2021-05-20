@@ -63,6 +63,9 @@ function checkForm(){
           alert("Please enter a valid email format");
           return false;
       }
+      else {
+        document.getElementById("email").style.color = "white";
+      }
   }   
 }
 // get infomation
