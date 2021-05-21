@@ -20,76 +20,6 @@
   </head>
 
   <body>
-    <div class="descriptionContainer">
-      <div class="description">anonymous Chat</div>
-    </div>
-    
-   <div class = "chatContainer" >
-        <div class = "chat">
-            <!--start chat header-->
-            <div class = "chatHeader">
-                <div class = "profile">
-                    <div class = "leftSide">
-                      <div class = "online"></div>
-                      <span></span>
-                      <div class = "nameMessage">PSU</div>
-                    </div>
-                    <div class = "endContainer">
-                        <button class = "endButton">End Chat</button>
-                    </div>
-                </div>
-            </div>
-            <!--end chat header-->
-            <div id = "chatBoxContainer" class = "chatBox">
-                <!-- this is where msgs will be outputted to the DOM -->
-              <!-- <div class = "textBox">
-                <h2 class = "textName">PSU</h2>
-                <p class = "innerText">This is an example text. Testing. 1 2 3. Hello. My name is Jake.This is an example text. Testing. 1 2 3. Hello. My name is Jake. This is an example text. Testing. 1 2 3. Hello. My name is Jake.</p>
-              </div>
-              <div class = "textBox">
-                <h2 class = "textName">Anonymous</h2>
-                <p class = "innerText">This is an example text. Testing. 1 2 3. Hello. My name is Jake.This is an example text. Testing. 1 2 3. Hello. My name is Jake. This is an example text. Testing. 1 2 3. Hello. My name is Jake.</p>
-              </div>
-              <div class = "textBox">
-                <h2 class = "textName">PSU</h2>
-                <p class = "innerText">This is an example text. Testing. 1 2 3. Hello. My name is Jake.This is an example text. Testing. 1 2 3. Hello. My name is Jake. This is an example text. Testing. 1 2 3. Hello. My name is Jake.</p>
-              </div>
-              <div class = "textBox">
-                <h2 class = "textName">Anonymous</h2>
-                <p class = "innerText">This is an example text. Testing. 1 2 3. Hello. My name is Jake.This is an example text. Testing. 1 2 3. Hello. My name is Jake. This is an example text. Testing. 1 2 3. Hello. My name is Jake.</p>
-              </div>
-              <div class = "textBox">
-                <h2 class = "textName">PSU</h2>
-                <p class = "innerText">This is an example text. Testing. 1 2 3. Hello. My name is Jake.This is an example text. Testing. 1 2 3. Hello. My name is Jake. This is an example text. Testing. 1 2 3. Hello. My name is Jake.</p>
-              </div>
-              <div class = "textBox">
-                <h2 class = "textName">Anonymous</h2>
-                <p class = "innerText">This is an example text. Testing. 1 2 3. Hello. My name is Jake.This is an example text. Testing. 1 2 3. Hello. My name is Jake. This is an example text. Testing. 1 2 3. Hello. My name is Jake.</p>
-              </div>
-              <div class = "textBox">
-                <h2 class = "textName">PSU</h2>
-                <p class = "innerText">This is an example text. Testing. 1 2 3. Hello. My name is Jake.This is an example text. Testing. 1 2 3. Hello. My name is Jake. This is an example text. Testing. 1 2 3. Hello. My name is Jake.</p>
-              </div> -->
-            </div>
-            <!--start footer-->
-            <div class = "chatFooter">
-              <div class = "form-group">
-                <form id = "form">
-                  <button type = "submit" value= "send" id = "submit-button" > 
-                    <img src ="images/sendIcon.png" class = "send">
-                  </button>
-                  <input id = "msg" type = "text" class = "textarea" placeholder="Message PSU"/>
-                  
-                </form>
-              </div>
-            </div>
-            <!--end footer-->
-        </div>
-       </div>
-     </div>
-   </div>
-
-     <!--This is the end of the chat portion of the html file-->
     <nav>
       <div class="background"></div>
       <ul class="navLinkLeft">
@@ -108,73 +38,49 @@
         <div class="line3"></div>
       </div>
     </nav>
+    <div class="text-center description">anonymous Chat</div>
+    
+   <div class = "chatContainer" >
+        <div class = "chat">
+            <!--start chat header-->
+            <div class = "chatHeader">
+                <div class = "profile">
+                    <div class = "leftSide">
+                      <div class = "online"></div>
+                      <span></span>
+                      <div class = "nameMessage">PSU</div>
+                    </div>
+                    <div class = "endContainer">
+                        <button onclick="window.location.href = '/feedbackDone';" type = "button" class = "text-center endButton">End Chat</button>
+                    </div>
+                </div>
+            </div>
+            <!--end chat header-->
+            <div id = "chatBoxContainer" class = "chatBox">
+
+            </div>
+            <!--start footer-->
+            <div class = "chatFooter">
+              <div class = "form-group">
+                <form id = "form">
+                  <button class = "sendButton1" type = "submit" value= "send" id = "submit-button" > 
+                    <img src ="images/sendIcon.png" class = "send1">
+                  </button>
+                  <input id = "msg" type = "text" class = "textarea" placeholder="Message PSU"/>
+                  
+                </form>
+              </div>
+            </div>
+            <!--end footer-->
+        </div>
+       </div>
+     </div>
+    </div>
+
+     <!--This is the end of the chat portion of the html file-->
 
     <script src="js/app.js"></script>
+    <script src="./js/submit.js"></script>
   </body>
 
 </html>
-
-
-
-          <!--  <div class = "chatFooter">    original html for input. see above for update in chatFooter
-                <textarea id = "input"placeholder = "Type a message..."></textarea>
-                <a id = "sendButton" onclick = "duplicate()">
-                    <img src ="sendIcon.png" class = "send">
-                </a> -->
-         <!--This is where the text area and the send button are made
-        <div class="chatFooter">
-          <textarea id="input" placeholder="Type a message..."></textarea>
-          <button id="sendButton">
-            <img src="images/sendIcon.png" class="send" />
-          </button>
-        </div> -->
-
-
-
-        <!--This is the inner window where texts will appear-->
-        <!--<div id="chatBoxContainer" class="chatBox">
-          This is where the right texts are made (The texts sent by you)
-          <div id="text" class="chatR">
-            <div class="sp"></div>
-            <div class="mess mess-r">
-              <p id="result" class="messageText">This is a test</p>
-              <div class="time"><span id="getTime"> </span></div>
-              <script>
-                var dt = new Date();
-                if (dt.getHours() > 12) {
-                  var timeOfDay = "PM";
-                } else {
-                  var timeOfDay = "AM";
-                }
-                if (dt.getMinutes() < 10) {
-                  var minutes = "0" + dt.getMinutes();
-                } else {
-                  var minutes = dt.getMinutes();
-                }
-                document.getElementById("getTime").innerHTML =
-                  (dt.getHours() % 12) + ":" + minutes + " " + timeOfDay;
-              </script>
-            </div>
-          </div>
-          <div class="chatL">
-            <div class="mess">
-              <p class="messageText">Hey Jerry, How are you doing?</p>
-              <div class="time"><span id="getTimeLeft"> </span></div>
-              <script>
-                var dt = new Date();
-                if (dt.getHours() > 12) {
-                  var timeOfDay = "PM";
-                } else {
-                  var timeOfDay = "AM";
-                }
-                if (dt.getMinutes() < 10) {
-                  var minutes = "0" + dt.getMinutes();
-                } else {
-                  var minutes = dt.getMinutes();
-                }
-                document.getElementById("getTimeLeft").innerHTML =
-                  (dt.getHours() % 12) + ":" + minutes + " " + timeOfDay;
-              </script>
-            </div>
-            <div class="sp"></div>
-          </div> -->

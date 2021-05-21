@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="./css/account.css">
     <link rel="stylesheet" href="./css/admin.css">
     <script src="/socket.io/socket.io.js"></script>
-    <script src="js/chat.js"></script>
   </head>
 
   <body>
@@ -51,16 +50,16 @@
     <!-- nav done-->
     <h1>Create account</h1>
     <div class="form">
-      <form action="dashboard.html" onsubmit="return checkForm();">
-      <div class="f-name"> 
+      <form action="/dashboard" onsubmit="return checkForm();">
+      <div class="input"> 
         <input type="text" class="form-control" id="Name" placeholder="Full name...">
       </div>
 
-      <div class="f-email">
+      <div class="input">
         <input type="text" class="form-control" id="email" placeholder="Email...">
       </div>
         
-      <div class="f-pass">
+      <div class="input">
         <input type="password" class="form-control" id="password" placeholder="Password...">
         
           <span class="picture" onclick="show()">
@@ -70,20 +69,26 @@
         
       </div>
         
-      <div class="f-comP">
-        <input type="text" class="form-control" id="ConfirmPass" placeholder="Confirm Password..." oninput="checkPass()">
+      <div class="input">
+        <input type="password" class="form-control" id="ConfirmPass" placeholder="Confirm Password..." oninput="checkPass()">
+        
+          <span class="picture" onclick="show()">
+            <i class="fas fa-eye" id="show"></i>
+            <i class="fas fa-eye-slash" id="hide"></i>
+          </span>
       </div>
         
-      <div class="f-btn">
+      <div class="input">
         <button type="submit" class="btn-submit" onclick="info()">Submit</button>
       </div>
 
-      <div class="f-label">
-        <a href="/admin.html">Sign in instead</a>
+      <div class="input text-center">
+        <a href="/admin">Sign in instead</a>
       </div>
     </form>
     </div>
     <script src="./js/account.js"></script>
-    <script src= "./js/app.js"></script>
+    <script src= "./js/admin.js"></script>
+    <script src="js/chat.js"></script>
   </body>
 </html>

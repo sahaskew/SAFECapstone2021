@@ -11,15 +11,18 @@ const bodyParser = require('body-parser');
 
 
 const INDEX = "/index.html";
-const DASHBOARD = "public/Dashboard.html";
+const DASHBOARD = "public/dashboard.html";
 const STUDENT = "public/student.html";
 const CHAT = "public/chat.html";
 const ADMIN = "public/admin.html";
 const ABOUT = "public/about.html";
+const ACCOUNT = "public/account.html";
+const FORGOT = "public/forgotPass.html";
 const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
 const FEEDBACKDONE = "public/feedbackDone.html";
 const REPLY = "public/reply.html";
+
 
 
 //set up app
@@ -72,6 +75,18 @@ app.get("/student", (req, res) => {
   res.sendFile(STUDENT, { root: __dirname });
 });
 
+app.get("/account", (req, res) => {
+  res.sendFile(ACCOUNT, { root: __dirname });
+});
+
+app.get("/forgot", (req, res) => {
+  res.sendFile(FORGOT, { root: __dirname });
+});
+
+app.get("/resetPass", (req, res) => {
+  res.sendFile(RESET, { root: __dirname });
+});
+
 app.get("/chat", (req, res) => {
   res.sendFile(CHAT, { root: __dirname });
 });
@@ -109,6 +124,10 @@ app.get("/message", (req, res) => {
   res.sendFile(MESSAGE, { root: __dirname });
 });
 
+app.get("/feedbackDone", (req, res) => {
+  res.sendFile(FEEDBACKDONE, { root: __dirname });
+});
+
 //following app methods are for message.html and DB implementation
 app.post("/addMessage", (req, res) => {
   var myData = new Message(req.body);
@@ -126,7 +145,7 @@ io.on("connection", (socket) => {
   console.log("Client connected via socket (not in a room yet)");
   
   //sends msg to client to test connection 
-  socket.emit('Msg', 'welcome! , I am a msg sent from the server to your chat room.');
+  socket.emit('Msg', 'Welcome! I am a msg sent from the server to your chat room.');
 
   socket.on("createRoom", function (room) {
     socket.join(room);

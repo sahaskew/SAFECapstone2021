@@ -2,6 +2,7 @@
   width: 23% !important;
   justify-content: flex-end;
 }
+
 .adminIcon {
   list-style: none;
   display: flex;
@@ -9,18 +10,16 @@
   width: 15%;
   margin: 0 0;
 }
-
 .headerText {
   font-family: "Major Mono Display", monospace;
   font-size: 35px !important;
 }
 
 .dashboardContainer {
-  position: absolute;
-  display: flex;
-  right: 4%;
-  height: 530px;
-  width: 92%;
+  position: relative;
+  margin-right: 5%;
+  height: 600px;
+  margin-left: 5%;
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 15px;
 }
@@ -308,16 +307,27 @@
 }
 
 .logOut {
-  position: absolute;
-  left: 49%;
-  justify-content: center;
-  bottom: 10px;
+  position: relative;
+  margin-right: 39%;
+  margin-left: 39%;
+  margin-top: 20px;
+  text-align: center;
 }
+
+.logOutText {
+  text-align: center;
+  display: inline-block;
+}
+
 @media screen and (max-width: 600px) {
   .adminIcon {
     width: 35% !important;
   }
 
+  .adminIconActive {
+    width: 25vw !important;
+    align-items: center !important;
+  }
   .navLinkRight {
     justify-content: center !important;
     align-content: center;
@@ -329,8 +339,8 @@
     z-index: 0;
   }
   .dashboardContainer {
-    right: 0%;
-    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
   }
   .messages {
     width: 30%;
@@ -341,5 +351,28 @@
   }
   .folders {
     width: 20%;
+  }
+  .trashCan {
+    left: 5px;
+    width: 40px;
+  }
+  .flag {
+    left: 175px;
+    width: 40px;
+  }
+
+  .unread {
+    left: 50px;
+    width: 120px;
+  }
+
+  .junk {
+    left: 220px;
+    width: 50px;
+  }
+
+  .reply {
+    left: 275px;
+    width: 50px;
   }
 }
