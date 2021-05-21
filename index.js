@@ -1,7 +1,6 @@
 /* This is the server file. This file will create an http connection and kickstart 
 a socket connection. local port is set to :   http://localhost:3000   */
 
-//import "body-parser";
 const express = require("express");
 require('dotenv').config();
 const socketIO = require("socket.io");
@@ -9,28 +8,6 @@ const {instrument} = require( "@socket.io/admin-ui");
 const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 
-//Connect to MongoDB
-const dbURI = 'mongodb+srv://jkmoore:' + process.env.MONGO_DB_PASSWORD + '@cluster0.bfd5u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-mongoose.connect(dbURI, { useNewUrlParser: true , useUnifiedTopology: true });
-mongoose.connection.once('open', function(){
-  console.log('Connected to MongoDB');
-}).on('error', function(error){
-  console.log('error is:', error);
-});
-
-// Adding body parser
-//const bodyParser = require("body-parser");
-//import Login from "./Login";
-let adminLogin = require("./public/js/login.js");
-
-//Create message schema
-const messageSchema = new Schema({
-  message: String
-})
-const Message = mongoose.model('Message', messageSchema);
-module.exports = Message;
 
 
 const INDEX = "/index.html";
@@ -56,7 +33,9 @@ var server = app.listen(PORT, () => {
 var mongoConnect = require('./public/js/mongoModule.js');
 mongoConnect.db();
 //call SchemaModule to fill a message model for DB
-//var Message = require('./public/js/schemaModule.js');
+var Message = require('./public/js/schemaModule.js');
+
+const adminLogin = require("./public/js/login.js");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
@@ -64,11 +43,9 @@ app.use(bodyParser.urlencoded({ extended: true}));
 //static files for retrieval. ALL HTML and CSS must go in this folder.
 app.use(express.static("public"));
 
-// Using body-parser
-//app.use(bodyParser.urlencoded({extended: false}));
 
 // Use login file to handle posting form information
-app.use("/public/admin", adminLogin);
+//app.use("/public/admin", adminLogin);
 
 //Socketio gets passed http server as arg and specifies 
 var io = socketIO(server, {
@@ -106,12 +83,19 @@ app.get("/dashboard", (req, res) => {
 app.get("/admin", (req, res) => {
   res.sendFile(ADMIN, { root: __dirname });
 });
-/*
+
 app.post("/login", (req, res) => {
-  let result = Login();
-  console.log(result);
+  // find the email and password in the request
+  // since we've added it let's use the body-parser
+  // the login function returns a boolean value
+  if(adminLogin.login(req.body.email, req.body.password)) {
+    res.sendFile(DASHBOARD, { root: __dirname});
+  }
+  else {
+    res.sendFile(ADMIN, { root: __dirname});
+  }
 });
-*/
+
 
 app.get("/reply", (req, res) => {
   res.sendFile(REPLY, { root: __dirname });

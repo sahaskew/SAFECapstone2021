@@ -53,31 +53,20 @@ window.onload = function() {
     }
 }
 */
+const fs = require('fs');
 
-// I reiterate: DO NOT KEEP THIS!! THIS IS ONLY FOR TESTING PURPOSES!!!
-/*
-socket.on('Message', (email, password) => {
-    console.log((email, password));
-    alert("Email:" + email + "\nPassword:" + password);
-});
-*/
+const user = {email:'safeadmin@safemail.com', password:'safepassword'};
 
-/*
-function Login() {
-    let email = document.getElementById('email').value;
-    console.log('User email: ' + email);
-
-    return false;
+function login(username,pass) {
+    let result;
+    if(username === user.email && pass === user.password) {
+        result = true;
+    }
+    else {
+        result = false;
+    }
+    
+    return result;
 }
 
-export default Login;
-*/
-
-var express = require('express');
-var router = express.Router();
-
-router.post("../admin", (req, res) => {
-    console.log(req);
-});
-
-module.exports = router;
+module.exports = { login };
