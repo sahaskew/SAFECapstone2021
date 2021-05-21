@@ -87,6 +87,10 @@ app.get("/chat", (req, res) => {
 
 app.get("/dashboard", (req, res) => {
   res.sendFile(DASHBOARD, { root: __dirname });
+   var results = Message.find( function(err, dataArray){
+     if(err)  return console.error(err);
+     console.log(dataArray)
+   })
 });
 
 app.get("/admin", (req, res) => {
