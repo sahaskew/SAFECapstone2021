@@ -1,10 +1,10 @@
 
-//output message to Dashboard DOM 
-function chatBox(msg){
+//output all entries of DB to Dashboard DOM 
+/*
+function outputEntries(QueryList){ //Querylist is a list of JSON docs
  const div = document.createElement('div');
- div.classList.add('mess');
- var msgTime = getTime();
- div.innerHTML = `<p>  ${msgTime} </p> 
+ div.classList.add('messages');
+ div.innerHTML = `<p>  ${QueryList[0].message} </p> 
  <p class= "messageText">  ${msg}  </p>`;
- document.querySelector('.chatBox').appendChild(div);
-}
+ document.querySelector('.messages').appendChild(div);
+}*/ 

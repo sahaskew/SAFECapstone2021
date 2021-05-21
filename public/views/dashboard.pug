@@ -1,0 +1,70 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl' crossorigin='anonymous')
+  title Admin Dashboard
+  link(rel='stylesheet' href='./css/styles.css')
+  link(rel='stylesheet' href='./css/adminDashboard.css')
+<!--  script(src='/js/displayDb.js') --> 
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+nav
+  .background
+  ul.navLinkLeft
+    .linkContainer
+      li
+        a(href='/about') about
+  .logo
+    h1 SaFE
+  ul.navLinkRight
+    .linkContainer
+      li
+        a(href='/') home
+  ul.adminIcon
+    .linkContainer
+      li
+        a(href='/admin')
+          img(alt='SourceLink' height='30' src='./images/profileIcon.png')
+  .burger
+    .line1
+    .line2
+    .line3
+// <script src="admin.js"></script>
+h1.text-center.headerText.mt-2 admin dashboard
+.dashboardContainer
+  .headerContainer
+    button.trashCan
+      img.align-center.imageCenter(alt='trash can' src='./images/garbage-can-icon-2.png')
+    button.unread Mark Unread
+    button.flag
+      img.align-center.imageCenter(alt='flag message' src='./images/flag.png')
+    button.reply(onclick='writeMessage()') Reply
+    button.junk Junk
+  .innerContainer
+    .folders
+      .folderText.text-center Mailboxes
+      button#inbox.aFolder(onclick="buttonClicked('inbox')") Inbox
+      button#flagged.aFolder(onclick="buttonClicked('flagged')") Flagged
+      button#sent.aFolder(onclick="buttonClicked('sent')") Sent
+      button#trash.aFolder(onclick="buttonClicked('trash')") Trash
+      button#junk.aFolder(onclick="buttonClicked('junk')") Junk
+    .messages
+     
+     each entry in messageList
+      button.clickableMessage(onclick = '')
+        .unreadIndicator
+        p.innerText #{entry.subject}
+
+    span
+    .readMessage
+      p.messageText
+        | Feedback:
+        | Hi Bruce, I am in your capstone class and I wanted to let you know that I really like
+        | such and such about it. Thanks for such and such. I only wish you would do more
+        | X, Y, and Z in class. Have a good one
+.logOut
+  a.text-center.logOutText(href='/') Log Out
+script(src='js/admin.js')
+
+
+

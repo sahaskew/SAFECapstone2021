@@ -7,7 +7,8 @@ const socketIO = require("socket.io");
 const {instrument} = require( "@socket.io/admin-ui"); 
 const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
-
+//const pug = require('pug');
+var path = require('path');
 
 
 const INDEX = "/index.html";
@@ -38,11 +39,16 @@ mongoConnect.db();
 //call SchemaModule to fill a message model for DB
 var Message = require('./public/js/schemaModule.js')
 
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 //static files for retrieval. ALL HTML and CSS must go in this folder.
 app.use(express.static("public"));
+
+//prepare for template engine
+app.set("view engine", "pug");
+app.set("views", "./public/views");
 
 //Socketio gets passed http server as arg and specifies 
 var io = socketIO(server, {
@@ -86,11 +92,17 @@ app.get("/chat", (req, res) => {
 });
 
 app.get("/dashboard", (req, res) => {
-  res.sendFile(DASHBOARD, { root: __dirname });
-   var results = Message.find( function(err, dataArray){
-     if(err)  return console.error(err);
-     console.log(dataArray)
+//  res.sendFile(DASHBOARD, { root: __dirname });
+  Message.find( {}, function(err, data){ // all callbacks in mongo are (err, result) dataObj is a list of JSON doc
+     if(err)  
+      return console.error(err);
+     //console.log(data[0].subject);
+     console.log(data);
+   // outputEntries(data);
+     res.render("dashboard.pug", {messageList: data})
+     
    })
+
 });
 
 app.get("/admin", (req, res) => {
@@ -151,3 +163,8 @@ io.on("connection", (socket) => {
 
 //test emit signal with displaying time display msg sent time
 setInterval(() => io.emit("time", new Date().toTimeString()), 1000);
+
+/* have fn create a button.clicabkleMEssage
+- for( var i = 0; i < messageList.length; ++ i)
+   entryObj = JSON.parse(messageList[i])
+   */ 
