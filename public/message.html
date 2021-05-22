@@ -24,7 +24,7 @@
           <li> <a href="/about">about</a></li>
         </ul>
         <div class = "logo">
-            <h1>SaFE</h1>
+          <a class = "safeButton" href="/">SaFE</a>
         </div>
         <ul class = "navLinkRight">
           <li> <a href="/">home</a></li>
@@ -40,15 +40,15 @@
         </div>
     </nav>
     </header>
-    <h2>send an anonymous message</h2>
-    <div class = "form-group">
+    <h2 class = "headerTextMessage">send an anonymous message</h2>
+    <div >
         <form class = "form" id="form" method="post" action="/addMessage" onsubmit="return checkform();">
         
-          <div class="form-group">
-            <input type="text" class="form-control" id="name" name="subject" placeholder="Type Subject...">
+          <div class="input">
+            <input type="text" class="innerInput" id="name" name="subject" placeholder="Subject (Not Required)">
           </div>
 
-          <div class="form-group">
+          <div class="textDiv">
             <label for="name" class="label1">What's your feedback?</label>
             <div class="textP">
               <textarea class="form-control" id="feedback" name="message" maxlength="500" 
@@ -59,18 +59,18 @@
             </div>
           </div>
 
-          <div class="checkbox">
-            <label for="chkEmail" class="label2">
+          <div class="checkboxDiv">
+            <label for="chkEmail" class="text-center label2">
               <input type="checkbox" id="chkEmail" onclick="EnableDisableTextBox(this)" />
               I'd like a Reply
           </label>
           </div>
 
-          <div id="dvEmail">
-            <input type="text" class="form-control" id="txtEmail" name="email" disabled="disabled" placeholder="Enter Email...">
+          <div id="dvEmail" class = "input">
+            <input type="text" class="emailInput" id="txtEmail" name="email" disabled="disabled" placeholder="Email (Not Required)">
           </div>
 
-          <div class="button">
+          <div class="input">
             <button type = "submit" value = "Submit" class= "btn-submit" onclick="getInfo()">Submit Feedback</button>
           </div>
         </form>
