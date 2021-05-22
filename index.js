@@ -96,9 +96,7 @@ app.get("/dashboard", (req, res) => {
   Message.find( {}, function(err, data){ // all callbacks in mongo are (err, result) dataObj is a list of JSON doc
      if(err)  
       return console.error(err);
-     //console.log(data[0].subject);
      console.log(data);
-   // outputEntries(data);
      res.render("dashboard.pug", {messageList: data})
      
    })

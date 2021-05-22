@@ -48,20 +48,21 @@ h1.text-center.headerText.mt-2 admin dashboard
       button#sent.aFolder(onclick="buttonClicked('sent')") Sent
       button#trash.aFolder(onclick="buttonClicked('trash')") Trash
       button#junk.aFolder(onclick="buttonClicked('junk')") Junk
+    
     .messages
-     
      each entry in messageList
-      button.clickableMessage(onclick = '')
+      button.clickableMessage(onclick = helper(entry))
         .unreadIndicator
         p.innerText #{entry.subject}
 
     span
-    .readMessage
-      p.messageText
-        | Feedback:
-        | Hi Bruce, I am in your capstone class and I wanted to let you know that I really like
-        | such and such about it. Thanks for such and such. I only wish you would do more
-        | X, Y, and Z in class. Have a good one
+    .script 
+      function=helper(entry){
+       .readMessage
+        p.messageText #{entry.message}
+      }
+
+    
 .logOut
   a.text-center.logOutText(href='/') Log Out
 script(src='js/admin.js')
