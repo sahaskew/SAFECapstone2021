@@ -6,7 +6,7 @@ head
   title Admin Dashboard
   link(rel='stylesheet' href='./css/styles.css')
   link(rel='stylesheet' href='./css/adminDashboard.css')
-<!--  script(src='/js/displayDb.js') --> 
+  script(src='/js/displayDb.js') 
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 nav
   .background
@@ -51,18 +51,17 @@ h1.text-center.headerText.mt-2 admin dashboard
     
     .messages
      each entry in messageList
-      button.clickableMessage(onclick = helper(entry))
+      button.clickableMessage(onclick = 'helper(#{entry.message})' )
         .unreadIndicator
         p.innerText #{entry.subject}
-
     span
-    .script 
-      function=helper(entry){
-       .readMessage
-        p.messageText #{entry.message}
-      }
+     .readMessage
+       p.messageText
+        | Feedback:
+        | Hi Bruce, I am in your capstone class and I wanted to let you know that I really like
+        | such and such about it. Thanks for such and such. I only wish you would do more
+        | X, Y, and Z in class. Have a good one
 
-    
 .logOut
   a.text-center.logOutText(href='/') Log Out
 script(src='js/admin.js')

@@ -16,9 +16,13 @@ function outputEntries(QueryList){ //Querylist is a list of JSON docs
         | such and such about it. Thanks for such and such. I only wish you would do more
         | X, Y, and Z in class. Have a good one
 
-
-    .script 
-      function helper(entry)
-       .readMessage
-        p.messageText ${entry.message}
 */ 
+ function helper(txt) {
+  const div = document.createElement("div");
+  div.classList.add("readMessage");
+  div.innerHTML = `<p class = "messageText"> ${txt} </p>`;
+  document.querySelector(".readMessage").appendChild(div); //probably something better than append
+ }
+
+
+
