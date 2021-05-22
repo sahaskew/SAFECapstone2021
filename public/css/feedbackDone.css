@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
-
+.container{
+	margin-top: 5%;
+}
 h1{
     font-family: 'Major Mono Display', monospace;
 	text-align: center;
@@ -33,9 +35,42 @@ label{
 	text-align: center;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 350px){
+	.container{
+		margin-top: 30%;
+	}
 	h1{
-		font-size: 15px;
+		font-size: calc(100vw / 20);
+	}
+	label{
+		font-size: calc(100vw / 99);
+	}
+	.label1{
+		position: relative;
+		right: 7%;
+	}
+}
+@media screen and (min-width: 350px)and (max-width: 500px){
+	.container{
+		margin-top: 20%;
+	}
+	h1{
+		font-size: calc(100vw / 20);
+	}
+	img{
+		width: calc(100vw / 10);
+		height: calc(100vw / 8);
+	}
+	label{
+		font-size: calc(100vw / 99);
+	}
+}
+@media screen and (min-width: 500px) and (max-width: 800px){
+	.container{
+		margin-top: 10%;
+	}
+	h1{
+		font-size: calc(100vw / 25);
 	}
 	label{
 		font-size: calc(100vw / 99);
