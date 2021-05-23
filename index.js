@@ -93,11 +93,17 @@ app.get("/chat", (req, res) => {
 
 app.get("/dashboard", (req, res) => {
 //  res.sendFile(DASHBOARD, { root: __dirname });
+   const displayFn = require("./public/js/displayDb.js");
   Message.find( {}, function(err, data){ // all callbacks in mongo are (err, result) dataObj is a list of JSON doc
      if(err)  
       return console.error(err);
-     console.log(data);
-     res.render("dashboard.pug", {messageList: data})
+//     console.log(typeof data[0].subject); string type
+     let envelope = [];
+     for( i = 0; i < data.length; ++i){
+        envelope.push(data[i].subject);
+        envelope.push(data[i].message);
+     }
+     res.render("dashboard.pug", {messageList: data} ); //can I not use render this way in express if I want to call multiple times
      
    })
 
