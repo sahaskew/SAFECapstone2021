@@ -17,19 +17,27 @@
 // have the script tag in the header of the admin.html file list this file
 // as the source
 const fs = require('fs');
+const filePath = "public/users.txt";
 
-const user = {email:'safeadmin@safemail.com', password:'safepassword'};
+// Reads the txt file that contains the admin accounts
+function readUsersFile() {
+    // fs.readFileSync returns the contents of the file as a string
+    let userFile = fs.readFileSync(filePath, 'utf-8');
+    // need to parse the data and store it as an array
+    let userArr = JSON.parse(userFile);
+    return userArr;
+};
 
 function login(username,pass) {
-    let result;
-    if(username === user.email && pass === user.password) {
-        result = true;
-    }
-    else {
-        result = false;
-    }
-    
-    return result;
+    let users = readUsersFile();
+    // loop through each user searching for a matching username and password
+    let i;
+    for(i = 0; i < users.length; i++){
+        if(username === users[i].email && pass === users[i].password) {
+            return true;
+        }
+    }  
+    return false;
 }
 
 module.exports = { login };

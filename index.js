@@ -39,6 +39,8 @@ mongoConnect.db();
 var Message = require('./public/js/schemaModule.js');
 
 const adminLogin = require("./public/js/login.js");
+const users = require("./public/js/createUsers.js");
+users.createUsers();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
