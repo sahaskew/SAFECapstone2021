@@ -24,7 +24,7 @@
 }
 
 .forgotText {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .form {
@@ -81,6 +81,6 @@ label {
     z-index: 30000;
   }
   label {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 }

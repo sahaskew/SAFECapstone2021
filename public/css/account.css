@@ -18,12 +18,12 @@ h1 {
   text-overflow: ellipsis;
   word-break: keep-all;
   white-space: nowrap;
-  margin-top: 2%;
+  margin-top: 45px;
 }
 
 .form {
   position: absolute;
-  top: 160px;
+  top: 220px;
   right: 0px;
   left: 0px;
   justify-items: center;
