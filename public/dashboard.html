@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/adminDashboard.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--    <script src="bundle.js"></script>  -->
+    <script src="./js/displayDb.js"></script>
   </head>
 
   <body >
@@ -44,15 +46,6 @@
       </div>
     </nav>
 
-    <script>
-          function helper() {
-            const div = document.createElement("div");
-            div.classList.add("readMessage");
-            div.innerHTML = `<p class = "messageText"> ${beep} </p>`;
-            document.querySelector(".readMessage").appendChild(div); //probably something better than append
-          }
-     </script>
-
     <h1 class = "text-center headerText mt-2">admin dashboard</h1>
     <div class = "dashboardContainer"> 
         <div class = "headerContainer"> 
@@ -72,7 +65,7 @@
               <button onclick="buttonClicked('junk')" id = "junk" class = "aFolder">Junk</button>
             </div>
             <div class = "messages">
-                <button class = "clickableMessage" onclick="helper()">
+                <button class = "clickableMessage" onclick="msgDisplay()">
                     <div class = "unreadIndicator"></div>
                     <p class = "innerText">You have a new Message.</p>
                 </button>
@@ -117,7 +110,7 @@
                     <div class = "unreadIndicator"></div>
                     <p class = "innerText">You have a new Message.</p>
                 </button>
-            </div><span></span><div class = "readMessage">
+            </div><span></span><div id = "msgDisplay" class = "readMessage">
                 <p class = "messageText">Feedback: 
                     Hi Bruce, I am in your capstone class and I wanted to let you know that I really like 
                     such and such about it. Thanks for such and such. I only wish you would do more 

@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 //const pug = require('pug');
 var path = require('path');
-
+var mongoose = require('mongoose');
 
 const INDEX = "/index.html";
 const DASHBOARD = "public/dashboard.html";
@@ -39,7 +39,6 @@ mongoConnect.db();
 //call SchemaModule to fill a message model for DB
 var Message = require('./public/js/schemaModule.js')
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
@@ -47,8 +46,8 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static("public"));
 
 //prepare for template engine
-app.set("view engine", "pug");
-app.set("views", "./public/views");
+//app.set("view engine", "pug");
+//app.set("views", "./public/views");
 
 //Socketio gets passed http server as arg and specifies 
 var io = socketIO(server, {
@@ -92,21 +91,16 @@ app.get("/chat", (req, res) => {
 });
 
 app.get("/dashboard", (req, res) => {
-//  res.sendFile(DASHBOARD, { root: __dirname });
-   const displayFn = require("./public/js/displayDb.js");
-  Message.find( {}, function(err, data){ // all callbacks in mongo are (err, result) dataObj is a list of JSON doc
+ res.sendFile(DASHBOARD, { root: __dirname });
+ Message.find( {}, function(err, data){ // all callbacks in mongo are (err, result) dataObj is a list of JSON doc
      if(err)  
       return console.error(err);
-//     console.log(typeof data[0].subject); string type
-     let envelope = [];
-     for( i = 0; i < data.length; ++i){
-        envelope.push(data[i].subject);
-        envelope.push(data[i].message);
-     }
-     res.render("dashboard.pug", {messageList: data} ); //can I not use render this way in express if I want to call multiple times
-     
+     return data;
    })
 
+});
+app.get("/bundle", (req, res) => {
+ res.sendFile(DASHBOARD, { root: __dirname });
 });
 
 app.get("/admin", (req, res) => {
