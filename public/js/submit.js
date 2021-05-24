@@ -74,7 +74,8 @@ function checkEmail2(){
             alert("Please enter a valid email format");
             return false;
         }
-    }   
+    }
+    return true;
 }
 
 // check the feedback in the form. 
@@ -92,17 +93,12 @@ function checkform(){
         if(checkSub == true){
             // to the different pages.
             if(checkStatus == true){
-                alert("Checking Email");
-                checkEmail2();
-                // formSub.action= "feedbackDone.html"
-            } else {
-                formSub.action= "/addMessage";
+                if (checkEmail2() == true){
+                    formSub.submit();
+                    return true;
+                }
             }
-            formSub.submit();
-            return true;
         }
-        else{
-            return false;
-        }
+        return false;
     }   
 }
