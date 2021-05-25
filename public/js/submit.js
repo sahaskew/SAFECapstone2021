@@ -8,7 +8,13 @@ function EnableDisableTextBox(chkEmail) {
     var txtEmail = document.getElementById("txtEmail");
     txtEmail.disabled = chkEmail.checked ? false : true;
     if (!txtEmail.disabled) {
+        txtEmail.classList.add("innerInput")
+        txtEmail.classList.remove("emailInput")
         txtEmail.focus();
+    }
+    else{
+        txtEmail.classList.remove("innerInput")
+        txtEmail.classList.add("emailInput")
     }
 }
 

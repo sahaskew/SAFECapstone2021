@@ -2,16 +2,31 @@ button {
   height: 70px !important;
 }
 
+.lockLogo {
+  position: relative;
+  margin: 30px auto;
+  height: 150px;
+  width: 120px;
+  margin-bottom: 0px;
+}
+
+.lockIcon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .student-title {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-family: "Major Mono Display", monospace;
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
 .student-body {
   display: flex;
   justify-content: center;
+  margin-top: 0px;
 }
 
 .student-box {
@@ -21,17 +36,20 @@ button {
   border-radius: 25px;
   text-align: center;
   margin: 50px;
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 .student-box a {
   display: block;
   box-sizing: border-box;
   font-family: "Major Mono Display", monospace;
   font-size: 1.5em;
-  font-weight: 800;
+  font-weight: 800 !important;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.69);
-  padding-top: 3.3em;
   height: inherit;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3.6em;
 }
 
 .textIndex {
@@ -46,14 +64,31 @@ button {
   font-family: "Arvo", serif;
   margin-top: 20px;
 }
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .student-box {
     width: 50%;
     text-align: center;
     margin: 50px 15px;
   }
+
+  .lockLogo {
+    height: 120px;
+    width: 90px;
+    margin-bottom: 30px !important;
+    margin-top: 60px;
+  }
+
+  .student-title {
+    font-size: 2rem;
+  }
+
+  .student-box a {
+    padding-top: 3.4em;
+    margin-top: 1em;
+    font-size: 1.3em;
+  }
 }
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .student-body {
     display: block;
   }
@@ -61,16 +96,16 @@ button {
     width: 90%;
     height: 125px;
     text-align: center;
-    margin: 0 15px 26px 15px;
+    margin: 20px 5% 26px 5%;
   }
-  .student-box a:first-child {
-    padding-top: 2.5em;
-  }
+
   .student-box a {
+    padding-top: 2.6em;
     margin-top: 1em;
     font-size: 1.2em;
   }
   .student-title {
+    font-size: 1.8rem;
     margin: 30px 0;
   }
 }

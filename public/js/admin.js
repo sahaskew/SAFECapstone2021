@@ -8,6 +8,11 @@ function buttonClicked(id) {
         last.classList.add("aFolder");
         last.classList.remove("clickedFolder");
     }
+    else {
+        var inbox = document.getElementById("inbox");
+        inbox.classList.remove("clickedFolder");
+        inbox.classList.add("aFolder")
+    }
     var element = document.getElementById(id);
     element.classList.remove("aFolder");
     element.classList.add("clickedFolder");

@@ -14,7 +14,7 @@
   height: 6%;
   display: flex;
   justify-content: center;
-  top: 13%;
+  top: 15%;
 }
 .description {
   margin-top: 20px;
@@ -43,7 +43,6 @@
   height: 100%;
   border-radius: 25px;
   color: rgb(37, 37, 37) !important;
-  background-color: white !important;
   cursor: pointer !important;
   z-index: 50;
 }
@@ -60,9 +59,9 @@
   position: absolute;
   left: 23%;
   right: 20%;
-  height: 78%;
-  top: 20%;
-  bottom: 2%;
+  height: 74%;
+  top: 22%;
+  bottom: 4%;
 }
 
 .chat {
@@ -76,6 +75,7 @@
 .chatHeader {
   display: flex;
   width: 100%;
+  background-color: rgb(255, 0, 0) !important;
 }
 
 .profile {
