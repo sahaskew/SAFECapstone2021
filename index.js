@@ -92,7 +92,7 @@ app.get("/chat", (req, res) => {
 
 app.get("/dashboard", (req, res) => {
  res.sendFile(DASHBOARD, { root: __dirname });
- Message.find( {}, function(err, data){ // all callbacks in mongo are (err, result) dataObj is a list of JSON doc
+ Message.find( {}, function(err, data){ // data - list of JSON doc
      if(err)  
       return console.error(err);
      return data;
