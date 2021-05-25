@@ -16,46 +16,28 @@
 // setup: Have this file track the admin.html file
 // have the script tag in the header of the admin.html file list this file
 // as the source
-// Next: create a socket.io instance
-const socket = io();
+const fs = require('fs');
+const filePath = "public/users.txt";
 
-// Function runs as soon as the admin.html file is loaded
-window.onload = function() {
-    const loginForm = document.getElementById("login-form");
-    if(loginForm) {
-        loginForm.addEventListener('submit', event => {
-            // I'm not sure if I need to do this
-            event.preventDefault();
-            // Grab the email and password
-            // Note: Both the email and password are required in the html
-            //       form, so it's important that the following lines don't
-            //       execute if the user leaves any of the fields blank.
-            //       Test for later
-            // It does seem like the html form doesn't send the information
-            // through when a field is left blank
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+// Reads the txt file that contains the admin accounts
+function readUsersFile() {
+    // fs.readFileSync returns the contents of the file as a string
+    let userFile = fs.readFileSync(filePath, 'utf-8');
+    // need to parse the data and store it as an array
+    let userArr = JSON.parse(userFile);
+    return userArr;
+};
 
-            // DON'T KEEP THIS!!! FOR TESTING PURPOSES ONLY!!!
-            alert("Email: " + email + "\nPassword: " + password);
-            // Was successful in getting the user's data
-            // Remember to delete this once finished integrating the database
-
-            // DO NOT KEEP THIS!! FOR TESTING PURPOSES ONLY!!!!
-            // It didn't work. Still need to delete this just in case
-            //socket.emit('message', email, password);
-
-            // Clear inputs after login attempt
-            document.getElementById("email").value = '';
-            document.getElementById("password").value = '';
-        });
-    }
+function login(username,pass) {
+    let users = readUsersFile();
+    // loop through each user searching for a matching username and password
+    let i;
+    for(i = 0; i < users.length; i++){
+        if(username === users[i].email && pass === users[i].password) {
+            return true;
+        }
+    }  
+    return false;
 }
 
-// I reiterate: DO NOT KEEP THIS!! THIS IS ONLY FOR TESTING PURPOSES!!!
-/*
-socket.on('Message', (email, password) => {
-    console.log((email, password));
-    alert("Email:" + email + "\nPassword:" + password);
-});
-*/
+module.exports = { login };

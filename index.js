@@ -36,13 +36,21 @@ var server = app.listen(PORT, () => {
 var mongoConnect = require('./public/js/mongoModule.js');
 mongoConnect.db();
 //call SchemaModule to fill a message model for DB
-var Message = require('./public/js/schemaModule.js')
+var Message = require('./public/js/schemaModule.js');
+
+const adminLogin = require("./public/js/login.js");
+const users = require("./public/js/createUsers.js");
+users.createUsers();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 //static files for retrieval. ALL HTML and CSS must go in this folder.
 app.use(express.static("public"));
+
+
+// Use login file to handle posting form information
+//app.use("/public/admin", adminLogin);
 
 //Socketio gets passed http server as arg and specifies 
 var io = socketIO(server, {
@@ -92,6 +100,19 @@ app.get("/dashboard", (req, res) => {
 app.get("/admin", (req, res) => {
   res.sendFile(ADMIN, { root: __dirname });
 });
+
+app.post("/login", (req, res) => {
+  // find the email and password in the request
+  // since we've added it let's use the body-parser
+  // the login function returns a boolean value
+  if(adminLogin.login(req.body.email, req.body.password)) {
+    res.sendFile(DASHBOARD, { root: __dirname});
+  }
+  else {
+    res.sendFile(ADMIN, { root: __dirname});
+  }
+});
+
 
 app.get("/reply", (req, res) => {
   res.sendFile(REPLY, { root: __dirname });

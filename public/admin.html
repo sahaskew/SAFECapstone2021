@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/admin.css" />
     <script src="/socket.io/socket.io.js"></script>
+    <!--
     <script src="js/login.js"></script> 
+    -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
@@ -53,7 +55,7 @@
       <div class="login">
         <h1 class = "text-center">Sign In</h1>
       </div>
-      <form id="login-form" action="">
+      <form id="login-form" action="/login" method="POST">
         <div class = "input">
           <input required type="email" id="email" name="email" placeholder="Email"/>
         </div>
@@ -62,7 +64,10 @@
         </div>
         
         <div class="input">
+          <!--
           <input type="submit" value="Submit" onClick="location.href='/dashboard'"/>
+          -->
+          <input type="submit" value="Submit" />
         </div>
         <div class="forget_create">
           <a href="/forgot">Forget Password</a>
@@ -73,7 +78,9 @@
         
       </form>
     </section>
+    
     <script src="js/admin.js"></script>
+    
   
   </body>
 </html>
