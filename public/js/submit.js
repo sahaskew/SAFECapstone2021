@@ -80,8 +80,7 @@ function checkEmail2(){
             alert("Please enter a valid email format");
             return false;
         }
-    }
-    return true;
+    }   
 }
 
 // check the feedback in the form. 
@@ -99,12 +98,17 @@ function checkform(){
         if(checkSub == true){
             // to the different pages.
             if(checkStatus == true){
-                if (checkEmail2() == true){
-                    formSub.submit();
-                    return true;
-                }
+                alert("Checking Email");
+                checkEmail2();
+                // formSub.action= "feedbackDone.html"
+            } else {
+                formSub.action= "/addMessage";
             }
+            formSub.submit();
+            return true;
         }
-        return false;
+        else{
+            return false;
+        }
     }   
 }
