@@ -99,9 +99,6 @@ app.get("/dashboard", (req, res) => {
    })
 
 });
-app.get("/bundle", (req, res) => {
- res.sendFile(DASHBOARD, { root: __dirname });
-});
 
 app.get("/admin", (req, res) => {
   res.sendFile(ADMIN, { root: __dirname });

@@ -1,8 +1,9 @@
-var data = require("JSONmodule.js");
-dataList = data.fn(); //JSON list
+/*this file manipulates the DOM for the admin dashboard. data is retrieved 
+from a different module. displaying the subject and message of a single object.
+when a subject is clicked, the associated msg must be displayed */
 
-//const res = fetch('/dashboard');
-//const dataList = res.json();
+//var data = require("JSONmodule.js");
+//dataList = data.fn(); //JSON list
 
 function msgDisplay(){
   const newMessage = document.createElement("div");
