@@ -71,13 +71,13 @@ function checkEmail2(){
     console.log("Email: " + email);
 
     if(!email){
-        alert("Please enter your email");
+        alert("Please enter your email!");
         return false;
     }
     if(email != ""){
         var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
         if(!reg.test(email)){
-            alert("Please enter a valid email format");
+            alert("Please enter a valid email format!");
             return false;
         }
     }   
@@ -90,7 +90,7 @@ function checkform(){
     var checkStatus = document.getElementById("chkEmail").checked;
     var formSub =document.getElementById("form");
     if(feedback == ''){
-        alert("Please write your feedback");
+        alert("Please write your feedback!");
         return false;
     }
     else{
@@ -98,8 +98,12 @@ function checkform(){
         if(checkSub == true){
             // to the different pages.
             if(checkStatus == true){
-                alert("Checking Email");
-                checkEmail2();
+                var result = checkEmail2();
+                if(result == false){
+                    return false;
+                } else {
+                    return true;
+                }
                 // formSub.action= "feedbackDone.html"
             } else {
                 formSub.action= "/addMessage";
