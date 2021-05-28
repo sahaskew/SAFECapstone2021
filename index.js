@@ -22,6 +22,7 @@ const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
 const FEEDBACKDONE = "public/feedbackDone.html";
 const REPLY = "public/reply.html";
+const RECOVERY = "public/passwordRecovery.html"
 
 
 
@@ -83,6 +84,10 @@ app.get("/resetPass", (req, res) => {
 
 app.get("/chat", (req, res) => {
   res.sendFile(CHAT, { root: __dirname });
+});
+
+app.get("/recovery", (req, res) => {
+  res.sendFile(RECOVERY, { root: __dirname });
 });
 
 app.get("/dashboard", (req, res) => {
