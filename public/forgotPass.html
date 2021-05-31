@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     />
     <title>Forget Password Page</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/forgotPass.css">
     <link rel="stylesheet" href="./css/account.css">
@@ -48,21 +49,51 @@
     <!-- nav -->
     <h1 class = "forgotText text-center">forgot password?</h1>
 
-    <form class="form" action="/resetPass" onsubmit="return checkEmail();">
+    <!-- action="/resetPass" -->
+    <div class="form">
         
       <div class="input">
         <input type="text" class="form-control" id="email" placeholder="What's your email?">
       </div>
 
       <div class="input">
-          <button type="submit" class="btn-submit" onclick="getEmail()">Submit</button>
+          <button id = "submitButton" class="btn-submit" onclick="callerFun()">Submit</button>
       </div>
+      <script type="text/javascript">
+        function delay(n){
+            return new Promise(function(resolve){
+                setTimeout(resolve,n*1000);
+            });
+        }
+        function sendEmail() {
+          var email = document.getElementById("email").value;
+          document.getElementById("submitButton").innerHTML = "sending email..."
+          const code = setCode()
+          Email.send({
+              Host : "smtp.gmail.com",
+              Username : "SAFEAnonymousFeedbackSystem",
+              Password : "safeFeedback",
+              To : `${email}`,
+              From : "SAFEAnonymousFeedbackSystem@gmail.com",
+              Subject : "SAFE Anonymous Feedback Password Reset",
+              Body : `Dear SAFE Admin, A password reset was requested for your account. You can reset your password with this code: ${code} If you did not initiate this password reset request, please disregard it.`
+          }).then (        
+            // setTimeout(function () {}, 5000)
+          )
+          return ("Finished sending email")
+        }
+        async function callerFun(){
+          await sendEmail();
+          await delay(5);
+          window.location.href = '/recovery'
+        }
+      </script> 
       <div class="input">
           <label>A Password Recovery email will be send to</label>
           <label>this email.</label>
       </div>
       
-    </form>
+    </div>
     <script src= "./js/admin.js"></script>
     <script src="./js/forgot.js"></script>
 
