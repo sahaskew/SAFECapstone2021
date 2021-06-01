@@ -1,5 +1,30 @@
 //Admin.js includes animations and logic defining the header menu.
-var lastElement = "";
+
+/*
+const logout = document.querySelector('.logOutText');
+
+const localKey = 'safeUser';
+
+logout.addEventListener('click', leaveStorage);
+
+function leaveStorage(event) {
+    // Removes the users from localStorage
+    localStorage.removeItem(localKey);
+}
+*/
+// create function to check if user already logged in
+/*
+function checkStorage() {
+    let user = localStorage.getItem(localKey);
+    if(user) {
+        return true;
+    }
+    return false;
+}
+*/
+
+var lastElement = '';
+
 
 function buttonClicked(id) {
   if (lastElement != "") {
@@ -121,8 +146,52 @@ const navSlide = () => {
       }s`;
     }
 
-    burger.classList.toggle("toggle");
+    burger.classList.toggle('toggle');
+
+    });
+  }
+//Call function
+navSlide();
+
+//module.exports = { checkStorage };
+let url = '/readMessage';
+
+const readDiv = document.querySelector('.readMessage');
+
+const logout = document.querySelector('#inbox');
+
+logout.addEventListener('click', (event) => {
+    fetch(url)
+        .then(response => {
+            console.log('Request Successful ', response);
+            return response.json();
+        })
+        .then(data => {
+            console.log('Data ', data);
+            data.forEach((item) => {
+                let div = document.createElement('div');
+                let pTag = document.createElement('p');
+                pTag.innerHTML = `Subject: ${item.subject} <br />`;
+                pTag.innerHTML += `Message: ${item.message} <br />`;
+                if(item.email === undefined) {
+                    pTag.innerHTML += `Email: None <br />`;
+                }
+                else {
+                    pTag.innerHTML += `Email: ${item.email} <br />`;
+                }
+                pTag.innerHTML += `Date: ${item.date} <br />`;
+                div.appendChild(pTag);
+                readDiv.appendChild(div);
+            });
+        })
+        .catch(error => {
+            console.log('Request failed ', error);
+        });
+});
+
+ /*   burger.classList.toggle("toggle");
   });
 };
 //Call function
 navSlide();
+*/

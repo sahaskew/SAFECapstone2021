@@ -18,6 +18,7 @@
 // as the source
 const fs = require("fs");
 const filePath = "public/users.txt";
+//const localKey = 'safeUser';
 
 // Reads the txt file that contains the admin accounts
 function readUsersFile() {
@@ -28,6 +29,32 @@ function readUsersFile() {
   return userArr;
 }
 
+function login(username,pass) {
+    let users = readUsersFile();
+    // loop through each user searching for a matching username and password
+    let i;
+    for(i = 0; i < users.length; i++){
+        if(username === users[i].email && pass === users[i].password) {
+            // set localStorage item for easier navigation
+            //localStorage.setItem(localKey,users[i].name);
+            return true;
+        }
+    }  
+    return false;
+}
+
+/*
+function checkStorage() {
+    let user = window.localStorage.getItem(localKey);
+    if(user) {
+        return true;
+    }
+    return false;
+}
+*/
+
+module.exports = { login };
+ /*
 function login(username, pass) {
   let users = readUsersFile();
   // loop through each user searching for a matching username and password
@@ -41,3 +68,5 @@ function login(username, pass) {
 }
 
 module.exports = { login };
+*/
+
