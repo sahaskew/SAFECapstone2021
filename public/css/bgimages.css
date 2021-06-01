@@ -6,8 +6,7 @@
   background-repeat: no-repeat;
 }
 body {
-  background: #747474;
-  background-image: url(../images/safeBackground.png);
+  background: #747474 url(../images/safeBackground.png);
 }
 
 #canvas-flip-bg {

@@ -1,9 +1,9 @@
 /* hiding password*/
 function show() {
-  var P = document.getElementById("password");
-  var showP = document.getElementById("show");
-  var hideP = document.getElementById("hide");
-  if (P.type == "password") {
+  let P = document.getElementById("password");
+  let showP = document.getElementById("show");
+  let hideP = document.getElementById("hide");
+  if (P.type === "password") {
     P.type = "text";
     showP.style.display = "block";
     hideP.style.display = "none";
@@ -16,13 +16,13 @@ function show() {
 
 /*confirm password */
 function checkPass() {
-  var password = document.getElementById("password").value;
-  var comPassword = document.getElementById("ConfirmPass").value;
+  let password = document.getElementById("password").value;
+  let comPassword = document.getElementById("ConfirmPass").value;
   //console.log("pass" + password);
   //console.log("compass"+ comPassword);
-  if (password == "") {
-    return;
-  } else if (password == comPassword) {
+  if (password === "") {
+
+  } else if (password === comPassword) {
     document.getElementById("ConfirmPass").style.boxShadow =
       "0px 0px 1px 1px rgba(0,0,225,0.6)";
     document.getElementById("ConfirmPass").style.border = "1px solid blue";
@@ -35,9 +35,9 @@ function checkPass() {
 
 /* check all information  */
 function checkForm() {
-  var email = document.getElementById("email").value;
-  var pass = document.getElementById("password").value;
-  var comPass = document.getElementById("ConfirmPass").value;
+  let email = document.getElementById("email").value;
+  let pass = document.getElementById("password").value;
+  let comPass = document.getElementById("ConfirmPass").value;
 
   if (!email) {
     alert("Please enter your email");
@@ -48,16 +48,16 @@ function checkForm() {
     return false;
   }
   if (!comPass) {
-    alert("Please comfirm your password!");
+    alert("Please confirm your password!");
     return false;
   }
-  if (pass != comPass) {
+  if (pass !== comPass) {
     alert("Inconsistent passwords");
     return false;
   }
-  if (email != "") {
-    var reg =
-      /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+  if (email !== "") {
+    let reg =
+        /^\w+((-\w+)|(\.\w+))*@[A-Za-z0-9]+(([.\-])[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
     if (!reg.test(email)) {
       alert("Please enter a valid email format");
       return false;
@@ -66,11 +66,11 @@ function checkForm() {
     }
   }
 }
-// get infomation
+// get information
 function info() {
-  var name = document.getElementById("Name").value;
-  var email = document.getElementById("email").value;
-  var pass = document.getElementById("password").value;
+  let name = document.getElementById("Name").value;
+  let email = document.getElementById("email").value;
+  let pass = document.getElementById("password").value;
 
   console.log("name is: " + name);
   console.log("Email is: " + email);

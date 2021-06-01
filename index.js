@@ -18,21 +18,21 @@ const ACCOUNT = "public/account.html";
 const FORGOT = "public/forgotPass.html";
 const MESSAGE = "public/message.html";
 const RESET = "public/resetpw.html";
-const FEEDBACKDONE = "public/feedbackDone.html";
+const FEEDBACK_DONE = "public/feedbackDone.html";
 const REPLY = "public/reply.html";
 const RECOVERY = "public/passwordRecovery.html";
 
 //set up app
-var app = express();
-var server = app.listen(PORT, () => {
+let app = express();
+let server = app.listen(PORT, () => {
   console.log(`SAFE is running on port ${PORT}`);
 });
 
 //calls a module that connects to mongodb
-var mongoConnect = require("./public/js/mongoModule.js");
+let mongoConnect = require("./public/js/mongoModule.js");
 mongoConnect.db();
 //call SchemaModule to fill a message model for DB
-var Message = require("./public/js/schemaModule.js");
+let Message = require("./public/js/schemaModule.js");
 
 const adminLogin = require("./public/js/login.js");
 const users = require("./public/js/createUsers.js");
@@ -48,13 +48,13 @@ app.use(express.static("public"));
 //app.use("/public/admin", adminLogin);
 
 //Socketio gets passed http server as arg and specifies
-var io = socketIO(server, {
+let io = socketIO(server, {
   cors: {
     origin: ["https://admin.socket.io"], //permits cross origin of the static chat admin site
   },
 });
 
-//connect server to chat admin UI . !! NEED TO ENCRPYT !!
+//connect server to chat admin UI . TODO: NEED TO ENCRYPT
 instrument(io, {
   auth: {
     type: "basic",
@@ -123,18 +123,18 @@ app.get("/message", (req, res) => {
 });
 
 app.get("/feedbackDone", (req, res) => {
-  res.sendFile(FEEDBACKDONE, { root: __dirname });
+  res.sendFile(FEEDBACK_DONE, { root: __dirname });
 });
 
 //following app methods are for message.html and DB implementation
 app.post("/addMessage", (req, res) => {
-  var myData = new Message(req.body);
+  let myData = new Message(req.body);
   myData
     .save()
-    .then((item) => {
-      res.sendFile(FEEDBACKDONE, { root: __dirname });
+    .then(() => {
+      res.sendFile(FEEDBACK_DONE, { root: __dirname });
     })
-    .catch((err) => {
+    .catch(() => {
       res.status(400).send("Unable to save to database");
     });
 });

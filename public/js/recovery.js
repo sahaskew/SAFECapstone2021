@@ -1,7 +1,7 @@
 function checkCode() {
   code = localStorage.getItem("code");
 
-  var inputCode = document.getElementById("codeInput").value;
+  let inputCode = document.getElementById("codeInput").value;
   inputCode = inputCode.replaceAll(" ", "");
 
   if (String(inputCode) === String(code)) {

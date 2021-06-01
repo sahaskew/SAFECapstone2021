@@ -183,10 +183,10 @@
   position: absolute;
   display: flex;
   align-content: flex-start;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   top: 45px;
-  bottom: 0px;
+  bottom: 0;
   padding: 5px;
 }
 
@@ -195,7 +195,7 @@
   display: list-item;
   width: 12%;
   height: 100%;
-  border-radius: 12px 0px 0px 12px;
+  border-radius: 12px 0 0 12px;
   padding-top: 5px;
   background-color: rgba(255, 255, 255, 0.151);
   /* background-color: rgba(255, 255, 255, 0.72); */
@@ -208,33 +208,26 @@
   margin-bottom: 5px;
 }
 
-.aFolder {
+.aFolder, .clickedFolder {
   font-family: "Arvo", serif !important;
   font-size: 15px !important;
   color: black !important;
   width: 100%;
   text-align: left;
-  margin-left: 0px !important;
+  margin-left: 0 !important;
   margin-right: 10px !important;
   margin-bottom: 2px;
   padding: 5px !important;
   padding-left: 25px !important;
   border: none !important;
+
+}
+
+.aFolder {
   background-color: transparent !important;
 }
 
 .clickedFolder {
-  font-family: "Arvo", serif !important;
-  font-size: 15px !important;
-  color: black !important;
-  width: 100%;
-  text-align: left;
-  margin-left: 0px !important;
-  margin-right: 10px !important;
-  margin-bottom: 2px;
-  padding: 5px !important;
-  padding-left: 25px !important;
-  border: none !important;
   background-color: rgb(255, 255, 255) !important;
 }
 
@@ -252,7 +245,7 @@
   display: flex;
   width: 63%;
   height: 100%;
-  border-radius: 0px 12px 12px 0px;
+  border-radius: 0 12px 12px 0;
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.72);
 }
@@ -272,7 +265,7 @@
 .clickableMessage {
   width: 100%;
   border: none;
-  border-radius: 12px 0px 0px 12px;
+  border-radius: 12px 0 0 12px;
   background-color: rgba(255, 255, 255, 0.26) !important;
   height: 70px;
   margin-bottom: 5px;
@@ -298,7 +291,7 @@
 .innerText {
   display: flex;
   margin-left: 30px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   font-family: "Arvo", serif;
   font-size: 15px;
   color: rgb(46, 46, 46);
@@ -339,8 +332,8 @@
     z-index: 0;
   }
   .dashboardContainer {
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 0;
+    margin-left: 0;
   }
   .messages {
     width: 30%;
