@@ -1,37 +1,37 @@
 //Admin.js includes animations and logic defining the header menu.
-var lastElement = "";
+let lastElement = "";
 
 function buttonClicked(id) {
-  if (lastElement != "") {
-    var last = document.getElementById(lastElement);
+  if (lastElement !== "") {
+    let last = document.getElementById(lastElement);
     last.classList.add("aFolder");
     last.classList.remove("clickedFolder");
   } else {
-    var inbox = document.getElementById("inbox");
+    let inbox = document.getElementById("inbox");
     inbox.classList.remove("clickedFolder");
     inbox.classList.add("aFolder");
   }
-  var element = document.getElementById(id);
+  let element = document.getElementById(id);
   element.classList.remove("aFolder");
   element.classList.add("clickedFolder");
   lastElement = id;
 }
 
 function writeMessage() {
-  const replyWindow = window.open("/reply", "popup", "width=1000,height=650");
+  window.open("/reply", "popup", "width=1000,height=650");
 }
 
 function Validate() {
-  var password = document.getElementById("password1").value;
-  var confirmPassword = document.getElementById("password2").value;
-  var formSub = document.getElementById("login-form");
-  if (password != confirmPassword) {
+  let password = document.getElementById("password1").value;
+  let confirmPassword = document.getElementById("password2").value;
+  let formSub = document.getElementById("login-form");
+  if (password !== confirmPassword) {
     alert("Passwords do not match.");
     return false;
-  } else if (password == "") {
+  } else if (password === "") {
     alert("Fields Cannot Be Blank !");
     return false;
-  } else if (confirmPassword == "") {
+  } else if (confirmPassword === "") {
     alert("Fields Cannot Be Blank !");
     return false;
   } else {
@@ -43,7 +43,8 @@ function Validate() {
   return true;
 }
 
-var state = false;
+let state = false;
+
 function toggle() {
   if (state) {
     document.getElementById("password").setAttribute("type", "password");

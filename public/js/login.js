@@ -24,8 +24,7 @@ function readUsersFile() {
   // fs.readFileSync returns the contents of the file as a string
   let userFile = fs.readFileSync(filePath, "utf-8");
   // need to parse the data and store it as an array
-  let userArr = JSON.parse(userFile);
-  return userArr;
+  return JSON.parse(userFile);
 }
 
 function login(username, pass) {

@@ -39,7 +39,7 @@
   </header>
   <h2 class="headerTextMessage">send an anonymous message</h2>
   <div>
-    <form class="form" id="form" method="post" action="/addMessage" onsubmit="return checkform();">
+    <form class="form" id="form" method="post" action="/addMessage" onsubmit="return checkForm();">
 
       <div class="input">
         <input type="text" class="innerInput" id="name" name="subject" placeholder="Subject (Not Required)">
@@ -58,7 +58,7 @@
 
       <div class="checkboxDiv">
         <label for="chkEmail" class="text-center label2">
-          <input type="checkbox" id="chkEmail" onclick="EnableDisableTextBox(this)" />
+          <input type="checkbox" class="reply-check" id="chkEmail" onclick="EnableDisableTextBox(this)" />
           I'd like a Reply
         </label>
       </div>

@@ -4,10 +4,9 @@ button {
 
 .lockLogo {
   position: relative;
-  margin: 20px auto;
   height: 110px;
   width: 80px;
-  margin-bottom: 0px;
+  margin: 20px auto 0;
 }
 
 .lockIcon {
@@ -36,7 +35,7 @@ button {
   border-radius: 25px;
   text-align: center;
   margin: 50px;
-  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 .student-box a {
   display: block;
@@ -68,8 +67,7 @@ button {
   .student-box {
     width: 50%;
     text-align: center;
-    margin-top: 0px !important;
-    margin: 20px;
+    margin: 0 20px 20px 20px;
   }
 
   .lockLogo {

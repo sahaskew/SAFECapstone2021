@@ -33,7 +33,7 @@ socket.on("Msg", (msg) => {
 function chatBox(msg) {
   const div = document.createElement("div");
   div.classList.add("mess");
-  var msgTime = getTime();
+  const msgTime = getTime();
   div.innerHTML = `<p>  ${msgTime} </p> 
  <p class= "messageText">  ${msg}  </p>`;
   document.querySelector(".chatBox").appendChild(div);
@@ -41,16 +41,18 @@ function chatBox(msg) {
 
 //moved grahams time fn to backend for exporting in the msg box
 function getTime() {
-  var dt = new Date();
+  let minutes;
+  let timeOfDay;
+  const dt = new Date();
   if (dt.getHours() > 12) {
-    var timeOfDay = "PM";
+    timeOfDay = "PM";
   } else {
-    var timeOfDay = "AM";
+    timeOfDay = "AM";
   }
   if (dt.getMinutes() < 10) {
-    var minutes = "0" + dt.getMinutes();
+    minutes = "0" + dt.getMinutes();
   } else {
-    var minutes = dt.getMinutes();
+    minutes = dt.getMinutes();
   }
   return (dt.getHours() % 12) + ":" + minutes + " " + timeOfDay;
 }

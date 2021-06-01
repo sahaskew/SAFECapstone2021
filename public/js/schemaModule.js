@@ -1,8 +1,8 @@
 //file is exported and required within index.js
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 //Create message schema
-var messageSchema = new mongoose.Schema({
+const messageSchema = new mongoose.Schema({
   subject: {
     type: String,
   },
@@ -34,7 +34,7 @@ const Message = mongoose.model("Message", messageSchema);
 module.exports = Message;
 
 /*
-//this module creates a mongoschema and returns the model 
+//this module creates a mongo schema and returns the model
 //this was for the requirejs attempt.keep in case.
 define(['mongoose'], function(mongoose){ 
 //Create message schema

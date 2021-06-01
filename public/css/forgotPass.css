@@ -43,7 +43,6 @@
 
 .inputHolder {
   position: absolute;
-  width: 100%;
   height: 60px;
   top: 400px;
   left: 24%;
@@ -53,7 +52,6 @@
 
 .buttonHolder {
   position: absolute;
-  width: 100%;
   height: 60px;
   top: 490px;
   left: 24%;
@@ -97,7 +95,6 @@ label {
   margin-top: 40px !important;
   width: 70px;
   height: 100px;
-  margin: 0px auto;
 }
 
 .innerLock {

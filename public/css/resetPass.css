@@ -9,39 +9,3 @@
   width: 15%;
   margin: 0 0;
 }
-
-@media screen and (max-width: 600px) {
-  .adminIcon {
-    width: 35% !important;
-  }
-
-  .navLinkRight {
-    justify-content: center !important;
-    align-content: center;
-    position: absolute;
-    right: 10px;
-    height: 10%;
-    top: 30vh;
-    width: 35% !important;
-    z-index: -2000;
-  }
-
-  .adminIconActive {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    width: 35% !important;
-    margin: 0 0;
-  }
-
-  .navLinkRightActive {
-    justify-content: center !important;
-    align-content: center;
-    position: absolute;
-    right: 10px;
-    height: 10%;
-    top: 30vh;
-    width: 35% !important;
-    z-index: 30000;
-  }
-}

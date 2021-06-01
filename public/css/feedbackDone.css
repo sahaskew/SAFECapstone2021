@@ -4,8 +4,8 @@
 .feedbackDoneContainer {
   position: absolute;
   top: 20vh;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   height: auto;
 }
 .feedbackDoneHeader {
@@ -20,10 +20,9 @@
 
 .lock {
   position: relative;
-  margin: 5% auto;
   width: 150px;
   height: 200px;
-  margin-bottom: 50px;
+  margin: 5% auto 50px;
 }
 
 .lockIcon {
