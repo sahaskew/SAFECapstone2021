@@ -1,8 +1,19 @@
+var code = ""
+
+function makeid(length) {
+    var result           = [];
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789=-+';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result.push(characters.charAt(Math.floor(Math.random() * 
+ charactersLength)));
+   }
+   return result.join('');
+}
+
 /* check email */
 function checkEmail(){
     var email = document.getElementById("email").value;
-    //console.log("Email: " + email);
-
     if(!email){
         alert("Please enter your email");
         return false;
@@ -16,7 +27,14 @@ function checkEmail(){
     }   
 }
 
-function getEmail(){
-    var email = document.getElementById("email").value;
-    console.log("Email: " + email);
+function setCode()
+{
+    const code = makeid(30)
+    localStorage.setItem("code",code);
+
+    return(code)
 }
+
+
+
+
