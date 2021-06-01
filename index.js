@@ -37,7 +37,13 @@ var mongoConnect = require('./public/js/mongoModule.js');
 mongoConnect.db();
 //call SchemaModule to fill a message model for DB
 var Message = require('./public/js/schemaModule.js');
-
+/*
+let safeAdmin = {
+  email: "",
+  isOnline: false
+};
+*/
+//const adminFunct = require("./public/js/admin.js");
 const adminLogin = require("./public/js/login.js");
 const users = require("./public/js/createUsers.js");
 users.createUsers();
@@ -98,6 +104,15 @@ app.get("/dashboard", (req, res) => {
 });
 
 app.get("/admin", (req, res) => {
+  // Allow user to go directly to dashboard if they already logged in
+  /*
+  if(adminLogin.checkStorage()){
+    res.sendFile(DASHBOARD, { root: __dirname });
+  }
+  else{
+  res.sendFile(ADMIN, { root: __dirname });
+  }
+  */
   res.sendFile(ADMIN, { root: __dirname });
 });
 
@@ -106,6 +121,8 @@ app.post("/login", (req, res) => {
   // since we've added it let's use the body-parser
   // the login function returns a boolean value
   if(adminLogin.login(req.body.email, req.body.password)) {
+    //safeAdmin.email = req.body.email;
+    //safeAdmin.isOnline = true;
     res.sendFile(DASHBOARD, { root: __dirname});
   }
   else {
@@ -113,6 +130,16 @@ app.post("/login", (req, res) => {
   }
 });
 
+app.get("/readMessage", (req, res) => {
+  // In schemaModule.js Message was created and exported
+  // Already in the form Message = mongoose.model("Message",messageSchema)
+  Message.find()
+    .then((x) => {
+      console.log("Messages: " + x);
+      res.json(x);
+    })
+    .catch(() => {res.send("Sorry! Something went wrong."); });
+});
 
 app.get("/reply", (req, res) => {
   res.sendFile(REPLY, { root: __dirname });
