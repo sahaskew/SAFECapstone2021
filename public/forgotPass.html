@@ -1,101 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-    <title>Forget Password Page</title>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/forgotPass.css">
-    <link rel="stylesheet" href="./css/account.css">
-    
-  </head>
 
-  <body>
-    <!-- same as admin.html for nav-->
-    <nav>
-      <div class="background"></div>
-      <ul class="navLinkLeft">
-        <div class="linkContainer">
-          <li><a href="/about">about</a></li>
-        </div>
-      </ul>
-      <div class="logo">
-        <a class = "safeButton" href="/">SaFE</a>
-      </div>
-      <ul class="navLinkRight">
-        <div class="linkContainer">
-          <li><a href="/">home</a></li>
-        </div>
-      </ul>
-      <ul class="adminIcon">
-        <div class="linkContainer">
-          <li> <a href="/admin"><img alt="SourceLink" height="30" src="./images/profileIcon.png"/></a></li>
-        </div>
-      </ul>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <title>Forget Password Page</title>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/forgotPass.css">
+  <link rel="stylesheet" href="./css/account.css">
 
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-    </nav>
-    <!-- nav -->
-    <h1 class = "forgotText text-center">forgot password?</h1>
+</head>
 
-    <!-- action="/resetPass" -->
-    <div class="form">
-        
-      <div class="input">
-        <input type="text" class="form-control" id="email" placeholder="What's your email?">
+<body>
+  <!-- same as admin.html for nav-->
+  <nav>
+    <div class="background"></div>
+    <ul class="navLinkLeft">
+      <div class="linkContainer">
+        <li><a href="/about">about</a></li>
       </div>
-
-      <div class="input">
-          <button id = "submitButton" class="btn-submit" onclick="callerFun()">Submit</button>
-      </div>
-      <script type="text/javascript">
-        function delay(n){
-            return new Promise(function(resolve){
-                setTimeout(resolve,n*1000);
-            });
-        }
-        function sendEmail() {
-          var email = document.getElementById("email").value;
-          document.getElementById("submitButton").innerHTML = "sending email..."
-          const code = setCode()
-          Email.send({
-              Host : "smtp.gmail.com",
-              Username : "SAFEAnonymousFeedbackSystem",
-              Password : "safeFeedback",
-              To : `${email}`,
-              From : "SAFEAnonymousFeedbackSystem@gmail.com",
-              Subject : "SAFE Anonymous Feedback Password Reset",
-              Body : `Dear SAFE Admin, A password reset was requested for your account. You can reset your password with this code: ${code} If you did not initiate this password reset request, please disregard it.`
-          }).then (        
-            // setTimeout(function () {}, 5000)
-          )
-          return ("Finished sending email")
-        }
-        async function callerFun(){
-          await sendEmail();
-          await delay(5);
-          window.location.href = '/recovery'
-        }
-      </script> 
-      <div class="input">
-          <label>A Password Recovery email will be send to</label>
-          <label>this email.</label>
-      </div>
-      
+    </ul>
+    <div class="logo">
+      <a class="safeButton" href="/">SaFE</a>
     </div>
-    <script src= "./js/admin.js"></script>
-    <script src="./js/forgot.js"></script>
+    <ul class="navLinkRight">
+      <div class="linkContainer">
+        <li><a href="/">home</a></li>
+      </div>
+    </ul>
+    <ul class="adminIcon">
+      <div class="linkContainer">
+        <li> <a href="/admin"><img alt="SourceLink" height="30" src="./images/profileIcon.png" /></a></li>
+      </div>
+    </ul>
 
-  </body>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+  <!-- nav -->
+  <h1 class="forgotText text-center">forgot password?</h1>
+
+  <!-- action="/resetPass" -->
+  <div class="form">
+
+    <div class="input">
+      <input type="text" class="form-control" id="email" placeholder="What's your email?">
+    </div>
+
+    <div class="input">
+      <button id="submitButton" class="btn-submit" onclick="callerFun()">Submit</button>
+    </div>
+    <script type="text/javascript">
+      function delay(n) {
+        return new Promise(function (resolve) {
+          setTimeout(resolve, n * 1000);
+        });
+      }
+      function sendEmail() {
+        var email = document.getElementById("email").value;
+        document.getElementById("submitButton").innerHTML = "sending email..."
+        const code = setCode()
+        Email.send({
+          Host: "smtp.gmail.com",
+          Username: "SAFEAnonymousFeedbackSystem",
+          Password: "safeFeedback",
+          To: `${email}`,
+          From: "SAFEAnonymousFeedbackSystem@gmail.com",
+          Subject: "SAFE Anonymous Feedback Password Reset",
+          Body: `Dear SAFE Admin, A password reset was requested for your account. You can reset your password with this code: ${code} If you did not initiate this password reset request, please disregard it.`
+        }).then(
+          // setTimeout(function () {}, 5000)
+        )
+        return ("Finished sending email")
+      }
+      async function callerFun() {
+        await sendEmail();
+        await delay(5);
+        window.location.href = '/recovery'
+      }
+    </script>
+    <div class="input">
+      <label>A Password Recovery email will be send to</label>
+      <label>this email.</label>
+    </div>
+
+  </div>
+  <script src="./js/admin.js"></script>
+  <script src="./js/forgot.js"></script>
+
+</body>
+
 </html>
