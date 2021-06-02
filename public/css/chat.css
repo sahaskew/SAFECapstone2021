@@ -192,7 +192,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  height: 60px !important;
+  height: 60px;
 }
 
 .textarea {

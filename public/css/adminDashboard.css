@@ -1,5 +1,5 @@
 .navLinkRight {
-  width: 23% !important;
+  width: 23%;
   justify-content: flex-end;
 }
 
@@ -12,7 +12,7 @@
 }
 .headerText {
   font-family: "Major Mono Display", monospace;
-  font-size: 35px !important;
+  font-size: 35px;
 }
 
 .dashboardContainer {
@@ -37,8 +37,8 @@
 
 .trashCan {
   position: absolute;
-  align-content: center !important;
-  justify-content: center !important;
+  align-content: center;
+  justify-content: center;
   border: none;
   display: flex;
   top: 5px;
@@ -50,8 +50,8 @@
 }
 .flag {
   position: absolute;
-  align-content: center !important;
-  justify-content: center !important;
+  align-content: center;
+  justify-content: center;
   border: none;
   display: flex;
   top: 5px;
@@ -170,15 +170,6 @@
   background-color: rgba(209, 209, 209, 0.6) !important;
 }
 
-/*
-
-.aFolder:active {
-  background-color: rgba(255, 255, 255, 0.753) !important;
-}
-.aFolder:focus {
-  background-color: rgba(255, 255, 255, 0.87) !important;
-} */
-
 .innerContainer {
   position: absolute;
   display: flex;
@@ -209,17 +200,14 @@
 }
 
 .aFolder, .clickedFolder {
-  font-family: "Arvo", serif !important;
-  font-size: 15px !important;
-  color: black !important;
+  font-family: "Arvo", serif;
+  font-size: 15px;
+  color: black;
   width: 100%;
   text-align: left;
-  margin-left: 0 !important;
-  margin-right: 10px !important;
-  margin-bottom: 2px;
-  padding: 5px !important;
-  padding-left: 25px !important;
-  border: none !important;
+  margin: 0 10px 2px 0;
+  padding: 5px 5px 5px 25px;
+  border: none;
 
 }
 
@@ -314,21 +302,21 @@
 
 @media screen and (max-width: 600px) {
   .adminIcon {
-    width: 35% !important;
+    width: 35%;
   }
 
   .adminIconActive {
-    width: 25vw !important;
-    align-items: center !important;
+    width: 25vw;
+    align-items: center;
   }
   .navLinkRight {
-    justify-content: center !important;
+    justify-content: center;
     align-content: center;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 30vh;
-    width: 35% !important;
+    width: 35%;
     z-index: 0;
   }
   .dashboardContainer {

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
 .navLinkRight {
-  width: 23% !important;
+  width: 23%;
   justify-content: flex-end;
 }
 .adminIcon {
@@ -65,7 +65,7 @@
 }
 
 .form {
-  top: 240px !important;
+  top: 240px;
 }
 
 .f-label {
@@ -92,9 +92,9 @@ label {
 
 .lockLogo {
   position: relative;
-  margin-top: 40px !important;
   width: 70px;
   height: 100px;
+  margin: 40px auto;
 }
 
 .innerLock {
@@ -114,7 +114,7 @@ label {
 
 @media screen and (min-width: 600px) and (max-width: 800px) {
   .lockLogo {
-    margin-top: 20px !important;
+    margin-top: 20px;
   }
 
   .inputHolder {
@@ -140,21 +140,21 @@ label {
   }
 
   .adminIcon {
-    width: 35% !important;
+    width: 35%;
   }
 
   .lockLogo {
-    margin-top: 20px !important;
+    margin-top: 20px;
   }
 
   .navLinkRight {
-    justify-content: center !important;
+    justify-content: center;
     align-content: center;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 30vh;
-    width: 35% !important;
+    width: 35%;
     z-index: -2000;
   }
 
@@ -162,18 +162,18 @@ label {
     list-style: none;
     display: flex;
     justify-content: space-around;
-    width: 35% !important;
+    width: 35%;
     margin: 0 0;
   }
 
   .navLinkRightActive {
-    justify-content: center !important;
+    justify-content: center;
     align-content: center;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 30vh;
-    width: 35% !important;
+    width: 35%;
     z-index: 30000;
   }
   label {

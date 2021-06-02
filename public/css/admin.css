@@ -1,5 +1,5 @@
 .navLinkRight {
-  width: 23% !important;
+  width: 23% ;
   justify-content: flex-end;
 }
 .adminIcon {
@@ -10,7 +10,7 @@
   margin: 0 0;
 }
 .navLinkRightActive {
-  width: 23% !important;
+  width: 23%;
   justify-content: flex-end;
 }
 
@@ -24,31 +24,31 @@
 
 @media screen and (max-width: 600px) {
   .adminIcon {
-    width: 35% !important;
+    width: 35%;
   }
 
   .navLinkRight {
-    justify-content: center !important;
+    justify-content: center;
     align-content: center;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 30vh;
-    width: 35% !important;
+    width: 35%;
     z-index: -2000;
   }
   .adminIconActive {
-    width: 35% !important;
+    width: 35%;
   }
 
   .navLinkRightActive {
-    justify-content: center !important;
+    justify-content: center;
     align-content: center;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 30vh;
-    width: 35% !important;
+    width: 35%;
     z-index: 30000;
   }
 }
