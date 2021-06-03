@@ -59,12 +59,12 @@ nav {
 
 .logo h1 {
   font-family: "Major Mono Display", monospace;
-  font-size: 60px !important;
+  font-size: 60px;
 }
 
 .safeButton {
   font-family: "Major Mono Display", monospace;
-  font-size: 60px !important;
+  font-size: 60px;
   text-decoration: none;
   color: white;
 }
@@ -218,7 +218,7 @@ nav {
     right: 10px;
     height: 10%;
     top: 20vh;
-    width: 23% !important;
+    width: 23%;
     opacity: 0;
   }
   .navLinkLeft {
@@ -271,7 +271,7 @@ nav {
     right: 10px;
     height: 10%;
     top: 20vh;
-    width: 23% !important;
+    width: 23%;
     opacity: 0;
     z-index: 30000;
   }
@@ -402,7 +402,7 @@ input[type="password"] {
 input[type="submit"] {
   position: absolute;
   font-family: "Major Mono Display", monospace;
-  font-size: 20px !important;
+  font-size: 20px;
   text-align: center;
   background-color: white;
   border-radius: 30px;
@@ -455,17 +455,17 @@ input[type="text"] {
 
 @media screen and (max-width: 600px) {
   .adminIcon {
-    width: 35% !important;
+    width: 35%;
   }
 
   .navLinkRight {
-    justify-content: center !important;
+    justify-content: center;
     align-content: center;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 30vh;
-    width: 35% !important;
+    width: 35%;
     z-index: -2000;
   }
 
@@ -473,18 +473,18 @@ input[type="text"] {
     list-style: none;
     display: flex;
     justify-content: space-around;
-    width: 35% !important;
+    width: 35%;
     margin: 0 0;
   }
 
   .navLinkRightActive {
-    justify-content: center !important;
+    justify-content: center;
     align-content: center;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 30vh;
-    width: 35% !important;
+    width: 35%;
     z-index: 30000;
   }
 }

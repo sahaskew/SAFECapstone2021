@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
 .navLinkRight {
-  width: 23% !important;
+  width: 23%;
   justify-content: flex-end;
 }
 .adminIcon {
@@ -95,6 +95,7 @@ label {
   margin-top: 40px !important;
   width: 70px;
   height: 100px;
+  margin: 0 auto;
 }
 
 .innerLock {
@@ -140,7 +141,7 @@ label {
   }
 
   .adminIcon {
-    width: 35% !important;
+    width: 35%;
   }
 
   .lockLogo {
@@ -148,13 +149,13 @@ label {
   }
 
   .navLinkRight {
-    justify-content: center !important;
+    justify-content: center;
     align-content: center;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 30vh;
-    width: 35% !important;
+    width: 35%;
     z-index: -2000;
   }
 
@@ -162,18 +163,18 @@ label {
     list-style: none;
     display: flex;
     justify-content: space-around;
-    width: 35% !important;
+    width: 35%;
     margin: 0 0;
   }
 
   .navLinkRightActive {
-    justify-content: center !important;
+    justify-content: center;
     align-content: center;
     position: absolute;
     right: 10px;
     height: 10%;
     top: 30vh;
-    width: 35% !important;
+    width: 35%;
     z-index: 30000;
   }
   label {

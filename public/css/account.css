@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
 .navLinkRight {
-  width: 23% !important;
+  width: 23%;
   justify-content: flex-end;
 }
 .adminIcon {
@@ -78,5 +78,3 @@ h1 {
   font-family: "Arvo", serif;
   font-size: 13px;
 }
-
-
