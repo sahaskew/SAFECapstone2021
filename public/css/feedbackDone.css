@@ -75,7 +75,7 @@
     top: 25vh;
   }
   .feedbackDoneHeader {
-    font-size: 2em !important;
+    font-size: 2em;
   }
 
   .lock {
@@ -83,7 +83,7 @@
     height: 150px;
   }
   .bottomLabel {
-    font-size: 1.2em !important;
+    font-size: 1.2em;
   }
 }
 
